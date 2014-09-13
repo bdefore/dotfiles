@@ -15,5 +15,5 @@ open https://github.com/settings/ssh
 
 ### Run .setup
 ```
-curl https://github.com/bdefore/dotfiles/.setup | sudo sh 
+git clone https://github.com/bdefore/dotfiles && cd dotfiles && ./.setup
 ```
