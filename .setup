@@ -3,6 +3,7 @@
 
 # install latest ruby: (this will also install homebrew)
 rvm install 2.0
+source /etc/profile.d/rvm.sh
 
 # install homesick and get your dotfiles:
 gem install homesick
