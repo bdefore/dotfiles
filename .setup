@@ -1,1 +1,26 @@
-echo foo
+# install rvm: (it may tell you that git requires installing command line tools, accept that)
+\curl -sSL https://get.rvm.io | bash
+
+# install latest ruby: (this will also install homebrew)
+rvm install 2.0
+
+# install homesick and get your dotfiles:
+gem install homesick
+
+# Clone dotfiles (overwrite all except .ssh - that should be removed from dotfiles at some point)
+homesick clone git@github.com:bdefore/dotfiles.git
+homesick symlink dotfiles
+
+# install brew cask:
+brew tap phinze/cask
+brew install brew-cask
+brew tap caskroom/versions
+
+# setup osx preferences:
+~/.osx
+
+# Use cask to install the apps you use (and take a coffee break):
+~/.cask
+
+# log out, back in again
+osascript -e 'tell app "System Events" to log out'
