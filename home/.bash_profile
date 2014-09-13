@@ -38,9 +38,9 @@ alias .....="cd ../../../.."
 alias -- -="cd -"
 
 # From git source. Adds completions for branches, among other treats
-source .gittools/git-completion.bash
-source .gittools/git-flow-completion.bash
-source .gittools/git-prompt.bash
+source ~/.gittools/git-completion.bash
+source ~/.gittools/git-flow-completion.bash
+source ~/.gittools/git-prompt.bash
 
 ##################################################
 # Fancy PWD display function from https://wiki.archlinux.org/index.php/Color_Bash_Prompt
