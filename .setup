@@ -11,6 +11,9 @@ gem install homesick
 homesick clone git@github.com:bdefore/dotfiles.git
 homesick symlink dotfiles
 
+# Update
+source ~/.bash_profile
+
 # install brew cask:
 brew tap phinze/cask
 brew install brew-cask

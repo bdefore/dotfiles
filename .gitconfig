@@ -1,0 +1,12 @@
+[user]
+	name = Buck DeFore
+	email = bdefore@gmail.com
+[color]
+	diff = auto
+	status = auto
+	branch = auto
+[core]
+	excludesfile = /Users/bdefore/.gitignore_global
+[alias]
+	unadd = reset HEAD
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset' --abbrev-commit
