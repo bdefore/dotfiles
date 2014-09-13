@@ -1,27 +1,33 @@
 #!/bin/bash
-brew cask install firefox
-brew cask install skype
+
+# more important
 brew cask install google-chrome
-brew cask install chromium
-brew cask install handbrake
-brew cask install adium
-brew cask install audacity
-brew cask install adobe-air
-brew cask install alfred
-brew cask install charles
 brew cask install onepassword
-brew cask install sublime-text3
-brew cask install brackets
-brew cask install atom
-brew cask install daisydisk
-brew cask install superduper
-brew cask install vlc
-brew cask install steam
-brew cask install iterm2
 brew cask install dropbox
-brew cask install vmware-fusion
+brew cask install google-drive
+brew cask install iterm2
 brew cask install transmission
 brew cask install the-unarchiver
-brew cask install google-drive
+brew cask install sublime-text3
+brew cask install atom
+
+# less important
+brew cask install firefox
+brew cask install skype
+brew cask install chromium
+# brew cask install adium
+brew cask install adobe-air
+# brew cask install alfred
+brew cask install charles
+brew cask install brackets
+brew cask install vlc
+brew cask install steam
+brew cask install vmware-fusion
+
+# rare use but nice to have
 brew cask install colloquy
+brew cask install daisydisk
+brew cask install superduper
+brew cask install audacity
+brew cask install handbrake
 brew cask install unity-web-player
