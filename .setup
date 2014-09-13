@@ -8,8 +8,11 @@ source /etc/profile.d/rvm.sh
 # install homesick and get your dotfiles:
 gem install homesick
 
+# Bypass hostname verification for smoother install
+ssh -T -o "VerifyHostKeyDNS yes" git@github.com
+
 # Clone dotfiles (overwrite all except .ssh - that should be removed from dotfiles at some point)
-homesick clone git@github.com:bdefore/dotfiles.git
+homesick clone https://github.com/bdefore/dotfiles.git
 homesick symlink dotfiles
 
 # Update
