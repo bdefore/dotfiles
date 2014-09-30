@@ -23,6 +23,8 @@ brew cask install brackets
 brew cask install vlc
 brew cask install steam
 brew cask install vmware-fusion
+brew cask install plex-media-server
+brew cask install android-studio
 
 # rare use but nice to have
 brew cask install colloquy
