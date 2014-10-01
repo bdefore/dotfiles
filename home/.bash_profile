@@ -88,13 +88,12 @@ PS1=$PS1'$(__git_ps1 " (%s)") \n→ '
 # PS1 suggestions from https://wiki.archlinux.org/index.php/Color_Bash_Prompt:
 #PS1='\e[1;33;47m\u \e[1;32;47mon \h \e[1;35;47m\d \@\e[0;0m\n\e[1;34m[dir.= \w] \# > \e[0;0m'
 #PS1='\e[1;31;47m\u \e[1;32;47mon \h \e[1;35;47m\d \@\e[0;0m\n\e[1;31m[dir.= \w] \# > \e[0;0m'
-
+export ANDROID_HOME=/Applications/Android\ Studio.app/sdk
 PATH=$PATH:/usr/local/share/npm/bin
 PATH=/usr/local/bin:$PATH:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin
 PATH=$PATH:/Applications/Postgres.app/Contents/MacOS/bin
-PATH=$PATH:~/Sync/Code/SDK/alchemy/alchemy-setup/achacks
-PATH=$PATH:~/Sync/Code/SDK/adt-bundle-mac-x86_64/sdk/tools
-PATH=$PATH:~/Sync/Code/SDK/adt-bundle-mac-x86_64/sdk/platform-tools
+PATH=$PATH:$ANDROID_HOME/tools
+PATH=$PATH:$ANDROID_HOME/platform-tools
 PATH=$PATH:$AIR_HOME/bin
 #PATH=$PATH:$ANT_HOME/bin
 #PATH=$PATH:/opt/subversion/bin/

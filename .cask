@@ -25,6 +25,8 @@ brew cask install steam
 brew cask install vmware-fusion
 brew cask install plex-media-server
 brew cask install android-studio
+brew cask install hipchat
+brew cask install genymotion
 
 # rare use but nice to have
 brew cask install colloquy
