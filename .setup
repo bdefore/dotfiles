@@ -20,7 +20,6 @@ source ~/.rvm/scripts/rvm
 
 # install latest ruby
 rvm install 2.0
-source /etc/profile.d/rvm.sh
 
 # install homesick and get your dotfiles:
 gem install homesick
