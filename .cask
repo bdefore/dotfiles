@@ -1,39 +1,45 @@
 #!/bin/bash
 
-# more important
+# essentials
 brew cask install google-chrome
-brew cask install onepassword
 brew cask install dropbox
-brew cask install google-drive
+brew cask install onepassword
 brew cask install iterm2
-brew cask install transmission
 brew cask install the-unarchiver
+brew cask install hipchat
+brew cask install slack
+
+# editors
 brew cask install sublime-text3
 brew cask install atom
+brew cask install brackets
 
 # less important
+brew cask install google-drive
 brew cask install firefox
 brew cask install skype
 brew cask install chromium
+brew cask install charles
+brew cask install vmware-fusion
 # brew cask install adium
 # brew cask install adobe-air
 # brew cask install alfred
-brew cask install charles
-brew cask install brackets
+
+# home entertainment
+brew cask install transmission
 brew cask install vlc
-brew cask install steam
-brew cask install vmware-fusion
 brew cask install plex-media-server
-brew cask install android-studio
+brew cask install audacity
+brew cask install steam
+# brew cask install handbrake # too slow
+
+# android dev
 brew cask install java
-brew cask install hipchat
-brew cask install slack
+brew cask install android-studio
 brew cask install genymotion
 
 # rare use but nice to have
 brew cask install colloquy
 brew cask install daisydisk
 brew cask install superduper
-brew cask install audacity
-# brew cask install handbrake # too slow
 # brew cask install unity-web-player
