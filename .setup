@@ -4,14 +4,6 @@ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/
 # install common dev tools
 ./.brew
 
-# install nvm and node
-curl https://raw.githubusercontent.com/creationix/nvm/v0.17.2/install.sh | bash
-source ~/.bashrc
-nvm install 0.10
-
-# install common node tools
-./.npm
-
 # install rvm: (it may tell you that git requires installing command line tools, accept that)
 \curl -sSL https://get.rvm.io | bash
 
@@ -30,6 +22,14 @@ homesick symlink dotfiles
 
 # Update
 source ~/.bash_profile
+
+# install nvm and node
+curl https://raw.githubusercontent.com/creationix/nvm/v0.17.2/install.sh | bash
+source ~/.bashrc
+nvm install 0.10
+
+# install common node tools
+./.npm
 
 # setup osx preferences:
 ./.osx
