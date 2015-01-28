@@ -15,6 +15,9 @@ nvm install 0.10
 # install rvm: (it may tell you that git requires installing command line tools, accept that)
 \curl -sSL https://get.rvm.io | bash
 
+# source the rvm
+source ~/.rvm/scripts/rvm
+
 # install latest ruby
 rvm install 2.0
 source /etc/profile.d/rvm.sh
