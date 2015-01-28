@@ -1,1 +1,4 @@
 .DS_Store
+home/.gradle/caches
+home/.gradle/daemon
+home/.gradle/wrapper

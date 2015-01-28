@@ -1,0 +1,5 @@
+brew install postgres
+brew install mysql
+brew install nginx
+brew install redis
+brew install imagemagick

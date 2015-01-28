@@ -12,7 +12,7 @@ export EDITOR='subl -w'
 
 # Git Aliases
 alias gs='git status'
-alias gl='git pull'
+# alias gl='git pull'
 alias gp='git push'
 alias gd='git diff | subl'
 alias gc='git commit -v'
@@ -142,8 +142,6 @@ export PATH
 # done
 # }}}
 
-# Enable Node.JS via nave version manager:
-# nave use 0.8.8
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 
@@ -168,3 +166,5 @@ done
 # fish
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
+
+nvm use 0.10

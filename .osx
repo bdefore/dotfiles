@@ -166,6 +166,10 @@ defaults write com.apple.appstore ShowDebugMenu -bool true
 # Don’t prompt for confirmation before downloading
 defaults write org.m0k.transmission DownloadAsk -bool false
 
+# Never bounce a dock icon
+defaults write com.apple.dock no-bouncing -bool TRUE
+killall Dock
+
 killall Finder
 
 echo 'Done writing OS X defaults!'
