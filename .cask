@@ -26,6 +26,7 @@ brew cask install vmware-fusion
 brew cask install plex-media-server
 brew cask install android-studio
 brew cask install hipchat
+brew cask install slack
 brew cask install genymotion
 
 # rare use but nice to have
@@ -33,5 +34,5 @@ brew cask install colloquy
 brew cask install daisydisk
 brew cask install superduper
 brew cask install audacity
-brew cask install handbrake
+# brew cask install handbrake # too slow
 brew cask install unity-web-player
