@@ -34,8 +34,8 @@ brew cask install steam
 # brew cask install handbrake # too slow
 
 # android dev
-brew cask install java
-brew cask install android-studio
+# brew cask install java
+# brew cask install android-studio
 brew cask install genymotion
 
 # rare use but nice to have

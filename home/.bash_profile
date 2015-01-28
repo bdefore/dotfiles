@@ -132,7 +132,7 @@ export NODE_ENV=development
 export JAVA_HOME="/Library/Internet Plug-Ins/JavaAppletPlugin.plugin/Contents/Home"
 
 # an android studio 1.0 / os x 10.10 workaround
-export STUDIO_JDK="/Library/Java/JavaVirtualMachines/jdk1.8.0_31.jdk"
+# export STUDIO_JDK="/Library/Java/JavaVirtualMachines/jdk1.8.0_31.jdk"
 
 export PATH
 
