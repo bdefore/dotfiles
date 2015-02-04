@@ -26,3 +26,5 @@
 	lsv = log --pretty=format:'%C(yellow)%h %C(blue)%ad%C(red)%d %C(reset)%s%C(green) [%cn]' --decorate --date=short --numstat
 	oy = !git st
 	bfgs = !/Users/d4/workspace/devops/git/purge_big_files_from_git_history.rb
+[credential]
+	helper = osxkeychain
