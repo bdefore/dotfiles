@@ -28,6 +28,7 @@ brew cask install vmware-fusion
 # home entertainment
 brew cask install transmission
 brew cask install vlc
+brew cask install rdio
 brew cask install plex-media-server
 brew cask install audacity
 brew cask install steam
