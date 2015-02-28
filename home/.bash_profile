@@ -1,6 +1,7 @@
 # [[ -r ~/.profile ]] && source ~/.profile
 # [[ -r ~/.bashrc ]] && source ~/.bashrc
 [[ -r ~/.corporate_profiles/learnist ]] && source ~/.corporate_profiles/learnist
+[[ -r ~/.corporate_profiles/academiaedu ]] && source ~/.corporate_profiles/academiaedu
 
 # Terminal coloring
 export CLICOLOR=1

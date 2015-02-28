@@ -1,14 +1,24 @@
 {
-  "ignored_packages":
-  [
-    "Vintage"
-  ],
-  "theme": "Spacegray.sublime-theme",
-  "color_scheme": "Packages/Theme - Spacegray/base16-ocean.dark.tmTheme",
-  "save_on_focus_lost": true,
-  "translate_tabs_to_spaces": true,
-  "tab_size": 2,
-  "folder_exclude_patterns": [".svn", ".git", ".hg", "CVS", "node_modules", "bower_components", "jspm_packages"],
-  "auto_find_in_selection": true,
-  "draw_white_space": "all"
+	"auto_find_in_selection": true,
+	"color_scheme": "Packages/Theme - Spacegray/base16-ocean.dark.tmTheme",
+	"draw_white_space": "all",
+	"folder_exclude_patterns":
+	[
+		".svn",
+		".git",
+		".hg",
+		"CVS",
+		"node_modules",
+		"bower_components",
+		"jspm_packages",
+		"tmp"
+	],
+	"ignored_packages":
+	[
+		"Vintage"
+	],
+	"save_on_focus_lost": true,
+	"tab_size": 2,
+	"theme": "Spacegray.sublime-theme",
+	"translate_tabs_to_spaces": true
 }
