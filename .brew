@@ -4,5 +4,6 @@ brew install nginx
 brew install redis
 brew install imagemagick
 brew install wget
+brew install heroku
 brew install terminal-notifier
 brew install --HEAD hub
