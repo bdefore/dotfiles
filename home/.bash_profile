@@ -106,9 +106,11 @@ PATH=$PATH:/Applications/mongodb/bin
 PATH=$PATH:/Developer/usr/bin
 
 # http://blog.macromates.com/2008/working-with-history-in-bash/
-export HISTCONTROL=erasedups
+export HISTCONTROL=ignoredups:erasedups
 export HISTSIZE=1000000
 shopt -s histappend
+# After each command, append to the history file and reread it. Preserves history across all terminal windows
+export PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND$'\n'}history -a; history -c; history -r"
 
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
