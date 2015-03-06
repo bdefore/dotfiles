@@ -8,6 +8,7 @@ brew cask install iterm2
 brew cask install the-unarchiver
 brew cask install hipchat
 brew cask install slack
+brew cask install spectacle
 
 # editors
 brew cask install sublime-text3
