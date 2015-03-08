@@ -2,6 +2,7 @@
 # [[ -r ~/.bashrc ]] && source ~/.bashrc
 # [[ -r ~/.corporate_profiles/learnist ]] && source ~/.corporate_profiles/learnist
 # [[ -r ~/.corporate_profiles/academiaedu ]] && source ~/.corporate_profiles/academiaedu
+[[ -r ~/.corporate_profiles/ga ]] && source ~/.corporate_profiles/ga
 
 # Terminal coloring
 export CLICOLOR=1
@@ -176,4 +177,7 @@ done
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
 
 source ~/.nvm/nvm.sh
-nvm use 0.10
+nvm use 0.12
+
+# added by Anaconda 2.1.0 installer
+export PATH="/Users/d4/anaconda/bin:$PATH"
