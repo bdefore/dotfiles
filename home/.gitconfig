@@ -28,3 +28,5 @@
 	bfgs = !/Users/d4/workspace/devops/git/purge_big_files_from_git_history.rb
 [credential]
 	helper = osxkeychain
+[rerere]
+	enabled = true

@@ -177,7 +177,7 @@ done
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
 
 source ~/.nvm/nvm.sh
-nvm use 0.12
+nvm use # expects ~/.nvmrc to define version
 
 # added by Anaconda 2.1.0 installer
 export PATH="/Users/d4/anaconda/bin:$PATH"
