@@ -1,4 +1,5 @@
 brew install git
+brew install hub
 brew install postgres
 brew install mysql
 brew install nginx
@@ -7,4 +8,5 @@ brew install imagemagick
 brew install wget
 brew install heroku
 brew install terminal-notifier
+brew install diff-so-fancy
 brew install --HEAD hub

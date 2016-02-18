@@ -26,7 +26,16 @@
 	lsv = log --pretty=format:'%C(yellow)%h %C(blue)%ad%C(red)%d %C(reset)%s%C(green) [%cn]' --decorate --date=short --numstat
 	oy = !git st
 	bfgs = !/Users/d4/workspace/devops/git/purge_big_files_from_git_history.rb
+	branches = for-each-ref --sort=-committerdate refs/heads/ --format='%(color:green)%(committerdate:relative)%(color:reset)\t %(color:bold yellow)%(refname:short)%(color:reset) %(contents:subject) - %(color:bold)%(authorname)%(color:reset)'
+	recent = for-each-ref --sort=-committerdate refs/heads/ --format='%(committerdate:short) %(authorname) %(refname:short)'
 [credential]
 	helper = osxkeychain
 [rerere]
 	enabled = true
+[filter "lfs"]
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f
+	required = true
+[pager]
+	diff = diff-so-fancy | less --tabs=1,5 -RFX
+	show = diff-so-fancy | less --tabs=1,5 -RFX

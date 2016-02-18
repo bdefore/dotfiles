@@ -31,6 +31,8 @@ alias git='hub'
 # http://fredkschott.com/post/2014/02/git-log-is-so-2005/
 git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset' --abbrev-commit"
 
+git config --global alias.recent "for-each-ref --sort=-committerdate refs/heads/ --format='%(committerdate:short) %(authorname) %(refname:short)'"
+
 # Node Aliases
 alias npd='npm install -d'
 
@@ -98,22 +100,21 @@ PATH=/usr/local/bin:$PATH:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin
 PATH=$PATH:/Applications/Postgres.app/Contents/MacOS/bin
 PATH=$PATH:$ANDROID_HOME/tools
 PATH=$PATH:$ANDROID_HOME/platform-tools
-PATH=$PATH:$AIR_HOME/bin
-#PATH=$PATH:$ANT_HOME/bin
-#PATH=$PATH:/opt/subversion/bin/
 PATH=$PATH:/opt/local/bin
 PATH=$PATH:/opt/local/sbin
 PATH=$PATH:/usr/local/mysql/bin
 PATH=$PATH:/usr/local/git/bin
 PATH=$PATH:/Applications/mongodb/bin
 PATH=$PATH:/Developer/usr/bin
+PATH=$PATH:/Users/d4/.nvm/versions/node/v5.2.0/bin # to enable sublimelinter finding eslint
 
 # http://blog.macromates.com/2008/working-with-history-in-bash/
 export HISTCONTROL=ignoredups:erasedups
 export HISTSIZE=1000000
 shopt -s histappend
+
 # After each command, append to the history file and reread it. Preserves history across all terminal windows
-export PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND$'\n'}history -a; history -c; history -r"
+# export PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND$'\n'}history -a; history -c; history -r"
 
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
@@ -123,6 +124,7 @@ alias bitch=sudo
 alias nave="sh ~/Documents/bash/nave.sh"
 alias alert="open ~/Desktop/BabyElephantWalk.flv"
 alias brack="/Applications/Brackets.app/Contents/MacOS/Brackets"
+alias ur="cd ~/code/universal-redux"
 
 # flash logging
 alias fl="tail -f ~/Library/Preferences/Macromedia/Flash\ Player/Logs/flashlog.txt"
@@ -177,7 +179,14 @@ done
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
 
 source ~/.nvm/nvm.sh
-nvm use # expects ~/.nvmrc to define version
+nvm use > /dev/null 2>&1 # expects ~/.nvmrc to define version
+
+# http://vijayskotecha.blogspot.com/2015/08/2-methods-to-speed-up-you-nodejs-npm.html
+alias npmi="npm i --cache-min=1000000"
+# alias npmi="if test npm i --cache-min=1000000; then terminal-notifier -title 'npm' -message 'Install completed successfully' ; else terminal-notifier -title 'npm' -message 'Install failed!' ; fi"
+alias nrd="npm run dev"
+alias rmn="rm -rf node_modules"
+alias rei="rm -rf ./node-modules && npmi"
 
 # added by Anaconda 2.1.0 installer
 export PATH="/Users/d4/anaconda/bin:$PATH"

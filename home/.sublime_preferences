@@ -1,6 +1,6 @@
 {
 	"auto_find_in_selection": true,
-	"color_scheme": "Packages/Theme - Spacegray/base16-ocean.dark.tmTheme",
+	"color_scheme": "Packages/User/SublimeLinter/base16-ocean.dark (SL).tmTheme",
 	"draw_white_space": "all",
 	"file_exclude_patterns":
 	[
@@ -25,12 +25,15 @@
 		"*.db",
 		"*.svg",
 		"*.sublime-workspace",
-		"webpack-bundle.js",
-		"webpack-bundle.js.map",
+		"*.bundle.js",
+		"*.bundle.js.map",
 		"404.html",
 		"422.html",
 		"500.html",
-		"maintenance.html"
+		"maintenance.html",
+		".log",
+		"*.js.map",
+		"webpack-stats.json"
 	],
 	"folder_exclude_patterns":
 	[
@@ -43,8 +46,10 @@
 		"node_modules",
 		"bower_components",
 		"jspm_packages",
-		"tmp"
+		"tmp",
+		"static/dist"
 	],
+	"font_size": 12,
 	"ignored_packages":
 	[
 		"Vintage"

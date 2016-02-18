@@ -1,13 +1,18 @@
 "*":
-  editor:
-    fontSize: 12
-    invisibles: {}
   core:
     themes: [
       "atom-dark-ui"
       "atom-dark-syntax"
     ]
+  editor:
+    fontSize: 11
+    invisibles: {}
   "exception-reporting":
     userId: "d2d522d3-f1bc-c5f1-1ab7-1788a9fb0baa"
+  "file-watcher":
+    promptWhenFileHasChangedOnDisk: false
+  nuclide:
+    remoteProjectsConfig: []
+  react: {}
   welcome:
     showOnStartup: false
