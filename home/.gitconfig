@@ -6,7 +6,7 @@
 	status = auto
 	branch = auto
 [core]
-	excludesfile = /Users/bdefore/.gitignore_global
+	excludesfile = /Users/d4/.gitignore_global
 [alias]
 	unadd = reset HEAD
 	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset' --abbrev-commit
@@ -16,6 +16,7 @@
 	ci = !git commit
 	co = !git checkout
 	fuckit = !git reset --hard
+	deceive = git rebase
 	production-tag = !git tag -l 'production-*' | sort -n -k2 -t- | tail -1
 	staging-tag = !git tag -l 'staging-*' | sort -n -k2 -t- | tail -1
 	latest-tag = !git log --pretty=oneline -1 | sed 's/ .*//'
@@ -28,10 +29,11 @@
 	bfgs = !/Users/d4/workspace/devops/git/purge_big_files_from_git_history.rb
 	branches = for-each-ref --sort=-committerdate refs/heads/ --format='%(color:green)%(committerdate:relative)%(color:reset)\t %(color:bold yellow)%(refname:short)%(color:reset) %(contents:subject) - %(color:bold)%(authorname)%(color:reset)'
 	recent = for-each-ref --sort=-committerdate refs/heads/ --format='%(committerdate:short) %(authorname) %(refname:short)'
+	autocommit = !"git commit -m \"$(curl -s 'http://whatthecommit.com' | grep -A1 'id=\"content\"' | tail -n 1 | tr -d '<p>')\""
 [credential]
 	helper = osxkeychain
 [rerere]
-	enabled = true
+	enabled = 1
 [filter "lfs"]
 	clean = git-lfs clean %f
 	smudge = git-lfs smudge %f

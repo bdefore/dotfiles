@@ -1,5 +1,6 @@
 {
 	"auto_find_in_selection": true,
+	"auto_match_enabled": false,
 	"color_scheme": "Packages/User/SublimeLinter/base16-ocean.dark (SL).tmTheme",
 	"draw_white_space": "all",
 	"file_exclude_patterns":
@@ -49,9 +50,10 @@
 		"tmp",
 		"static/dist"
 	],
-	"font_size": 12,
+	"font_size": 15,
 	"ignored_packages":
 	[
+		"Pylinter",
 		"Vintage"
 	],
 	"save_on_focus_lost": true,

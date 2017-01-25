@@ -1,4 +1,6 @@
+brew install coreutils
 brew install git
+brew install git-extras
 brew install hub
 brew install postgres
 brew install mysql
