@@ -137,7 +137,7 @@ alias tree="ls -R | grep ":$" | sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' -e 's/^
 #source ~/Sync/Code/SDK/alchemy/alchemy-setup
 
 export NODE_ENV=development
-export JAVA_HOME="/Library/Internet Plug-Ins/JavaAppletPlugin.plugin/Contents/Home"
+# export JAVA_HOME="/Library/Internet Plug-Ins/JavaAppletPlugin.plugin/Contents/Home"
 
 # an android studio 1.0 / os x 10.10 workaround
 # export STUDIO_JDK="/Library/Java/JavaVirtualMachines/jdk1.8.0_31.jdk"
@@ -187,6 +187,8 @@ alias npmi="npm i --cache-min=1000000"
 alias nrd="npm run dev"
 alias rmn="rm -rf node_modules"
 alias rei="rm -rf ./node-modules && npmi"
+alias hbo="cd ~/code/reaktor/hbo"
+alias mvndoit="mvn install -PautoInstallPackage"
 
 # added by Anaconda 2.1.0 installer
 export PATH="/Users/d4/anaconda/bin:$PATH"
