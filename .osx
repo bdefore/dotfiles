@@ -166,6 +166,14 @@ defaults write org.m0k.transmission DownloadAsk -bool false
 
 # Never bounce a dock icon
 defaults write com.apple.dock no-bouncing -bool TRUE
+
+# Speed up / disable animations https://apple.stackexchange.com/a/253800
+defaults write com.apple.dock launchanim -bool false
+defaults write com.apple.dock expose-animation-duration -float 0.1
+defaults write com.apple.dock autohide-delay -float 0
+defaults write com.apple.dock autohide-time-modifier -float 0
+defaults write NSGlobalDomain NSWindowResizeTime -float 0.001
+
 killall Dock
 
 killall Finder
