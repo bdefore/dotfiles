@@ -182,7 +182,7 @@ source ~/.nvm/nvm.sh
 nvm use > /dev/null 2>&1 # expects ~/.nvmrc to define version
 
 # http://vijayskotecha.blogspot.com/2015/08/2-methods-to-speed-up-you-nodejs-npm.html
-alias npmi="npm i --cache-min=1000000"
+alias npmi="time npm i --cache-min=1000000"
 # alias npmi="if test npm i --cache-min=1000000; then terminal-notifier -title 'npm' -message 'Install completed successfully' ; else terminal-notifier -title 'npm' -message 'Install failed!' ; fi"
 alias nrd="npm run dev"
 alias rmn="rm -rf node_modules"

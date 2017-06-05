@@ -2,17 +2,21 @@
 
 # essentials
 brew cask install google-chrome
-brew cask install dropbox
+# brew cask install dropbox # necessary to download manually beforehand anyway in order to start dotfiles scripts
 brew cask install onepassword
 brew cask install iterm2
 brew cask install the-unarchiver
+brew cask install spectacle
+
+# messengers
 brew cask install hipchat
 brew cask install slack
-brew cask install spectacle
+brew cask install discord
 brew cask install riot
+# brew cask install colloquy
 
 # editors
-brew cask install sublime-text3
+brew cask install sublime-text
 brew cask install atom
 brew cask install brackets
 
@@ -20,10 +24,10 @@ brew cask install brackets
 brew cask install google-drive
 brew cask install firefox
 brew cask install skype
-brew cask install chromium
 brew cask install charles
-brew cask install vmware-fusion
 brew cask install screenhero
+# brew cask install chromium
+# brew cask install vmware-fusion
 # brew cask install adium
 # brew cask install adobe-air
 # brew cask install alfred
@@ -37,15 +41,15 @@ brew cask install audacity
 brew cask install steam
 brew cask install gog
 brew cask install itch
+brew cask install battle-net
 # brew cask install handbrake # too slow
 
 # android dev
 # brew cask install java
 # brew cask install android-studio
-brew cask install genymotion
+# brew cask install genymotion
 
 # rare use but nice to have
-brew cask install colloquy
 brew cask install daisydisk
 brew cask install superduper
 # brew cask install unity-web-player

@@ -1,5 +1,7 @@
-npm install -g grunt-cli
-npm install -g gulp-cli
-npm install -g karma-cli
-npm install -g npm-check-updates
-npm install -g trash-cli
+npm install -g \
+  grunt-cli \
+  gulp-cli \
+  karma-cli \
+  npm-check-updates \
+  trash-cli \
+  eslint
