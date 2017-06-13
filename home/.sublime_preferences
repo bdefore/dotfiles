@@ -50,7 +50,7 @@
 		"tmp",
 		"static/dist"
 	],
-	"font_size": 18,
+	"font_size": 16,
 	"ignored_packages":
 	[
 		"Pylinter",

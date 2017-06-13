@@ -94,7 +94,11 @@ PS1=$PS1'$(__git_ps1 " (%s)") \n→ '
 # PS1 suggestions from https://wiki.archlinux.org/index.php/Color_Bash_Prompt:
 #PS1='\e[1;33;47m\u \e[1;32;47mon \h \e[1;35;47m\d \@\e[0;0m\n\e[1;34m[dir.= \w] \# > \e[0;0m'
 #PS1='\e[1;31;47m\u \e[1;32;47mon \h \e[1;35;47m\d \@\e[0;0m\n\e[1;31m[dir.= \w] \# > \e[0;0m'
-export ANDROID_HOME=/Applications/Android\ Studio.app/sdk
+export ANDROID_SDK_ROOT=/usr/local/share/android-sdk
+export ANDROID_NDK_HOME=/usr/local/opt/android-ndk
+# export ANDROID_HOME=/Applications/Android\ Studio.app/sdk
+export ANDROID_HOME=$ANDROID_SDK_ROOT
+
 PATH=$PATH:/usr/local/share/npm/bin
 PATH=/usr/local/bin:$PATH:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin
 PATH=$PATH:/Applications/Postgres.app/Contents/MacOS/bin
@@ -106,7 +110,7 @@ PATH=$PATH:/usr/local/mysql/bin
 PATH=$PATH:/usr/local/git/bin
 PATH=$PATH:/Applications/mongodb/bin
 PATH=$PATH:/Developer/usr/bin
-PATH=$PATH:/Users/d4/.nvm/versions/node/v5.2.0/bin # to enable sublimelinter finding eslint
+PATH=$PATH:/Users/d4/.nvm/versions/node/v6.2.1/bin # to enable sublimelinter finding eslint
 
 # http://blog.macromates.com/2008/working-with-history-in-bash/
 export HISTCONTROL=ignoredups:erasedups
@@ -180,6 +184,7 @@ done
 
 source ~/.nvm/nvm.sh
 nvm use > /dev/null 2>&1 # expects ~/.nvmrc to define version
+nvm alias default 6.2.1 # TODO: have this derived from nvmrc. is needed for sublimelinter to function
 
 # http://vijayskotecha.blogspot.com/2015/08/2-methods-to-speed-up-you-nodejs-npm.html
 alias npmi="time npm i --cache-min=1000000"
