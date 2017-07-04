@@ -54,3 +54,5 @@ brew cask install battle-net
 brew cask install daisydisk
 brew cask install superduper
 # brew cask install unity-web-player
+
+brew cask cleanup

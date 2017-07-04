@@ -12,3 +12,4 @@ brew install heroku
 brew install terminal-notifier
 brew install diff-so-fancy
 brew install --HEAD hub
+brew cleanup
