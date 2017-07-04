@@ -1,7 +1,7 @@
 {
 	"auto_find_in_selection": true,
 	"auto_match_enabled": false,
-	"color_scheme": "Packages/User/SublimeLinter/Monokai (SL).tmTheme",
+	"color_scheme": "Packages/Boxy Theme/schemes/Boxy Monokai.tmTheme",
 	"draw_white_space": "all",
 	"file_exclude_patterns":
 	[
@@ -50,6 +50,7 @@
 		"tmp",
 		"static/dist"
 	],
+	"font_face": "Iosevka",
 	"font_size": 16,
 	"ignored_packages":
 	[
@@ -59,6 +60,6 @@
 	"save_on_focus_lost": true,
 	"show_line_endings": "true",
 	"tab_size": 2,
-	"theme": "Spacegray.sublime-theme",
+	"theme": "Boxy Monokai.sublime-theme",
 	"translate_tabs_to_spaces": true
 }

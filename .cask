@@ -38,7 +38,6 @@ brew cask install transmission
 brew cask install vlc
 brew cask install spotify
 brew cask install plex-media-server
-brew cask install audacity
 brew cask install steam
 brew cask install gog
 brew cask install itch
@@ -53,6 +52,10 @@ brew cask install battle-net
 # rare use but nice to have
 brew cask install daisydisk
 brew cask install superduper
+brew cask install audacity
 # brew cask install unity-web-player
+
+brew tap caskroom/fonts
+brew cask install font-iosevka
 
 brew cask cleanup

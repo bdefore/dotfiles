@@ -45,7 +45,6 @@ brew tap caskroom/versions
 
 # Setup Sublime Text
 SUBLIME_SUPPORT=~/Library/Application\ Support/Sublime\ Text\ 3
-git clone https://github.com/aponxi/sublime-better-coffeescript.git "$SUBLIME_SUPPORT"/Packages/Better\ CoffeeScript
 mkdir -p "$SUBLIME_SUPPORT"/Installed\ Packages
 curl https://packagecontrol.io/Package%20Control.sublime-package > "$SUBLIME_SUPPORT"/Installed\ Packages/Package\ Control.sublime-package
 wget https://github.com/kkga/spacegray/archive/master.zip && unzip master.zip && mv spacegray-master "$SUBLIME_SUPPORT"/Packages/Theme\ -\ Spacegray
