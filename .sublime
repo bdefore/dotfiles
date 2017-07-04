@@ -1,0 +1,34 @@
+#####################
+# NOTE: The following is deprecated in lieu of using a Dropbox symlink of ~/Library/Application Support/Sublime Text 3
+#####################
+
+# SUBLIME_SUPPORT=~/Library/Application\ Support/Sublime\ Text\ 3
+
+# mkdir -p "$SUBLIME_SUPPORT"/Installed\ Packages
+# mkdir -p "$SUBLIME_SUPPORT"/Packages/User
+
+# Setup Symlinks
+
+# ln -s ~/.sublime_preferences "$SUBLIME_SUPPORT"/Packages/User/Preferences.sublime-settings
+# ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" ~/bin/subl
+
+# Install Package Control
+
+# curl https://packagecontrol.io/Package%20Control.sublime-package > "$SUBLIME_SUPPORT"/Installed\ Packages/Package\ Control.sublime-package
+# wget https://github.com/kkga/spacegray/archive/master.zip && unzip master.zip && mv spacegray-master "$SUBLIME_SUPPORT"/Packages/Theme\ -\ Spacegray
+
+# Install Sublime Boxy
+# Modified version of: https://blog.markvincze.com/download-artifacts-from-a-latest-github-release-in-sh-and-powershell/
+
+# GITHUB_REPO="ihodev/sublime-boxy"
+# LATEST_RELEASE=$(curl -L -s -H 'Accept: application/json' https://github.com/$GITHUB_REPO/releases/latest)
+# # The releases are returned in the format {"id":3622206,"tag_name":"hello-1.0.0.11",...}, we have to extract the tag_name.
+# echo $LATEST_RELEASE
+# LATEST_VERSION=$(echo $LATEST_RELEASE | sed -e 's/.*"tag_name":"\([^"]*\)".*/\1/')
+# FILE_NAME=$LATEST_VERSION.zip
+# # ARTIFACT_URL="https://github.com/$GITHUB_REPO/releases/download/$LATEST_VERSION/$FILE_NAME"
+# ARTIFACT_URL="https://github.com/$GITHUB_REPO/archive/$FILE_NAME"
+# echo $ARTIFACT_URL
+# # NOTE: The use of cut here is brittle, and is due to how the library owner is wrapping into a parent 'sublime-boxy-5.2.0' directory
+# SUB_DIR=sublime-boxy-$(echo ${FILE_NAME%.zip} | cut -c2-)
+# wget $ARTIFACT_URL && unzip $FILE_NAME && mv $SUB_DIR "$SUBLIME_SUPPORT"/Installed\ Packages/Boxy\ Theme.sublime-package && rm $FILE_NAME

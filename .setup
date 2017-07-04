@@ -35,6 +35,9 @@ nvm use 8.0.0
 # setup osx preferences:
 ./.osx
 
+# Symlink Application Support directories from Dropbox
+./.symlink_application_support
+
 # install brew cask:
 brew tap phinze/cask
 brew install brew-cask
@@ -43,13 +46,7 @@ brew tap caskroom/versions
 # Use cask to install the apps you use (and take a coffee break):
 ./.cask
 
-# Setup Sublime Text
-SUBLIME_SUPPORT=~/Library/Application\ Support/Sublime\ Text\ 3
-mkdir -p "$SUBLIME_SUPPORT"/Installed\ Packages
-curl https://packagecontrol.io/Package%20Control.sublime-package > "$SUBLIME_SUPPORT"/Installed\ Packages/Package\ Control.sublime-package
-wget https://github.com/kkga/spacegray/archive/master.zip && unzip master.zip && mv spacegray-master "$SUBLIME_SUPPORT"/Packages/Theme\ -\ Spacegray
-mkdir -p "$SUBLIME_SUPPORT"/Packages/User
-ln -s ~/.sublime_preferences "$SUBLIME_SUPPORT"/Packages/User/Preferences.sublime-settings
+# Add Sublime Text convenience script
 ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" ~/bin/subl
 
 # log out, back in again

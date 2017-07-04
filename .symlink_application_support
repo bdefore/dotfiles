@@ -1,0 +1,19 @@
+USERNAME=d4
+DROPBOX_DIR=/Users/$USERNAME/Dropbox
+SYNCED_APPLICATION_SUPPORT_DIR=$DROPBOX_DIR/Application\ Support
+APPLICATION_SUPPORT_DIR=/Users/$USERNAME/Library/Application\ Support
+
+echo Symlinking Application Support directories from $SYNCED_APPLICATION_SUPPORT_DIR to $APPLICATION_SUPPORT_DIR...
+
+for path in "$SYNCED_APPLICATION_SUPPORT_DIR"/*; do
+  subdir="${path%/*}"
+  basename="${path##*/}"
+  if [ -e "$APPLICATION_SUPPORT_DIR/$basename" ]; then
+    echo Skipping $basename since it already exists locally
+  else
+    echo Symlinking $basename
+    ln -s "$subdir/$basename" "$APPLICATION_SUPPORT_DIR/$basename"
+  fi
+done
+
+echo Application Support directories symlinked successfully.
