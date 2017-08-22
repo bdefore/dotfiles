@@ -49,5 +49,8 @@ brew tap caskroom/versions
 # Add Sublime Text convenience script
 ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" ~/bin/subl
 
+# Add VS Code settings
+ln -s ~/.vscode_settings.json /Users/d4/Library/Application\ Support/Code/User/settings.json
+
 # log out, back in again
 # osascript -e 'tell app "System Events" to log out'
