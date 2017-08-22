@@ -16,7 +16,7 @@ sudo pmset -a sms 0
 sudo nvram SystemAudioVolume=" "
 
 # Set computer name (as done via System Preferences → Sharing)
-sudo scutil --set ComputerName "foo"
+sudo scutil --set ComputerName "d4"
 sudo scutil --set HostName "d4"
 sudo scutil --set LocalHostName "d4"
 sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "d4"
@@ -36,6 +36,7 @@ defaults write com.apple.frameworks.diskimages skip-verify-locked -bool true
 defaults write com.apple.frameworks.diskimages skip-verify-remote -bool true
 
 # Avoid creating .DS_Store files on network volumes
+defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
 defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 
 # Show the ~/Library folder
