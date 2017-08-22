@@ -4,4 +4,5 @@ npm install -g \
   karma-cli \
   npm-check-updates \
   trash-cli \
-  eslint
+  eslint \
+  yarn

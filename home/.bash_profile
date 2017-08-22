@@ -2,7 +2,9 @@
 # [[ -r ~/.bashrc ]] && source ~/.bashrc
 # [[ -r ~/.corporate_profiles/learnist ]] && source ~/.corporate_profiles/learnist
 # [[ -r ~/.corporate_profiles/academiaedu ]] && source ~/.corporate_profiles/academiaedu
-[[ -r ~/.corporate_profiles/ga ]] && source ~/.corporate_profiles/ga
+# [[ -r ~/.corporate_profiles/ga ]] && source ~/.corporate_profiles/ga
+[[ -r ~/.corporate_profiles/bcdef ]] && source ~/.corporate_profiles/bcdef
+[[ -r ~/.corporate_profiles/reaktor ]] && source ~/.corporate_profiles/reaktor
 
 # Terminal coloring
 export CLICOLOR=1
@@ -27,10 +29,10 @@ alias gsd='git svn dcommit'
 alias undo='git reset HEAD~1'
 alias d='git diff'
 alias git='hub'
+alias effyoushrinkwrap="rm -r node_modules && git checkout master -- npm-shrinkwrap.json && npm i && rm npm-shrinkwrap.json && npm i && npm shrinkwrap --dev"
 
 # http://fredkschott.com/post/2014/02/git-log-is-so-2005/
 git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset' --abbrev-commit"
-
 git config --global alias.recent "for-each-ref --sort=-committerdate refs/heads/ --format='%(committerdate:short) %(authorname) %(refname:short)'"
 
 # Node Aliases
@@ -193,7 +195,8 @@ alias nrd="npm run dev"
 alias rmn="rm -rf node_modules"
 alias rei="rm -rf ./node-modules && npmi"
 alias hbo="cd ~/code/reaktor/hbo"
-alias mvndoit="mvn install -PautoInstallPackage"
+alias mvndoit="mvn clean install -PautoInstallPackage"
+alias jenk="ssh -i ~/.ssh/dotcom.pem ec2-user@35.165.121.244"
 
 # added by Anaconda 2.1.0 installer
 export PATH="/Users/d4/anaconda/bin:$PATH"
