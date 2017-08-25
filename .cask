@@ -21,6 +21,9 @@ brew cask install atom
 brew cask install visual-studio-code
 # brew cask install brackets
 
+# development
+brew cask install kitematic
+
 # less important
 brew cask install google-drive
 brew cask install firefox

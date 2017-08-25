@@ -26,8 +26,8 @@ source ~/.bash_profile
 # install nvm and node
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.29.0/install.sh | bash
 source ~/.bashrc
-nvm install 8.0.0
-nvm use 8.0.0
+nvm install 8
+nvm use 8
 
 # install common node tools
 ./.npm

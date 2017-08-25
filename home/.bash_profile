@@ -9,10 +9,11 @@
 # Terminal coloring
 export CLICOLOR=1
 export LSCOLORS=gxfxcxdxbxegedabagacad
-alias ls="ls -la"
 
 # Sublime Text as default editor for those that check this property
 export EDITOR='subl -w'
+
+alias ls="ls -la"
 
 # Git Aliases
 alias gs='git status'
@@ -37,6 +38,12 @@ git config --global alias.recent "for-each-ref --sort=-committerdate refs/heads/
 
 # Node Aliases
 alias npd='npm install -d'
+alias npmi="time npm i --cache-min=1000000" # http://vijayskotecha.blogspot.com/2015/08/2-methods-to-speed-up-you-nodejs-npm.html
+# alias npmi="if test npm i --cache-min=1000000; then terminal-notifier -title 'npm' -message 'Install completed successfully' ; else terminal-notifier -title 'npm' -message 'Install failed!' ; fi"
+alias nrd="npm run dev"
+alias rmn="rm -rf node_modules"
+alias rei="rm -rf ./node-modules && npmi"
+alias nrdr="npm run docker:restart"
 
 # Easier navigation: .., ..., ...., ....., ~ and -
 alias ..="cd .."
@@ -44,6 +51,19 @@ alias ...="cd ../.."
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
 alias -- -="cd -"
+
+alias mvndoit="mvn clean install -PautoInstallPackage"
+alias jenk="ssh -i ~/.ssh/dotcom.pem ec2-user@35.165.121.244"
+alias prof="subl ~/.bash_profile"
+alias bitch=sudo
+# alias tar="tar -cvzf"
+alias nave="sh ~/Documents/bash/nave.sh"
+alias alert="open ~/Desktop/BabyElephantWalk.flv"
+alias brack="/Applications/Brackets.app/Contents/MacOS/Brackets"
+alias ur="cd ~/code/universal-redux"
+
+# Pretty display recursively
+alias tree="ls -R | grep ":$" | sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' -e 's/^/   /' -e 's/-/|/'"
 
 # From git source. Adds completions for branches, among other treats
 source ~/.gittools/git-completion.bash
@@ -123,30 +143,7 @@ shopt -s histappend
 # export PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND$'\n'}history -a; history -c; history -r"
 
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
-
-alias prof="subl ~/.bash_profile"
-alias bitch=sudo
-# alias tar="tar -cvzf"
-alias nave="sh ~/Documents/bash/nave.sh"
-alias alert="open ~/Desktop/BabyElephantWalk.flv"
-alias brack="/Applications/Brackets.app/Contents/MacOS/Brackets"
-alias ur="cd ~/code/universal-redux"
-
-# flash logging
-alias fl="tail -f ~/Library/Preferences/Macromedia/Flash\ Player/Logs/flashlog.txt"
-alias flnonet="tail -f ~/Library/Preferences/Macromedia/Flash\ Player/Logs/flashlog.txt | grep -v [NET]"
-
-# Pretty display recursively
-alias tree="ls -R | grep ":$" | sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' -e 's/^/   /' -e 's/-/|/'"
-
-# Required for Alchemy dev
-#source ~/Sync/Code/SDK/alchemy/alchemy-setup
-
 export NODE_ENV=development
-# export JAVA_HOME="/Library/Internet Plug-Ins/JavaAppletPlugin.plugin/Contents/Home"
-
-# an android studio 1.0 / os x 10.10 workaround
-# export STUDIO_JDK="/Library/Java/JavaVirtualMachines/jdk1.8.0_31.jdk"
 
 export PATH
 
@@ -185,18 +182,23 @@ done
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
 
 source ~/.nvm/nvm.sh
+nvm alias default $(cat ~/.nvmrc)
 nvm use > /dev/null 2>&1 # expects ~/.nvmrc to define version
-nvm alias default 6.2.1 # TODO: have this derived from nvmrc. is needed for sublimelinter to function
-
-# http://vijayskotecha.blogspot.com/2015/08/2-methods-to-speed-up-you-nodejs-npm.html
-alias npmi="time npm i --cache-min=1000000"
-# alias npmi="if test npm i --cache-min=1000000; then terminal-notifier -title 'npm' -message 'Install completed successfully' ; else terminal-notifier -title 'npm' -message 'Install failed!' ; fi"
-alias nrd="npm run dev"
-alias rmn="rm -rf node_modules"
-alias rei="rm -rf ./node-modules && npmi"
-alias hbo="cd ~/code/reaktor/hbo"
-alias mvndoit="mvn clean install -PautoInstallPackage"
-alias jenk="ssh -i ~/.ssh/dotcom.pem ec2-user@35.165.121.244"
 
 # added by Anaconda 2.1.0 installer
 export PATH="/Users/d4/anaconda/bin:$PATH"
+
+# http://yobeki.com/how-to-make-nvm-automatically-use-the-correct-version-of-nodejs-for-a-specific-project/
+cd () { builtin cd "$@" && chNodeVersion; }
+pushd () { builtin pushd "$@" && chNodeVersion; }
+popd () { builtin popd "$@" && chNodeVersion; }
+
+chNodeVersion() {
+  # if there's a file named ".nvmrc"...
+  if [ -f ".nvmrc" ] ; then
+  # use it
+  nvm use;
+  fi
+}
+
+chNodeVersion;
