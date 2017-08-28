@@ -132,7 +132,7 @@ PATH=$PATH:/usr/local/mysql/bin
 PATH=$PATH:/usr/local/git/bin
 PATH=$PATH:/Applications/mongodb/bin
 PATH=$PATH:/Developer/usr/bin
-PATH=$PATH:/Users/d4/.nvm/versions/node/v6.2.1/bin # to enable sublimelinter finding eslint
+PATH=$PATH:$HOME/.nvm/versions/node/v6.2.1/bin # to enable sublimelinter finding eslint
 
 # http://blog.macromates.com/2008/working-with-history-in-bash/
 export HISTCONTROL=ignoredups:erasedups
@@ -186,7 +186,7 @@ nvm alias default $(cat ~/.nvmrc)
 nvm use > /dev/null 2>&1 # expects ~/.nvmrc to define version
 
 # added by Anaconda 2.1.0 installer
-export PATH="/Users/d4/anaconda/bin:$PATH"
+export PATH="$HOME/anaconda/bin:$PATH"
 
 # http://yobeki.com/how-to-make-nvm-automatically-use-the-correct-version-of-nodejs-for-a-specific-project/
 cd () { builtin cd "$@" && chNodeVersion; }
