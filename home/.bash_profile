@@ -5,6 +5,7 @@
 # [[ -r ~/.corporate_profiles/ga ]] && source ~/.corporate_profiles/ga
 [[ -r ~/.corporate_profiles/bcdef ]] && source ~/.corporate_profiles/bcdef
 [[ -r ~/.corporate_profiles/reaktor ]] && source ~/.corporate_profiles/reaktor
+[[ -r ~/.corporate_profiles/loc ]] && source ~/.corporate_profiles/loc
 
 # Terminal coloring
 export CLICOLOR=1
@@ -38,7 +39,8 @@ git config --global alias.recent "for-each-ref --sort=-committerdate refs/heads/
 
 # Node Aliases
 alias npd='npm install -d'
-alias npmi="time npm i --cache-min=1000000" # http://vijayskotecha.blogspot.com/2015/08/2-methods-to-speed-up-you-nodejs-npm.html
+alias npmicache="time npm i --cache-min=1000000" # http://vijayskotecha.blogspot.com/2015/08/2-methods-to-speed-up-you-nodejs-npm.html
+alias npmi="npm i && terminal-notifier -message 'npm install complete' -timeout 1"
 # alias npmi="if test npm i --cache-min=1000000; then terminal-notifier -title 'npm' -message 'Install completed successfully' ; else terminal-notifier -title 'npm' -message 'Install failed!' ; fi"
 alias nrd="npm run dev"
 alias rmn="rm -rf node_modules"
@@ -54,7 +56,7 @@ alias -- -="cd -"
 
 alias mvndoit="mvn clean install -PautoInstallPackage"
 alias jenk="ssh -i ~/.ssh/dotcom.pem ec2-user@35.165.121.244"
-alias prof="subl ~/.bash_profile"
+alias prof="code ~/.bash_profile"
 alias bitch=sudo
 # alias tar="tar -cvzf"
 alias nave="sh ~/Documents/bash/nave.sh"

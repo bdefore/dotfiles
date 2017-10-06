@@ -51,9 +51,10 @@
 		"static/dist"
 	],
 	"font_face": "Iosevka",
-	"font_size": 14,
+	"font_size": 13,
 	"ignored_packages":
 	[
+		"Package Control",
 		"Pylinter",
 		"Vintage"
 	],

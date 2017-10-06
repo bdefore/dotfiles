@@ -1,7 +1,10 @@
 // Place your settings in this file to overwrite the default settings
 {
     "editor.fontFamily": "Iosevka",
-    "files.autoSave": "onFocusChange",
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2,
+    "editor.renderWhitespace": "boundary",
     "extensions.ignoreRecommendations": false,
+    "files.autoSave": "onFocusChange",
     "window.zoomLevel": 1
 }
