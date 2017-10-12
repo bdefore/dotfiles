@@ -2,7 +2,7 @@
 
 # essentials
 brew cask install google-chrome
-# brew cask install dropbox # necessary to download manually beforehand anyway in order to start dotfiles scripts
+brew cask install dropbox
 brew cask install onepassword
 brew cask install iterm2
 brew cask install the-unarchiver

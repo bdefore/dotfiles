@@ -12,7 +12,7 @@ export CLICOLOR=1
 export LSCOLORS=gxfxcxdxbxegedabagacad
 
 # Sublime Text as default editor for those that check this property
-export EDITOR='subl -w'
+export EDITOR='code -w'
 
 alias ls="ls -la"
 
@@ -55,7 +55,6 @@ alias .....="cd ../../../.."
 alias -- -="cd -"
 
 alias mvndoit="mvn clean install -PautoInstallPackage"
-alias jenk="ssh -i ~/.ssh/dotcom.pem ec2-user@35.165.121.244"
 alias prof="code ~/.bash_profile"
 alias bitch=sudo
 # alias tar="tar -cvzf"
@@ -134,7 +133,7 @@ PATH=$PATH:/usr/local/mysql/bin
 PATH=$PATH:/usr/local/git/bin
 PATH=$PATH:/Applications/mongodb/bin
 PATH=$PATH:/Developer/usr/bin
-PATH=$PATH:$HOME/.nvm/versions/node/v6.2.1/bin # to enable sublimelinter finding eslint
+PATH=$PATH:$HOME/.nvm/versions/node/v8.4.0/bin # to enable sublimelinter finding eslint
 
 # http://blog.macromates.com/2008/working-with-history-in-bash/
 export HISTCONTROL=ignoredups:erasedups
