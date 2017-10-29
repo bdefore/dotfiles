@@ -1,4 +1,5 @@
 npm install -g \
+  diff-so-fancy \
   grunt-cli \
   gulp-cli \
   karma-cli \
