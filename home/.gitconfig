@@ -30,8 +30,6 @@
 	branches = for-each-ref --sort=-committerdate refs/heads/ --format='%(color:green)%(committerdate:relative)%(color:reset)\t %(color:bold yellow)%(refname:short)%(color:reset) %(contents:subject) - %(color:bold)%(authorname)%(color:reset)'
 	recent = for-each-ref --sort=-committerdate refs/heads/ --format='%(committerdate:short) %(authorname) %(refname:short)'
 	autocommit = !"git commit -m \"$(curl -s 'http://whatthecommit.com' | grep -A1 'id=\"content\"' | tail -n 1 | tr -d '<p>')\""
-[credential]
-	helper = osxkeychain
 [rerere]
 	enabled = 1
 [filter "lfs"]
