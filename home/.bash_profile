@@ -6,6 +6,7 @@
 [[ -r ~/.corporate_profiles/bcdef ]] && source ~/.corporate_profiles/bcdef
 [[ -r ~/.corporate_profiles/reaktor ]] && source ~/.corporate_profiles/reaktor
 [[ -r ~/.corporate_profiles/loc ]] && source ~/.corporate_profiles/loc
+[[ -r ~/.Xmodmap ]] && xmodmap ~/.Xmodmap
 
 # Terminal coloring
 export CLICOLOR=1
@@ -30,7 +31,7 @@ alias gsr='git svn rebase'
 alias gsd='git svn dcommit'
 alias undo='git reset HEAD~1'
 alias d='git diff'
-alias git='hub'
+# alias git='hub'
 alias effyoushrinkwrap="rm -r node_modules && git checkout master -- npm-shrinkwrap.json && npm i && rm npm-shrinkwrap.json && npm i && npm shrinkwrap --dev"
 
 # http://fredkschott.com/post/2014/02/git-log-is-so-2005/
