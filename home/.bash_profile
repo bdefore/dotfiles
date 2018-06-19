@@ -204,3 +204,6 @@ chNodeVersion() {
 }
 
 chNodeVersion;
+
+# https://github.com/joshfng/slack-keep-presence
+[[ -z "${SLACK_TOKEN}" ]] && echo No SLACK_TOKEN provided, skipping presence beacon || slack-keep-presence &
