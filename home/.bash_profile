@@ -135,7 +135,7 @@ PATH=$PATH:/usr/local/mysql/bin
 PATH=$PATH:/usr/local/git/bin
 PATH=$PATH:/Applications/mongodb/bin
 PATH=$PATH:/Developer/usr/bin
-PATH=$PATH:$HOME/.nvm/versions/node/v8.4.0/bin # to enable sublimelinter finding eslint
+PATH=$PATH:$HOME/.nvm/versions/node/v8.11.0/bin # to enable sublimelinter finding eslint
 
 # http://blog.macromates.com/2008/working-with-history-in-bash/
 export HISTCONTROL=ignoredups:erasedups
