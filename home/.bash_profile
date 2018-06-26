@@ -63,6 +63,7 @@ alias nave="sh ~/Documents/bash/nave.sh"
 alias alert="open ~/Desktop/BabyElephantWalk.flv"
 alias brack="/Applications/Brackets.app/Contents/MacOS/Brackets"
 alias ur="cd ~/code/universal-redux"
+alias remotebranches="git for-each-ref --format='%(color:cyan)%(authordate:format:%m/%d/%Y %I:%M %p)    %(align:25,left)%(color:yellow)%(authorname)%(end) %(color:reset)%(refname:strip=3)' --sort=authordate refs/remotes"
 
 # Pretty display recursively
 alias tree="ls -R | grep ":$" | sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' -e 's/^/   /' -e 's/-/|/'"
