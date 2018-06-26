@@ -1,5 +1,6 @@
 ssh-keygen
 eval `ssh-agent`
 ssh-add ~/.ssh/id_rsa
-cat ~/.ssh/id_rsa.pub | pbcopy
+sudo apt-get install xclip
+cat ~/.ssh/id_rsa.pub | xclip -sel clip
 echo New public key copied to clipboard

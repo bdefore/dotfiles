@@ -4,7 +4,6 @@
 # [[ -r ~/.corporate_profiles/academiaedu ]] && source ~/.corporate_profiles/academiaedu
 # [[ -r ~/.corporate_profiles/ga ]] && source ~/.corporate_profiles/ga
 [[ -r ~/.corporate_profiles/bcdef ]] && source ~/.corporate_profiles/bcdef
-[[ -r ~/.corporate_profiles/reaktor ]] && source ~/.corporate_profiles/reaktor
 [[ -r ~/.corporate_profiles/loc ]] && source ~/.corporate_profiles/loc
 [[ -r ~/.Xmodmap ]] && xmodmap ~/.Xmodmap
 
