@@ -173,7 +173,7 @@ for option in autocd globstar; do
 done
 
 # Import autujump indexing
-[[ -s `brew --prefix`/etc/autojump.sh ]] && . `brew --prefix`/etc/autojump.sh
+# [[ -s `brew --prefix`/etc/autojump.sh ]] && . `brew --prefix`/etc/autojump.sh
 
 # Switch to fish terminal. Do this rather than chsh so as to migrate exports
 # Things that don't work with fish:

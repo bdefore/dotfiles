@@ -18,14 +18,10 @@ echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sou
 sudo apt-get update
 sudo apt-get install sublime-text
 
-# install rvm: (it may tell you that git requires installing command line tools, accept that)
+# install rvm and ruby
 \curl -sSL https://get.rvm.io | bash
-
-# source the rvm
 source ~/.rvm/scripts/rvm
-
-# install latest ruby
-rvm install latest
+rvm install ruby --latest
 
 # install homesick and get your dotfiles:
 gem install homesick
@@ -40,8 +36,9 @@ source ~/.bash_profile
 # install nvm and node
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.29.0/install.sh | bash
 source ~/.bashrc
-nvm install 8
-nvm use 8
+source ~/.bash_profile
+nvm install 8.11.0
+nvm use 8.11.0
 
 # install common node tools
 ./.npm
