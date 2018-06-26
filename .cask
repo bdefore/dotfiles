@@ -3,7 +3,7 @@
 # essentials
 brew cask install google-chrome
 brew cask install dropbox
-brew cask install onepassword
+# brew cask install onepassword
 brew cask install iterm2
 brew cask install the-unarchiver
 brew cask install spectacle

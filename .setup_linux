@@ -1,3 +1,6 @@
+# setup ssh
+./.ssh_key_setup
+
 # these are intended/tested for galliumos on my asus chromebook c302
 sudo apt-get dist-upgrade
 sudo apt-get update
@@ -5,6 +8,10 @@ sudo apt-get install exfat-utils exfat-fuse ntfs-3g
 sudo apt-get install apt-transport-https
 sudo apt-get install git
 sudo apt-get install silversearcher-ag
+
+# install vscode
+curl -L https://go.microsoft.com/fwlink/?LinkID=760868 > code.deb
+sudo apt-get install libxss1 libasound2 ./code.deb
 
 # install sublime text
 wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
@@ -19,9 +26,9 @@ sudo apt-get install sublime-text
 source ~/.rvm/scripts/rvm
 
 # install latest ruby
-rvm install 2.4.1
+rvm install latest
 
-# # install homesick and get your dotfiles:
+# install homesick and get your dotfiles:
 gem install homesick
 
 # Clone dotfiles (overwrite all except .ssh - that should be removed from dotfiles at some point)
