@@ -7,6 +7,7 @@ sudo apt-get update
 sudo apt-get install exfat-utils exfat-fuse ntfs-3g
 sudo apt-get install apt-transport-https
 sudo apt-get install silversearcher-ag
+sudo apt-get install python-pip
 
 # install vscode
 curl -L https://go.microsoft.com/fwlink/?LinkID=760868 > code.deb
