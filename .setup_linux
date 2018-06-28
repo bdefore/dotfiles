@@ -4,6 +4,7 @@
 # these are intended/tested for galliumos on my asus chromebook c302
 sudo apt dist-upgrade
 sudo apt update
+sudo apt install -y curl # not included in ubuntu xenial
 sudo apt install -y exfat-utils exfat-fuse ntfs-3g
 sudo apt install -y apt-transport-https
 sudo apt install -y silversearcher-ag
