@@ -1,0 +1,8 @@
+# exclude everything except for vscode settings
+/*
+!.gitignore
+!/Code
+/Code/*
+!/Code/User
+/Code/User/*
+!/Code/User/settings.json
