@@ -23,6 +23,7 @@ sudo apt install -y sublime-text
 # install rvm and ruby
 \curl -sSL https://get.rvm.io | bash
 source ~/.rvm/scripts/rvm
+source /etc/profile.d/rvm.sh
 rvm install ruby --latest
 
 gem install slack-keep-presence
