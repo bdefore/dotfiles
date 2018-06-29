@@ -1,8 +1,9 @@
 {
+    "editor.fontSize": 18,
     "editor.insertSpaces": true,
     "editor.tabSize": 2,
     "editor.renderWhitespace": "boundary",
     "extensions.ignoreRecommendations": false,
     "files.autoSave": "onFocusChange",
-    "window.zoomLevel": 1
+    "window.zoomLevel": -1
 }
