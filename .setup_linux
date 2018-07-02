@@ -40,6 +40,29 @@ sudo apt install -y exfat-utils exfat-fuse ntfs-3g
 sudo apt install -y apt-transport-https
 sudo apt install -y silversearcher-ag
 sudo apt install -y python-pip
+sudo apt install -y fonts-powerline
+
+# install fonts
+git clone https://github.com/powerline/fonts.git --depth=1
+cd fonts
+./install.sh
+cd ..
+rm -rf fonts
+
+# install iosevka font
+mkdir iosevka && cd iosevka
+curl -L https://github.com/be5invis/Iosevka/releases/download/v1.14.3/01-iosevka-1.14.3.zip -o iosevka.zip                                                                                             
+unzip iosevka.zip 
+mkdir ~/.local/share/fonts/iosevka
+mv ttf/* ~/.local/share/fonts/iosevka
+cd ..
+rm -rf iosevka
+
+# Reset font cache
+if which fc-cache >/dev/null 2>&1 ; then
+  echo "Resetting font cache, this may take a moment..."
+  fc-cache -f "$font_dir"
+fi
 
 # install vscode
 curl -L https://go.microsoft.com/fwlink/?LinkID=760868 > code.deb
