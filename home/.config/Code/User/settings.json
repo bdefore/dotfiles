@@ -1,10 +1,11 @@
 {
-    "editor.fontSize": 18,
+    "editor.fontSize": 14,
+    "editor.fontFamily": "Iosevka",
     "editor.insertSpaces": true,
     "editor.tabSize": 2,
     "editor.renderWhitespace": "boundary",
     "extensions.ignoreRecommendations": false,
     "files.autoSave": "onFocusChange",
-    "window.zoomLevel": -1,
+    "window.zoomLevel": 1,
     "editor.minimap.enabled": false
 }
