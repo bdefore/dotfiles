@@ -5,7 +5,7 @@
 # [[ -r ~/.corporate_profiles/ga ]] && source ~/.corporate_profiles/ga
 [[ -r ~/.corporate_profiles/bcdef ]] && source ~/.corporate_profiles/bcdef
 [[ -r ~/.corporate_profiles/loc ]] && source ~/.corporate_profiles/loc
-[[ -r ~/.Xmodmap ]] && xmodmap ~/.Xmodmap
+[[ -r ~/.Xmodmap ]] && xmodmap ~/.Xmodmap # TODO: what was this for? galliumos?
 
 # Terminal coloring
 export CLICOLOR=1
@@ -15,6 +15,7 @@ export LSCOLORS=gxfxcxdxbxegedabagacad
 export EDITOR='code -w'
 
 alias ls="ls -la"
+alias vi=vim
 
 # Git Aliases
 alias gs='git status'
@@ -30,8 +31,8 @@ alias gsr='git svn rebase'
 alias gsd='git svn dcommit'
 alias undo='git reset HEAD~1'
 alias d='git diff'
+
 # alias git='hub'
-alias effyoushrinkwrap="rm -r node_modules && git checkout master -- npm-shrinkwrap.json && npm i && rm npm-shrinkwrap.json && npm i && npm shrinkwrap --dev"
 
 # http://fredkschott.com/post/2014/02/git-log-is-so-2005/
 git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset' --abbrev-commit"
@@ -54,14 +55,16 @@ alias ....="cd ../../.."
 alias .....="cd ../../../.."
 alias -- -="cd -"
 
-alias mvndoit="mvn clean install -PautoInstallPackage"
+# Retired
+# alias mvndoit="mvn clean install -PautoInstallPackage"
+# alias nave="sh ~/Documents/bash/nave.sh"
+# alias alert="open ~/Desktop/BabyElephantWalk.flv"
+# alias brack="/Applications/Brackets.app/Contents/MacOS/Brackets"
+# alias ur="cd ~/code/universal-redux"
+# alias effyoushrinkwrap="rm -r node_modules && git checkout master -- npm-shrinkwrap.json && npm i && rm npm-shrinkwrap.json && npm i && npm shrinkwrap --dev"
+
 alias prof="code ~/.bash_profile"
 alias bitch=sudo
-# alias tar="tar -cvzf"
-alias nave="sh ~/Documents/bash/nave.sh"
-alias alert="open ~/Desktop/BabyElephantWalk.flv"
-alias brack="/Applications/Brackets.app/Contents/MacOS/Brackets"
-alias ur="cd ~/code/universal-redux"
 alias remotebranches="git for-each-ref --format='%(color:cyan)%(authordate:format:%m/%d/%Y %I:%M %p)    %(align:25,left)%(color:yellow)%(authorname)%(end) %(color:reset)%(refname:strip=3)' --sort=authordate refs/remotes"
 
 # Pretty display recursively
