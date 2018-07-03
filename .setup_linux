@@ -12,10 +12,8 @@ source ~/.rvm/scripts/rvm
 source /etc/profile.d/rvm.sh
 rvm install ruby --latest
 
-gem install slack-keep-presence
-
 # install homesick and get your dotfiles:
-gem install homesick
+gem install homesick --no-document
 
 # Clone dotfiles (overwrite all except .ssh - that should be removed from dotfiles at some point)
 homesick clone https://github.com/bdefore/dotfiles.git
