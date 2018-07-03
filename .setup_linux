@@ -42,6 +42,7 @@ sudo apt install -y silversearcher-ag
 sudo apt install -y python-pip
 sudo apt install -y gnome-terminal
 sudo apt install -y fonts-powerline
+sudo apt install -y transmission-cli transmission-common transmission-daemon # complete further steps: https://www.addictivetips.com/ubuntu-linux-tips/set-up-transmission-bittorrent-server-on-linux/
 
 # install fonts
 git clone https://github.com/powerline/fonts.git --depth=1
