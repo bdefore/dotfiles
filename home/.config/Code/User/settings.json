@@ -6,6 +6,7 @@
     "editor.renderWhitespace": "boundary",
     "extensions.ignoreRecommendations": false,
     "files.autoSave": "onFocusChange",
+    "javascript.validate.enable": false,
     "window.zoomLevel": 1,
     "editor.minimap.enabled": false
 }
