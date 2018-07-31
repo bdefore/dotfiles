@@ -67,6 +67,7 @@ alias prof="code ~/.bash_profile"
 alias bitch=sudo
 alias remotebranches="git for-each-ref --format='%(color:cyan)%(authordate:format:%m/%d/%Y %I:%M %p)    %(align:25,left)%(color:yellow)%(authorname)%(end) %(color:reset)%(refname:strip=3)' --sort=authordate refs/remotes"
 alias weather="curl wttr.in"
+alias serveide='sudo docker run -it -p 3000:3000 -v "$(pwd):/home/project:cached" theiaide/theia:next'
 
 # Pretty display recursively
 alias tree="ls -R | grep ":$" | sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' -e 's/^/   /' -e 's/-/|/'"
