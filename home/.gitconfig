@@ -43,3 +43,5 @@
 	autostash = true
 [credential]
 	helper = store
+[push]
+	default = current
