@@ -1,0 +1,8 @@
+// SublimeLinter Settings - User
+{
+	"paths": {
+		"linux": [
+			"~/.nvm/versions/node/v8.11.0/bin"
+		]
+	}
+}

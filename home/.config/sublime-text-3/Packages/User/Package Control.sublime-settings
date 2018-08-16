@@ -1,0 +1,19 @@
+{
+	"bootstrapped": true,
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"FlowType",
+		"JavaScriptNext - ES6 Syntax",
+		"JSX",
+		"Naomi",
+		"Package Control",
+		"React IDE",
+		"ReactJS",
+		"SublimeLinter",
+		"SublimeLinter-eslint",
+		"SublimeLinter-flow"
+	]
+}

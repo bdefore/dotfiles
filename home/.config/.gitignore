@@ -7,3 +7,8 @@
 !/Code/User
 /Code/User/*
 !/Code/User/settings.json
+!/sublime-text-3
+/sublime-text-3/*
+!/sublime-text-3/Packages
+/sublime-text-3/Packages/*
+!/sublime-text-3/Packages/User
