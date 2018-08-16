@@ -4,13 +4,14 @@
 	"color_scheme": "Packages/Naomi/Candyman.tmTheme",
 	"dpi_scale": 1.5,
 	"draw_white_space": "all",
-	"folder_exclude_patterns": [
+	"folder_exclude_patterns":
+	[
 		"node_modules",
 		"dist",
 		".git"
 	],
 	"font_face": "Iosevka",
-	"font_size": 10,
+	"font_size": 9,
 	"ignored_packages":
 	[
 		"Vintage"
@@ -18,7 +19,7 @@
 	"remember_full_screen": true,
 	"save_on_focus_lost": true,
 	"tab_size": 2,
-	"theme": "Adaptive.sublime-theme",
+	"theme": "DA.sublime-theme",
 	"translate_tabs_to_spaces": true,
 	"ui_scale": 1.5
 }
