@@ -11,7 +11,7 @@
 		".git"
 	],
 	"font_face": "Iosevka",
-	"font_size": 9,
+	"font_size": 11,
 	"ignored_packages":
 	[
 		"Vintage"
@@ -21,5 +21,5 @@
 	"tab_size": 2,
 	"theme": "DA.sublime-theme",
 	"translate_tabs_to_spaces": true,
-	"ui_scale": 1.5
+	"ui_scale": 1.25
 }
