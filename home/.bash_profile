@@ -12,7 +12,8 @@ export CLICOLOR=1
 export LSCOLORS=gxfxcxdxbxegedabagacad
 
 # Sublime Text as default editor for those that check this property
-export EDITOR='code -w'
+export EDITOR='subl'
+# export EDITOR='code -w'
 
 alias ls="ls -la"
 alias vi=vim
@@ -190,7 +191,7 @@ done
 
 source ~/.nvm/nvm.sh
 nvm alias default $(cat ~/.nvmrc)
-nvm use > /dev/null 2>&1 # expects ~/.nvmrc to define version
+# nvm use > /dev/null 2>&1 # expects ~/.nvmrc to define version
 
 # added by Anaconda 2.1.0 installer
 export PATH="$HOME/anaconda/bin:$PATH"
@@ -212,3 +213,5 @@ chNodeVersion;
 
 # https://github.com/joshfng/slack-keep-presence
 # [[ -z "${SLACK_TOKEN}" ]] && echo No SLACK_TOKEN provided, skipping presence beacon || slack-keep-presence &
+
+# eval `ssh-agent`

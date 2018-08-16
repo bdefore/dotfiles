@@ -2,6 +2,7 @@
     "editor.fontSize": 14,
     "editor.fontFamily": "Iosevka",
     "editor.insertSpaces": true,
+    "editor.smoothScrolling": true,
     "editor.tabSize": 2,
     "editor.renderWhitespace": "boundary",
     "extensions.ignoreRecommendations": false,
