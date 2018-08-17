@@ -2,12 +2,12 @@
 
 ## MacOS
 ```
-./.setup_osx
+./scripts/macos/setup
 ```
 ## Linux (tested on Debian, Ubuntu, Gallium)
 ```
-./.setup_linux
-./.setup_development_tools # optional, only do this if you intend to work directly on this machine
+./scripts/linux/setup
+./scripts/linux/setup_development_tools # optional, only do this if you intend to work directly on this machine
 ```
 ## Chrome OS
 
