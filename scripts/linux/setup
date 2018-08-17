@@ -1,5 +1,5 @@
 # setup ssh
-./.ssh_key_setup
+../common/setup_ssh_key
 
 # these are intended/tested for galliumos on my asus chromebook c302
 sudo apt dist-upgrade
@@ -30,7 +30,7 @@ nvm install 8.11.0
 nvm use 8.11.0
 
 # install common node tools
-./.npm
+../common/setup_npm_globals
 
 # install other commonly needed linux libraries
 sudo apt install -y exfat-utils exfat-fuse ntfs-3g
