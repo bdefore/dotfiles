@@ -1,0 +1,41 @@
+# install tools used for development
+sudo apt install -y libgtk2.0 # TODO: what was this for? ubuntu/debian stretch not having it?
+sudo apt install -y silversearcher-ag
+sudo apt install -y gnome-terminal
+sudo apt install -y fonts-powerline
+sudo apt install -y transmission-cli transmission-common transmission-daemon # complete further steps: https://www.addictivetips.com/ubuntu-linux-tips/set-up-transmission-bittorrent-server-on-linux/
+
+# install fonts
+git clone https://github.com/powerline/fonts.git --depth=1
+cd fonts
+./install.sh
+cd ..
+rm -rf fonts
+
+# install iosevka font
+mkdir iosevka && cd iosevka
+curl -L https://github.com/be5invis/Iosevka/releases/download/v1.14.3/01-iosevka-1.14.3.zip -o iosevka.zip                                                                                             
+unzip iosevka.zip 
+mkdir ~/.local/share/fonts/iosevka
+mv ttf/* ~/.local/share/fonts/iosevka
+cd ..
+rm -rf iosevka
+
+# Reset font cache
+if which fc-cache >/dev/null 2>&1 ; then
+  echo "Resetting font cache, this may take a moment..."
+  fc-cache -f "$font_dir"
+fi
+
+# install vscode
+curl -L https://go.microsoft.com/fwlink/?LinkID=760868 > code.deb
+sudo apt install -y libxss1 libasound2 ./code.deb
+rm code.deb
+
+# install sublime text
+wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
+echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
+sudo apt update
+sudo apt install -y sublime-text
+
+source ~/.bash_profile

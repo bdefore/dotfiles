@@ -2,7 +2,12 @@
 
 ## MacOS
 ```
-git clone https://github.com/bdefore/dotfiles && cd dotfiles && ./.setup_osx
+./.setup_osx
+```
+## Linux (tested on Debian, Ubuntu, Gallium)
+```
+./.setup_linux
+./.setup_development_tools # optional, only do this if you intend to work directly on this machine
 ```
 ## Chrome OS
 
@@ -18,11 +23,8 @@ git clone https://github.com/bdefore/dotfiles && cd dotfiles && ./.setup_osx
     - Restart
 - Linux (Crostini)
     - Open settings again, find Linux (Beta), click Turn on, install
-
-```
-git clone https://github.com/bdefore/dotfiles && cd dotfiles && ./.setup_linux
-```
-
+- Open Terminal
+    - Follow install instructions above for Linux
 - While waiting for setup scripts:
     - Add new SSH key to Github/Bitbucket
         - Should be copied to clipboard at start of script.
