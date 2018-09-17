@@ -13,5 +13,6 @@
     "editor.minimap.enabled": false,
     "files.associations": {
         "*.css-module": "css"
-    }
+    },
+    "window.menuBarVisibility": "toggle"
 }

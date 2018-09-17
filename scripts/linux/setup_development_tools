@@ -1,10 +1,10 @@
 # install tools used for development
 sudo apt install -y libgtk2.0 # TODO: what was this for? ubuntu/debian stretch not having it?
-sudo apt install -y silversearcher-ag
 sudo apt install -y gnome-terminal
-sudo apt install -y fonts-powerline
+sudo apt install -y fonts-powerline 
 sudo apt install -y transmission-cli transmission-common transmission-daemon # complete further steps: https://www.addictivetips.com/ubuntu-linux-tips/set-up-transmission-bittorrent-server-on-linux/
 
+# TODO: is this redundant with the apt-install directive above?
 # install fonts
 git clone https://github.com/powerline/fonts.git --depth=1
 cd fonts
@@ -26,6 +26,10 @@ if which fc-cache >/dev/null 2>&1 ; then
   echo "Resetting font cache, this may take a moment..."
   fc-cache -f "$font_dir"
 fi
+
+# install ripgrep
+curl -LO https://github.com/BurntSushi/ripgrep/releases/download/0.10.0/ripgrep_0.10.0_amd64.deb
+$ sudo dpkg -i ripgrep_0.10.0_amd64.deb
 
 # install vscode
 curl -L https://go.microsoft.com/fwlink/?LinkID=760868 > code.deb
