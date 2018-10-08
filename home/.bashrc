@@ -14,3 +14,11 @@ export NVM_DIR="$HOME/.nvm"
 # if [[ "$SSH_AGENT_PID" == "" ]]; then
 #     eval "$(<~/.ssh-agent-thing)"
 # fi
+
+# tabtab source for serverless package
+# uninstall by removing these lines or running `tabtab uninstall serverless`
+[ -f /home/bdefore/.nvm/versions/node/v8.11.0/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.bash ] && . /home/bdefore/.nvm/versions/node/v8.11.0/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.bash
+# tabtab source for sls package
+# uninstall by removing these lines or running `tabtab uninstall sls`
+[ -f /home/bdefore/.nvm/versions/node/v8.11.0/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.bash ] && . /home/bdefore/.nvm/versions/node/v8.11.0/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.bash
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"

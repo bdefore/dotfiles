@@ -1,6 +1,6 @@
 ssh-keygen
 eval `ssh-agent`
-ssh-add ~/.ssh/id_rsa
+ssh-add -k ~/.ssh/id_rsa # k switch to persist across restarts
 sudo apt-get install xclip
 cat ~/.ssh/id_rsa.pub | xclip -sel clip
 echo New public key copied to clipboard
