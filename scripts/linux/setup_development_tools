@@ -5,6 +5,10 @@ sudo apt install -y fonts-powerline
 sudo apt install -y inotify-tools
 sudo apt install -y transmission-cli transmission-common transmission-daemon # complete further steps: https://www.addictivetips.com/ubuntu-linux-tips/set-up-transmission-bittorrent-server-on-linux/
 
+# setup tmux
+sudo apt install -y tmux
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
 # TODO: is this redundant with the apt-install directive above?
 # install fonts
 git clone https://github.com/powerline/fonts.git --depth=1

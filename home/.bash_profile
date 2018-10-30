@@ -215,3 +215,5 @@ chNodeVersion;
 # [[ -z "${SLACK_TOKEN}" ]] && echo No SLACK_TOKEN provided, skipping presence beacon || slack-keep-presence &
 
 # eval `ssh-agent`
+
+tmux source ~/.tmux.conf
