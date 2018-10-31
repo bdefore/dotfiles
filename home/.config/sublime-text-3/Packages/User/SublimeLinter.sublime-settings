@@ -4,5 +4,13 @@
 		"linux": [
 			"~/.nvm/versions/node/v8.11.0/bin"
 		]
-	}
+	},
+  "linters": {
+    "eslint": {
+        "env": {"PATH":"~/.nvm/versions/node/v8.11.0/bin"}
+    },
+    "eslint_d": {
+        "env": {"PATH":"~/.nvm/versions/node/v8.11.0/bin"}
+    }
+  }
 }
