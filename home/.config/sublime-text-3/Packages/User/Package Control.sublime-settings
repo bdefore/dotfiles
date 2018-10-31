@@ -16,6 +16,7 @@
 		"ReactJS",
 		"SublimeLinter",
 		"SublimeLinter-eslint",
-		"SublimeLinter-flow"
+		"SublimeLinter-flow",
+		"SublimeLinter-stylelint"
 	]
 }
