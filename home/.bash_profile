@@ -73,7 +73,7 @@ alias remotebranches="git for-each-ref --format='%(color:cyan)%(authordate:forma
 alias weather="curl wttr.in"
 alias serveide='sudo docker run -it -p 3000:3000 -v "$(pwd):/home/project:cached" theiaide/theia:next'
 alias stopdev='killall code-server'
-alias servedev="stopdev && PASSWORD=$CODE_SERVER_PASSWORD nohup code-server --port 8443 --auth password $DEV_HOME &"
+alias servedev="PASSWORD=$CODE_SERVER_PASSWORD nohup code-server --port 8443 --auth password $DEV_HOME &"
 alias tmuxref='tmux source ~/.tmux-pre.conf && tmux source ~/.tmux.conf'
 alias towin='sudo grub-reboot 2 && reboot'
 
