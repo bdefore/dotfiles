@@ -7,6 +7,9 @@
 [[ -r ~/.corporate_profiles/bcdef ]] && source ~/.corporate_profiles/bcdef
 [[ -r ~/.Xmodmap ]] && xmodmap ~/.Xmodmap # TODO: what was this for? galliumos?
 
+export GOROOT=/usr/local/go
+export GOPATH=$HOME/go
+
 # Terminal coloring
 export CLICOLOR=1
 export LSCOLORS=gxfxcxdxbxegedabagacad
@@ -142,6 +145,8 @@ PATH=$PATH:/usr/local/git/bin
 PATH=$PATH:/Applications/mongodb/bin
 PATH=$PATH:/Developer/usr/bin
 PATH=$PATH:$HOME/.nvm/versions/node/v8.11.0/bin # to enable sublimelinter finding eslint
+PATH=$PATH:$GOPATH/bin
+PATH=$PATH:$GOROOT/bin
 
 # http://blog.macromates.com/2008/working-with-history-in-bash/
 export HISTCONTROL=ignoredups:erasedups
