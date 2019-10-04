@@ -1,7 +1,9 @@
 npm install -g \
   diff-so-fancy \
+  firebase-tools \
   grunt-cli \
   gulp-cli \
+  leasot \
   karma-cli \
   npm-check-updates \
   trash-cli \
