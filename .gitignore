@@ -6,3 +6,4 @@ home/.gradle/wrapper
 home/.atom/.apm
 home/.atom/packages
 home/.atom/blob-store
+nohup.out
