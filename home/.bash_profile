@@ -37,7 +37,6 @@ alias undo='git reset HEAD~1'
 alias d='git diff'
 
 # alias git='hub'
-
 # http://fredkschott.com/post/2014/02/git-log-is-so-2005/
 git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset' --abbrev-commit"
 git config --global alias.recent "for-each-ref --sort=-committerdate refs/heads/ --format='%(committerdate:short) %(authorname) %(refname:short)'"
@@ -67,13 +66,18 @@ alias -- -="cd -"
 # alias ur="cd ~/code/universal-redux"
 # alias effyoushrinkwrap="rm -r node_modules && git checkout master -- npm-shrinkwrap.json && npm i && rm npm-shrinkwrap.json && npm i && npm shrinkwrap --dev"
 
+function servecode {
+  CODE_SERVER_PORT=${2:-8443}
+  PASSWORD=$CODE_SERVER_PASSWORD nohup code-server --port $CODE_SERVER_PORT --auth password $1 &
+}
+
 alias prof="code ~/.bash_profile"
 alias bitch=sudo
 alias remotebranches="git for-each-ref --format='%(color:cyan)%(authordate:format:%m/%d/%Y %I:%M %p)    %(align:25,left)%(color:yellow)%(authorname)%(end) %(color:reset)%(refname:strip=3)' --sort=authordate refs/remotes"
 alias weather="curl wttr.in"
 alias serveide='sudo docker run -it -p 3000:3000 -v "$(pwd):/home/project:cached" theiaide/theia:next'
 alias stopdev='killall code-server'
-alias servedev="PASSWORD=$CODE_SERVER_PASSWORD nohup code-server --port 8443 --auth password $DEV_HOME &"
+alias servedev="servecode $DEV_HOME"
 alias tmuxref='tmux source ~/.tmux-pre.conf && tmux source ~/.tmux.conf'
 alias towin='sudo grub-reboot 2 && reboot'
 
