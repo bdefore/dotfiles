@@ -1,0 +1,10 @@
+# install steam, per https://www.lifewire.com/how-to-get-steam-on-chromebook-4690652
+# worked well on acer spin 13
+#
+echo 'deb http://httpredir.debian.org/debian/ jessie main contrib non-free' | sudo tee -a /etc/apt/sources.list
+sudo dpkg --add-architecture i386
+sudo apt update
+sudo apt install -y steam
+echo
+echo On ChromeOS you may want to add to dock, right click, select Use low density
+echo

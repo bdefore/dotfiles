@@ -35,6 +35,7 @@ fi
 # install ripgrep
 curl -LO https://github.com/BurntSushi/ripgrep/releases/download/0.10.0/ripgrep_0.10.0_amd64.deb
 $ sudo dpkg -i ripgrep_0.10.0_amd64.deb
+rm ripgrep*
 
 # install vscode
 curl -L https://go.microsoft.com/fwlink/?LinkID=760868 > code.deb
@@ -51,5 +52,6 @@ sudo apt install -y sublime-text
 # install docker
 curl -fsSL https://get.docker.com -o get-docker.sh
 sudo sh get-docker.sh
+rm get-docker.sh
 
 source ~/.bash_profile
