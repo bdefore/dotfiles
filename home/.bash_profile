@@ -202,8 +202,8 @@ done
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
 
 source ~/.nvm/nvm.sh
-nvm alias default $(cat ~/.nvmrc)
-# nvm use > /dev/null 2>&1 # expects ~/.nvmrc to define version
+nvm alias default $(cat ~/.nvmrc) > /dev/null 2>&1
+nvm use > /dev/null 2>&1 # expects ~/.nvmrc to define version
 
 # added by Anaconda 2.1.0 installer
 export PATH="$HOME/anaconda/bin:$PATH"
@@ -216,17 +216,15 @@ popd () { builtin popd "$@" && chNodeVersion; }
 chNodeVersion() {
   # if there's a file named ".nvmrc"...
   if [ -f ".nvmrc" ] ; then
-  # use it
-  nvm use;
+    # use it, suppress output
+    nvm use >/dev/null 2>&1;
   fi
 }
-
-chNodeVersion;
 
 # https://github.com/joshfng/slack-keep-presence
 # [[ -z "${SLACK_TOKEN}" ]] && echo No SLACK_TOKEN provided, skipping presence beacon || slack-keep-presence &
 
 # eval `ssh-agent`
 
-# pre config used due to customizations to theme, see .tmux.conf for more info
-[[ -v TMUX ]] && echo Loading tmux configurations... && tmux source "$HOME/.tmux-pre.conf" && tmux source "$HOME/.tmux.conf" && echo tmux configuration complete
+# if in tmux, load pre config with customizations to theme, see .tmux.conf for more info
+[[ -v TMUX ]] && echo Loading tmux configurations... && tmux source "$HOME/.tmux-pre.conf" && tmux source "$HOME/.tmux.conf" && echo tmux configuration complete, remember to prefix-I if first run to install plugins
