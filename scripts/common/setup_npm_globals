@@ -8,4 +8,6 @@ npm install -g \
   npm-check-updates \
   trash-cli \
   eslint \
+  eslint-plugin-import \
+  eslint-plugin-react \
   yarn
