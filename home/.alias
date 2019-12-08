@@ -1,0 +1,43 @@
+alias ls="ls -la"
+alias vi=vim
+
+# Git Aliases
+alias gs='git status'
+# alias gl='git pull'
+alias gp='git push'
+alias gd='git diff | subl'
+alias gc='git commit -v'
+alias gca='git commit -v -a'
+alias gb='git branch'
+alias gba='git branch -a'
+alias ga='git add -i'
+alias gsr='git svn rebase'
+alias gsd='git svn dcommit'
+alias undo='git reset HEAD~1'
+alias d='git diff'
+alias remotebranches="git for-each-ref --format='%(color:cyan)%(authordate:format:%m/%d/%Y %I:%M %p)    %(align:25,left)%(color:yellow)%(authorname)%(end) %(color:reset)%(refname:strip=3)' --sort=authordate refs/remotes"
+
+# Easier navigation: .., ..., ...., ....., ~ and -
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
+alias -- -="cd -"
+
+# Pretty display recursively
+alias tree="ls -R | grep ":$" | sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' -e 's/^/   /' -e 's/-/|/'"
+
+alias prof="code ~/.bash_profile"
+alias bitch=sudo
+alias weather="curl wttr.in"
+alias towin='sudo grub-reboot 2 && reboot'
+alias yr='yarn run'
+
+# remote ide helpers
+function servecode {
+  CODE_SERVER_PORT=${2:-8443}
+  PASSWORD=$CODE_SERVER_PASSWORD nohup code-server --disable-updates --port $CODE_SERVER_PORT --auth password $1 &
+}
+alias serveide='sudo docker run -it -p 3000:3000 -v "$(pwd):/home/project:cached" theiaide/theia:next'
+alias stopdev='killall code-server'
+alias servedev="servecode $DEV_HOME"

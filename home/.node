@@ -1,0 +1,30 @@
+export DEFAULT_NODE_VERSION=v8.11.0
+export NODE_ENV=development
+
+alias npd='npm install -d'
+alias npmicache="time npm i --cache-min=1000000" # http://vijayskotecha.blogspot.com/2015/08/2-methods-to-speed-up-you-nodejs-npm.html
+alias npmi="npm i && terminal-notifier -message 'npm install complete' -timeout 1"
+# alias npmi="if test npm i --cache-min=1000000; then terminal-notifier -title 'npm' -message 'Install completed successfully' ; else terminal-notifier -title 'npm' -message 'Install failed!' ; fi"
+alias nrd="npm run dev"
+alias rmn="rm -rf node_modules"
+alias rei="rm -rf ./node-modules && npmi"
+alias nrdr="npm run docker:restart"
+
+source ~/.nvm/nvm.sh
+nvm alias default $(cat ~/.nvmrc) > /dev/null 2>&1
+nvm use > /dev/null 2>&1 # expects ~/.nvmrc to define version
+
+# http://yobeki.com/how-to-make-nvm-automatically-use-the-correct-version-of-nodejs-for-a-specific-project/
+cd () { builtin cd "$@" && chNodeVersion; }
+pushd () { builtin pushd "$@" && chNodeVersion; }
+popd () { builtin popd "$@" && chNodeVersion; }
+
+chNodeVersion() {
+  # if there's a file named ".nvmrc"...
+  if [ -f ".nvmrc" ] ; then
+    # use it, suppress output
+    nvm use >/dev/null 2>&1;
+  fi
+}
+
+export PATH=$PATH:$HOME/.nvm/versions/node/$DEFAULT_NODE_VERSION/bin # to enable sublimelinter finding eslint
