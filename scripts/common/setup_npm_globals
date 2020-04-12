@@ -4,7 +4,6 @@ npm install -g \
   grunt-cli \
   gulp-cli \
   leasot \
-  karma-cli \
   npm-check-updates \
   trash-cli \
   eslint \

@@ -20,3 +20,7 @@ export NVM_DIR="$HOME/.nvm"
 # fi
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/home/d4/.sdkman"
+[[ -s "/home/d4/.sdkman/bin/sdkman-init.sh" ]] && source "/home/d4/.sdkman/bin/sdkman-init.sh"

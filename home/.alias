@@ -35,9 +35,16 @@ alias yr='yarn run'
 
 # remote ide helpers
 function servecode {
+  # download release from https://github.com/cdr/code-server/releases into ~/code/code-server manually
+  # when AUR is updated this can be changed back from `node /path/to/entry.js` to `code-server`
   CODE_SERVER_PORT=${2:-8443}
-  PASSWORD=$CODE_SERVER_PASSWORD nohup code-server --disable-updates --port $CODE_SERVER_PORT --auth password $1 &
+  PASSWORD=$CODE_SERVER_PASSWORD nohup node ~/code/code-server/out/node/entry.js --disable-ssh --disable-updates --port $CODE_SERVER_PORT --host 0.0.0.0 --auth password $1 &
 }
 alias serveide='sudo docker run -it -p 3000:3000 -v "$(pwd):/home/project:cached" theiaide/theia:next'
 alias stopdev='killall code-server'
 alias servedev="servecode $DEV_HOME"
+
+# https://www.2daygeek.com/how-to-get-find-size-of-directory-folder-linux/
+function foldersize {
+  du -hc $1 | sort -rh | head -20
+}
