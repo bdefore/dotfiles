@@ -1,0 +1,18 @@
+yay -S \
+  vlc \
+  simplescreenrecorder \
+  ripgrep \
+  gnome-disk-utility \
+  x11vnc \
+  dnsutils \
+  steam \
+  bat \
+  git-delta \
+  tmux
+
+# code-server \ # an ide, package is out of date, use github release instead
+
+# setup tmux
+#git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
+source ~/.bash_profile

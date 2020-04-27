@@ -15,6 +15,7 @@ alias gsr='git svn rebase'
 alias gsd='git svn dcommit'
 alias undo='git reset HEAD~1'
 alias d='git diff'
+alias cat=bat
 alias remotebranches="git for-each-ref --format='%(color:cyan)%(authordate:format:%m/%d/%Y %I:%M %p)    %(align:25,left)%(color:yellow)%(authorname)%(end) %(color:reset)%(refname:strip=3)' --sort=authordate refs/remotes"
 
 # Easier navigation: .., ..., ...., ....., ~ and -

@@ -1,10 +1,9 @@
-# setup ssh
-../common/setup_ssh_key
+# before
+./setup_arch
+#./setup_debian
 
-# these are intended/tested for galliumos on my asus chromebook c302
-sudo apt dist-upgrade
-sudo apt update
-sudo apt install -y curl # not included in ubuntu xenial
+# setup ssh
+#../common/setup_ssh_key
 
 # install rvm and ruby
 \curl -sSL https://get.rvm.io | bash
@@ -26,15 +25,10 @@ source ~/.bash_profile
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.29.0/install.sh | bash
 source ~/.bashrc
 source ~/.bash_profile
-nvm install 8.11.0
-nvm use 8.11.0
+cat ~/.nvmrc | nvm install
+cat ~/.nvmrc | nvm use
 
 # install common node tools
 ../common/setup_npm_globals
-
-# install other commonly needed linux libraries
-sudo apt install -y exfat-utils exfat-fuse ntfs-3g
-sudo apt install -y apt-transport-https
-sudo apt install -y python-pip
 
 source ~/.bash_profile

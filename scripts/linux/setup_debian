@@ -1,0 +1,4 @@
+# what follows is what to do before other setup tasks
+sudo apt dist-upgrade
+sudo apt update
+sudo apt install -y curl # not included in ubuntu xenial

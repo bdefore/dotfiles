@@ -1,5 +1,4 @@
 npm install -g \
-  diff-so-fancy \
   firebase-tools \
   grunt-cli \
   gulp-cli \

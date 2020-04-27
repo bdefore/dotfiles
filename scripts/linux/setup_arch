@@ -1,0 +1,6 @@
+# what follows is what to do before other setup tasks
+sudo pacman -S yay
+yay -S openssh
+
+sudo systemctl enable sshd.service
+sudo systemctl start sshd
