@@ -6,6 +6,7 @@ yay -S \
   x11vnc \
   dnsutils \
   steam \
+  code \
   bat \
   git-delta \
   tmux \
