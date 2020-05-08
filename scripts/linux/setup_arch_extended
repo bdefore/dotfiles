@@ -10,7 +10,8 @@ yay -S \
   bat \
   git-delta \
   tmux \
-  vim
+  vim \
+  ngrok
 
 # code-server \ # an ide, package is out of date, use github release instead
 
