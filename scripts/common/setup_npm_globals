@@ -5,7 +5,4 @@ npm install -g \
   leasot \
   npm-check-updates \
   trash-cli \
-  eslint \
-  eslint-plugin-import \
-  eslint-plugin-react \
   yarn
