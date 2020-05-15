@@ -6,6 +6,7 @@ yay -S \
   x11vnc \
   dnsutils \
   steam \
+  transmission-cli \
   code \
   bat \
   git-delta \
