@@ -12,10 +12,20 @@ yay -S \
   git-delta \
   tmux \
   vim \
-  ngrok
+  ngrok \
+  xorg-server-xvfb
+
+### notes on the above and why i want them:
+
+# dnsutils: unsure why this is here
+# git-delta: a pleasing git diff parser
+# bat: an enhanced cat
+# xorg-server-xvfb: required by cypress, a functional testing library
+# ngrok: for simulating https in web development
+
+### no longer used:
 
 # code-server \ # an ide, package is out of date, use github release instead
-
 # setup tmux
 #git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
