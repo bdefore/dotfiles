@@ -8,6 +8,7 @@ yay -S \
   steam \
   transmission-cli \
   code \
+  code-server \
   bat \
   git-delta \
   tmux \
@@ -17,6 +18,7 @@ yay -S \
 
 ### notes on the above and why i want them:
 
+# code-server: remote vscode in the browser
 # dnsutils: unsure why this is here
 # git-delta: a pleasing git diff parser
 # bat: an enhanced cat
@@ -25,7 +27,6 @@ yay -S \
 
 ### no longer used:
 
-# code-server \ # an ide, package is out of date, use github release instead
 # setup tmux
 #git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
