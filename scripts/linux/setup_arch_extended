@@ -14,7 +14,8 @@ yay -S \
   tmux \
   vim \
   ngrok \
-  xorg-server-xvfb
+  xorg-server-xvfb \
+  chromium
 
 ### notes on the above and why i want them:
 
@@ -24,6 +25,10 @@ yay -S \
 # bat: an enhanced cat
 # xorg-server-xvfb: required by cypress, a functional testing library
 # ngrok: for simulating https in web development
+# chromium: headless browser testing with testcafe
+# gnome-disk-utility: gui for automounting disks on start https://www.youtube.com/watch?v=ceQZw-Ot9r8
+# ripgrep: faster grep
+# x11vnc: remote desktop
 
 ### no longer used:
 
