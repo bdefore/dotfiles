@@ -2,5 +2,9 @@
 sudo pacman -S yay
 yay -S openssh
 
+# auth issues can occur if NTP is not enabled. have experienced with google and steam
+# https://github.com/liamcurry/passport-steam/issues/68#issuecomment-658367752
+timedatectl set-ntp true
+
 sudo systemctl enable sshd.service
 sudo systemctl start sshd
