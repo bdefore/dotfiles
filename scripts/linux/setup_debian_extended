@@ -7,6 +7,7 @@ sudo apt install -y fonts-powerline
 sudo apt install -y inotify-tools
 sudo apt install -y transmission-cli transmission-common transmission-daemon # complete further steps: https://www.addictivetips.com/ubuntu-linux-tips/set-up-transmission-bittorrent-server-on-linux/
 sudo apt install -y bat
+sudo apt install -y exa
 sudo apt install -y tmux
 
 # setup tmux
