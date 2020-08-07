@@ -2,7 +2,7 @@
 
 ## MacOS
 ```
-./scripts/macos/setup
+(cd ./scripts/macos && ./setup)
 ```
 ## Linux (tested on Debian, Ubuntu, Gallium)
 ```

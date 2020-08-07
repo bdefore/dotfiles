@@ -1,7 +1,6 @@
 brew install coreutils
 brew install git
 brew install git-extras
-brew install hub
 brew install postgres
 brew install mysql
 brew install nginx
@@ -11,5 +10,8 @@ brew install wget
 brew install heroku
 brew install terminal-notifier
 brew install diff-so-fancy
+brew install bat
+brew install exa
+brew install git-delta
 brew install --HEAD hub
 brew cleanup
