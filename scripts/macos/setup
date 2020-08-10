@@ -1,3 +1,6 @@
+# macos now defaults to zsh. switch it back to bash
+chsh -s /bin/bash
+
 # install homebrew
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
