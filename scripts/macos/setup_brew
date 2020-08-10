@@ -1,4 +1,11 @@
+# macos now defaults to zsh. switch it back to bash
 brew install bash
+echo /usr/local/bin/bash | sudo tee -a /etc/shells
+chsh -s /usr/local/bin/bash
+echo The following bash version echoes should NOT be version 3
+bash --version
+echo $BASH_VERSION
+
 brew install coreutils
 brew install git
 brew install git-extras

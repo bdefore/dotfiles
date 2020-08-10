@@ -1,4 +1,4 @@
-export DEFAULT_NODE_VERSION=v8.11.0
+export DEFAULT_NODE_VERSION=v12.16.3
 export NODE_ENV=development
 
 alias npd='npm install -d'
