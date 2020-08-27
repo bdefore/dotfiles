@@ -2,18 +2,18 @@
 {
 	"paths": {
 		"linux": [
-			"~/.nvm/versions/node/v12.16.3/bin"
+			"~/.nvm/versions/node/v12.18.0/bin"
 		]
 	},
   "linters": {
     "eslint": {
-        "env": {"PATH":"~/.nvm/versions/node/v12.16.3/bin"}
+        "env": {"PATH":"~/.nvm/versions/node/v12.18.0/bin"}
     },
     "eslint_d": {
-        "env": {"PATH":"~/.nvm/versions/node/v12.16.3/bin"}
+        "env": {"PATH":"~/.nvm/versions/node/v12.18.0/bin"}
     },
     "stylelint": {
-        "env": {"PATH":"~/.nvm/versions/node/v12.16.3/bin"}
+        "env": {"PATH":"~/.nvm/versions/node/v12.18.0/bin"}
     }
   }
 }
