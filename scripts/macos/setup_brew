@@ -1,15 +1,26 @@
+# macos now defaults to zsh. switch it back to bash
+brew install bash
+echo /usr/local/bin/bash | sudo tee -a /etc/shells
+chsh -s /usr/local/bin/bash
+echo The following bash version echoes should NOT be version 3
+bash --version
+echo $BASH_VERSION
+
 brew install coreutils
 brew install git
 brew install git-extras
-brew install hub
 brew install postgres
 brew install mysql
 brew install nginx
 brew install redis
 brew install imagemagick
+brew install code-server
 brew install wget
 brew install heroku
 brew install terminal-notifier
 brew install diff-so-fancy
+brew install bat
+brew install exa
+brew install git-delta
 brew install --HEAD hub
 brew cleanup
