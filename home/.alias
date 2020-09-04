@@ -43,7 +43,7 @@ function servecode {
   # PASSWORD=$CODE_SERVER_PASSWORD nohup node ~/code/code-server/out/node/entry.js --disable-ssh --disable-updates --port $CODE_SERVER_PORT --host 0.0.0.0 --auth password $1 &
 
   # curent way
-  PASSWORD=$CODE_SERVER_PASSWORD nohup code-server --bind-addr 0.0.0.0:$CODE_SERVER_PORT --auth password $1 &
+  PASSWORD=$CODE_SERVER_PASSWORD nohup code-server --bind-addr 0.0.0.0:$CODE_SERVER_PORT --auth password $1 >> /tmp/nohup.out
 }
 alias serveide='sudo docker run -it -p 3000:3000 -v "$(pwd):/home/project:cached" theiaide/theia:next'
 alias stopdev='killall code-server'
