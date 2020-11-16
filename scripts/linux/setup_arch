@@ -1,5 +1,5 @@
 # what follows is what to do before other setup tasks
-sudo pacman -S yay
+sudo pacman -S base-devel yay
 yay -S openssh
 
 # auth issues can occur if NTP is not enabled. have experienced with google and steam

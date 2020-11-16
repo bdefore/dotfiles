@@ -1,10 +1,11 @@
 yay -S \
+  dnsutils \
+  net-tools \
   vlc \
   simplescreenrecorder \
   ripgrep \
   gnome-disk-utility \
   x11vnc \
-  dnsutils \
   steam \
   transmission-cli \
   code \
@@ -15,6 +16,7 @@ yay -S \
   tmux \
   vim \
   ngrok \
+  xow \
   xorg-server-xvfb \
   chromium
 
@@ -31,6 +33,7 @@ yay -S \
 # gnome-disk-utility: gui for automounting disks on start https://www.youtube.com/watch?v=ceQZw-Ot9r8
 # ripgrep: faster grep
 # x11vnc: remote desktop
+# xow: xbox one wireless adapter
 
 ### no longer used:
 
