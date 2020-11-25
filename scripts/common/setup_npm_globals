@@ -2,6 +2,7 @@ npm install -g \
   firebase-tools \
   grunt-cli \
   gulp-cli \
+  netlify-cli \
   leasot \
   npm-check-updates \
   trash-cli \
