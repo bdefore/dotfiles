@@ -17,6 +17,7 @@ yay -S \
   vim \
   ngrok \
   xow \
+  sc-controller \
   xorg-server-xvfb \
   chromium
 
@@ -34,6 +35,7 @@ yay -S \
 # ripgrep: faster grep
 # x11vnc: remote desktop
 # xow: xbox one wireless adapter
+# sc-controller: steam controller, allows use outside of steam games
 
 ### no longer used:
 
