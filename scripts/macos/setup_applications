@@ -36,6 +36,7 @@ brew cask install vnc-viewer
 # brew cask install adium
 # brew cask install adobe-air
 # brew cask install alfred
+brew cask install keepingyouawake
 
 # home entertainment
 brew cask install transmission
