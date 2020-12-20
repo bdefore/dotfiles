@@ -16,7 +16,7 @@ gem install homesick --no-document
 
 # Clone dotfiles (overwrite all except .ssh - that should be removed from dotfiles at some point)
 homesick clone https://github.com/bdefore/dotfiles.git
-homesick symlink dotfiles
+homesick link dotfiles
 
 # Update
 source ~/.bash_profile
