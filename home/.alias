@@ -32,7 +32,7 @@ alias tree="ls -R | grep ":$" | sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' -e 's/^
 alias prof="code ~/.bash_profile"
 alias bitch=sudo
 alias weather="curl wttr.in"
-alias towin='sudo grub-reboot 2 && reboot'
+alias towin='sudo grub-reboot 4 && reboot'
 alias yr='yarn run'
 
 # remote ide helpers
