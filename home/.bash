@@ -1,6 +1,10 @@
 # http://blog.macromates.com/2008/working-with-history-in-bash/
 export HISTCONTROL=ignoredups:erasedups
 export HISTSIZE=1000000
+
+# https://ostechnix.com/how-to-enable-timestamp-in-bash-history-in-linux/
+export HISTTIMEFORMAT='%d/%m/%y %T '
+
 shopt -s histappend
 
 # Enable some Bash 4 features when possible:
