@@ -17,6 +17,7 @@ yay -S \
   vim \
   ngrok \
   xow \
+  ncdu \
   sc-controller \
   xorg-server-xvfb \
   chromium
@@ -35,6 +36,7 @@ yay -S \
 # ripgrep: faster grep
 # x11vnc: remote desktop
 # xow: xbox one wireless adapter
+# ncdu: ncurses du. nice command-line tool for exploring disk usage. common offender: yay cache. use yay -Sc periodically to clear it
 # sc-controller: steam controller, allows use outside of steam games
 
 ### no longer used:
