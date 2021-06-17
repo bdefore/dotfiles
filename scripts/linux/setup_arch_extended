@@ -11,7 +11,7 @@ yay -S \
   code \
   code-server \
   bat \
-  git-delta \
+  git-delta-bin \
   exa \
   tmux \
   vim \
@@ -26,7 +26,7 @@ yay -S \
 
 # code-server: remote vscode in the browser
 # dnsutils: unsure why this is here
-# git-delta: a pleasing git diff parser
+# git-delta-bin: a pleasing git diff parser
 # exa: an enhanced ls
 # bat: an enhanced cat
 # xorg-server-xvfb: required by cypress, a functional testing library
