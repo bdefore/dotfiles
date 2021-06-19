@@ -53,6 +53,6 @@ NOTE: This has most recently been used, and is configured to be used, on Manjaro
 
 ## Post-Installation
 
-The SSH daemon is enabled by setup, but you'll still need to connect to it. The easiest way is to run from another client: `ssh-copy-id ssh-copy-id -i ~/.ssh/id_rsa.pub username@ip.address.of.new.machine` and enter the password you've set up for the new machine. If you're running ChromeOS, you can run this from Termina then select `id_rsa` as the identity in Secure Shell App.
+The SSH daemon is enabled by setup, but you'll still need to connect to it. The easiest way is to run from another client: `ssh-copy-id -i ~/.ssh/id_rsa.pub username@ip.address.of.new.machine` and enter the password you've set up for the new machine. If you're running ChromeOS, you can run this from Termina then select `id_rsa` as the identity in Secure Shell App.
 
 For code-server use, you'll first want to run it to create a file at `~/.config/code-server/config.yaml` and then edit the values there to your liking and get the random password generated.
