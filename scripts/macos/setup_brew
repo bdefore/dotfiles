@@ -16,7 +16,7 @@ brew install redis
 brew install imagemagick
 brew install code-server
 brew install wget
-brew install heroku
+# brew install heroku
 brew install terminal-notifier
 brew install diff-so-fancy
 brew install bat
@@ -24,3 +24,5 @@ brew install exa
 brew install git-delta
 brew install --HEAD hub
 brew cleanup
+
+brew services start code-server
