@@ -1,6 +1,5 @@
 {
     "editor.fontSize": 14,
-    "editor.fontFamily": "Iosevka",
     "editor.insertSpaces": true,
     "editor.smoothScrolling": true,
     "editor.tabSize": 2,
@@ -14,5 +13,6 @@
     "files.associations": {
         "*.css-module": "css"
     },
-    "window.menuBarVisibility": "toggle"
+    "window.menuBarVisibility": "toggle",
+    "workbench.colorTheme": "Solarized Dark"
 }
