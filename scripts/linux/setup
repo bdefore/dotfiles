@@ -5,30 +5,7 @@
 # setup ssh
 #../common/setup_ssh_key
 
-# install rvm and ruby
-\curl -sSL https://get.rvm.io | bash
-source ~/.rvm/scripts/rvm
-source /etc/profile.d/rvm.sh
-rvm install ruby --latest
-
-# install homesick and get your dotfiles:
-gem install homesick --no-document
-
-# Clone dotfiles (overwrite all except .ssh - that should be removed from dotfiles at some point)
-homesick clone https://github.com/bdefore/dotfiles.git
-homesick link dotfiles
-
-# Update
-source ~/.bash_profile
-
-# install nvm and node
-curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.29.0/install.sh | bash
-source ~/.bashrc
-source ~/.bash_profile
-cat ~/.nvmrc | nvm install
-cat ~/.nvmrc | nvm use
-
-# install common node tools
-../common/setup_npm_globals
+#../common/setup_ruby
+../common/setup_node
 
 source ~/.bash_profile

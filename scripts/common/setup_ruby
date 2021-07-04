@@ -1,0 +1,19 @@
+# install rvm: (it may tell you that git requires installing command line tools, accept that)
+\curl -sSL https://get.rvm.io | bash
+
+# source the rvm
+source ~/.rvm/scripts/rvm
+source /etc/profile.d/rvm.sh
+rvm install ruby --latest
+
+# BEGIN OLD DOTFILE MANAGER
+# install homesick and get your dotfiles:
+#gem install homesick --no-document
+
+# Clone dotfiles (overwrite all except .ssh - that should be removed from dotfiles at some point)
+#homesick clone https://github.com/bdefore/dotfiles.git
+#homesick link dotfiles
+# END OLD DOTFILE MANAGER
+
+# Update
+source ~/.bash_profile

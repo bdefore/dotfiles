@@ -1,4 +1,3 @@
-[[ -r ~/.bash ]] && source ~/.bash
 [[ -r ~/.alias ]] && source ~/.alias
 [[ -r ~/.prompt ]] && source ~/.prompt
 [[ -r ~/.node ]] && source ~/.node

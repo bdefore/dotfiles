@@ -1,0 +1,8 @@
+# install nvm and node
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.29.0/install.sh | bash
+source ~/.bash_profile
+cat ~/.nvmrc | nvm install
+cat ~/.nvmrc | nvm use
+
+# install common node tools
+./setup_npm_globals
