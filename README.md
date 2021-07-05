@@ -1,4 +1,4 @@
-## Installation
+## Setup
 
 #### MacOS
 ```
@@ -50,6 +50,11 @@ NOTE: This has most recently been used, and is configured to be used, on Manjaro
     - Go through Chrome extensions, Hide from Chrome Menu (wish these would save preference)
     - Install Moonlight for streaming games
         - Requires manual exension install and NaCL flag (https://github.com/moonlight-stream/moonlight-chrome/releases/tag/v0.9.0)
+
+## Activate
+
+- [Install chezmoi](https://github.com/twpayne/chezmoi/blob/master/docs/INSTALL.md)
+- Run `chezmoi init --apply bdefore`
 
 ## Post-Installation
 
