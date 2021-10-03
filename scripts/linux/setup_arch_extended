@@ -24,7 +24,8 @@ yay -S \
   batstat \
   ttf-iosevka \
   alacritty \
-  swayidle
+  swayidle \
+  powertop
 
 ### notes on the above and why i want them:
 
@@ -46,6 +47,7 @@ yay -S \
 # ttf-iosevka: space conscious font
 # batstat: command line battery monitor
 # swayidle: used in sway config to trigger swaylock
+# powertop: power usage diagnostics
 
 ### no longer used:
 
