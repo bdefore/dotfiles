@@ -8,9 +8,9 @@ swipe:
     right:
       sendkey: 'rightalt+left'
     up:
-      workspace: 'next'
+      sendkey: 'capslock+tab'
     down:
-      workspace: 'prev'
+      sendkey: 'capslock+leftshift+tab'
 
 threshold:
   swipe: 0.5
