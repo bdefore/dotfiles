@@ -15,7 +15,10 @@ rvm install ruby --latest
 #homesick link dotfiles
 # END OLD DOTFILE MANAGER
 
+# gestures
 gem install fusuma
+gem install fusuma-plugin-sendkey
+sudo gpasswd -a $USER input
 
 # Update
 source ~/.bash_profile
