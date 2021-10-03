@@ -11,7 +11,7 @@ yay -S \
   code \
   code-server \
   bat \
-  git-delta-bin \
+  git-delta \
   exa \
   tmux \
   vim \
@@ -20,13 +20,16 @@ yay -S \
   ncdu \
   sc-controller \
   xorg-server-xvfb \
-  chromium
+  chromium \
+  batstat \
+  ttf-iosevka \
+  alacritty
 
 ### notes on the above and why i want them:
 
 # code-server: remote vscode in the browser
 # dnsutils: unsure why this is here
-# git-delta-bin: a pleasing git diff parser
+# git-delta: a pleasing git diff parser
 # exa: an enhanced ls
 # bat: an enhanced cat
 # xorg-server-xvfb: required by cypress, a functional testing library
@@ -38,6 +41,9 @@ yay -S \
 # xow: xbox one wireless adapter
 # ncdu: ncurses du. nice command-line tool for exploring disk usage. common offender: yay cache. use yay -Sc periodically to clear it
 # sc-controller: steam controller, allows use outside of steam games
+# alacritty: a modern terminal
+# ttf-iosevka: space conscious font
+# batstat: command line battery monitor
 
 ### no longer used:
 

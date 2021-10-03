@@ -15,5 +15,7 @@ rvm install ruby --latest
 #homesick link dotfiles
 # END OLD DOTFILE MANAGER
 
+gem install fusuma
+
 # Update
 source ~/.bash_profile
