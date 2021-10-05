@@ -1,4 +1,3 @@
-export DEFAULT_NODE_VERSION=v12.18.0
 export NODE_ENV=development
 
 alias npd='npm install -d'
@@ -39,26 +38,19 @@ cdnvm() {
         fi
 
         elif [[ -s $nvm_path/.nvmrc && -r $nvm_path/.nvmrc ]]; then
-        declare nvm_version
-        nvm_version=$(<"$nvm_path"/.nvmrc)
 
-        declare locally_resolved_nvm_version
-        # `nvm ls` will check all locally-available versions
-        # If there are multiple matching versions, take the latest one
-        # Remove the `->` and `*` characters and spaces
-        # `locally_resolved_nvm_version` will be `N/A` if no local versions are found
-        locally_resolved_nvm_version=$(nvm ls --no-colors "$nvm_version" | tail -1 | tr -d '\->*' | tr -d '[:space:]')
+        requested_version=$(cat "${nvm_path}/.nvmrc" | sed 's/v//g');
+        v_stripped="$(echo $(nvm current) | sed 's/v//g')";
 
-        # If it is not already installed, install it
-        # `nvm install` will implicitly use the newly-installed version
-        if [[ "$locally_resolved_nvm_version" == "N/A" ]]; then
-            nvm install "$nvm_version";
-        elif [[ $(nvm current) != "$locally_resolved_nvm_version" ]]; then
-            nvm use "$nvm_version";
+        # current version mismatch. switch to version declared by this directory
+        if [[ $v_stripped != $requested_version ]]; then
+            nvm use "$requested_version";
         fi
     fi
 }
-alias cd='cdnvm'
 cd $PWD
+alias cd='cdnvm'
 
-export PATH=$PATH:$HOME/.nvm/versions/node/$DEFAULT_NODE_VERSION/bin # to enable sublimelinter finding eslint
+root_nvm_version=$(cat ~/.nvmrc)
+
+export PATH=$PATH:$HOME/.nvm/versions/node/$root_nvm_version/bin # to enable sublimelinter finding eslint
