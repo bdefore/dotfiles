@@ -1,3 +1,7 @@
+# improve package download speed by finding appropriate mirrors
+sudo pacman-mirrors --geoip
+sudo pacman -Syyu
+
 yay -S \
   dnsutils \
   net-tools \

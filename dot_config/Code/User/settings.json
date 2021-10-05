@@ -8,7 +8,6 @@
     "files.autoSave": "onFocusChange",
     "javascript.validate.enable": false,
     "window.restoreFullscreen": true,
-    "window.zoomLevel": 1,
     "editor.minimap.enabled": false,
     "files.associations": {
         "*.css-module": "css"
