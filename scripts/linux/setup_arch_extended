@@ -26,7 +26,8 @@ yay -S \
   alacritty \
   swayidle \
   powertop \
-  xorg_xlsclients
+  xorg_xlsclients \
+  sworkstyle
 
 ### notes on the above and why i want them:
 
@@ -50,6 +51,7 @@ yay -S \
 # swayidle: used in sway config to trigger swaylock
 # powertop: power usage diagnostics
 # xorg-xlsclients: for diagnosing which apps are running x instead of wayland
+# sworkstyle: replace waybar workspace numbers with icons
 
 ### no longer used:
 
