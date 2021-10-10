@@ -13,5 +13,6 @@
         "*.css-module": "css"
     },
     "window.menuBarVisibility": "toggle",
-    "workbench.colorTheme": "Solarized Dark"
+    "workbench.colorTheme": "Solarized Dark",
+    "security.workspace.trust.untrustedFiles": "open"
 }
