@@ -8,10 +8,20 @@ user_pref("firefoxpwa.enableHidingIconBar", true);
 user_pref("signon.passwordEditCapture.enabled", false);	
 user_pref("services.sync.engine.passwords", false);
 
+// disable payments
 user_pref("dom.payments.defaults.saveAddress", false);
 user_pref("dom.payments.defaults.saveCreditCard", false);
 
 user_pref("browser.urlbar.quicksuggest.enabled", false);
+
+// disable sponsored behavior
+user_pref("browser.newtabpage.activity-stream.discoverystream.sponsored-collections.enabled", false);
+user_pref("browser.newtabpage.activity-stream.showSponsored", false);
+user_pref("browser.newtabpage.activity-stream.showSponsoredTopSites", false);
+user_pref("browser.urlbar.sponsoredTopSites", false);
+user_pref("browser.urlbar.suggest.quicksuggest.sponsored", false);	
+user_pref("services.sync.prefs.sync.browser.newtabpage.activity-stream.showSponsored", false);	
+user_pref("services.sync.prefs.sync.browser.newtabpage.activity-stream.showSponsoredTopSites", false);
 
 // =======================
 // THE FOLLOWING PLUCKED FROM
