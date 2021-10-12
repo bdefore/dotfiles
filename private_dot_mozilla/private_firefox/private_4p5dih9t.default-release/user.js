@@ -23,6 +23,12 @@ user_pref("browser.urlbar.suggest.quicksuggest.sponsored", false);
 user_pref("services.sync.prefs.sync.browser.newtabpage.activity-stream.showSponsored", false);	
 user_pref("services.sync.prefs.sync.browser.newtabpage.activity-stream.showSponsoredTopSites", false);
 
+// disable pocket recommended on new tab
+user_pref("browser.newtabpage.activity-stream.feeds.recommendationprovider", false);
+user_pref("services.sync.prefs.sync.browser.newtabpage.activity-stream.section.highlights.includePocket", false);
+user_pref("browser.newtabpage.activity-stream.section.highlights.includePocket", false);
+user_pref("browser.newtabpage.activity-stream.feeds.section.topstories",	false);
+
 // =======================
 // THE FOLLOWING PLUCKED FROM
 // https://github.com/pyllyukko/user.js/blob/master/user.js
