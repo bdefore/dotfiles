@@ -25,6 +25,10 @@ yay -S \
   ttf-iosevka \
   alacritty \
   powertop \
+  ncspot \
+  youtube-viewer \
+  mpv \
+  firefox-pwa
 
 ### notes on the above and why i want them:
 
@@ -46,6 +50,10 @@ yay -S \
 # ttf-iosevka: space conscious font
 # batstat: command line battery monitor
 # powertop: power usage diagnostics
+# ncspot: spotify from terminal
+# youtube-viewer: youtube from terminal
+# mpv: minimal video player
+# firefox-pwa: PWAs from firefox
 
 ### no longer used:
 
