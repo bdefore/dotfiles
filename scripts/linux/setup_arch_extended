@@ -28,7 +28,8 @@ yay -S \
   ncspot \
   youtube-viewer \
   mpv \
-  firefox-pwa
+  firefox-pwa \
+  viu
 
 ### notes on the above and why i want them:
 
@@ -54,6 +55,7 @@ yay -S \
 # youtube-viewer: youtube from terminal
 # mpv: minimal video player
 # firefox-pwa: PWAs from firefox
+# viu: terminal image rendering
 
 ### no longer used:
 
