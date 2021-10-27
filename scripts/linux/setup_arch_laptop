@@ -1,0 +1,10 @@
+yay -S \
+  batstat \
+  tlp \
+  tlp-rdw
+
+### notes on the above
+
+# batstat: command line battery monitor
+# tlp: sensible power management
+# tlp-rdw: radio power management

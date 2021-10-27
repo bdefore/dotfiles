@@ -13,6 +13,7 @@ yay -S \
   bat \
   git-delta \
   exa \
+  procs \
   tmux \
   vim \
   ngrok \
@@ -21,7 +22,6 @@ yay -S \
   sc-controller \
   xorg-server-xvfb \
   chromium \
-  batstat \
   ttf-iosevka \
   alacritty \
   powertop \
@@ -36,6 +36,7 @@ yay -S \
 # dnsutils: unsure why this is here
 # git-delta: a pleasing git diff parser
 # exa: an enhanced ls
+# procs: an enhanced ps
 # bat: an enhanced cat
 # xorg-server-xvfb: required by cypress, a functional testing library
 # ngrok: for simulating https in web development
@@ -48,7 +49,6 @@ yay -S \
 # sc-controller: steam controller, allows use outside of steam games
 # alacritty: a modern terminal
 # ttf-iosevka: space conscious font
-# batstat: command line battery monitor
 # powertop: power usage diagnostics
 # ncspot: spotify from terminal
 # youtube-viewer: youtube from terminal
