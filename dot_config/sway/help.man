@@ -1,0 +1,134 @@
+.\" Manpage for manjaro-sway.
+
+.TH man 8 "27 Dec 2020" "1.1" "Manjaro Sway Edition man page"
+
+.SH NAME
+Manjaro Sway Edition
+
+.SH SHORTCUTS
+
+.SS Action
+
+
+.B Kill focused window:
+.I Super + Shift + q
+
+.B Reload Sway Configuration:
+.I Super + Shift + c
+
+.B Increase volume of Master:
+.I Volume+
+
+.B Decrease volume of Master:
+.I Volume-
+
+.B Mute volume of Master:
+.I Mute
+
+.B Increase brightness:
+.I Brightness+
+
+.B Decrease brightness:
+.I Brightness-
+
+.B Move focussed window to workspace:
+.I Super + Shift + [number]
+
+.B Switch to window stacking:
+.I Super + s
+
+.B Switch to window tabbing:
+.I Super + w
+
+.B Toggle window splitting:
+.I Super + e
+
+.B Toggle fullscreen:
+.I Super + f
+
+.B Toggle floating:
+.I Super + Shift + space
+
+.B Move the currently focused window to the scratchpad:
+.I Super + Shift + minus
+
+.B Show the next scratchpad window or hide the focused scratchpad window.:
+.I Super + minus
+
+.SS Launch
+
+
+.B Terminal:
+.I Super + Return
+
+.B Launcher:
+.I Super + d
+
+.B Exit Menu:
+.I Super + Shift + e
+
+.B Help:
+.I Super + question
+
+.B Recording Mode:
+.I Super + Shift + r
+
+.B Resize Mode:
+.I Super + r
+
+.B Screenshot Mode:
+.I Super + Shift + s
+
+.SS Navigation
+
+
+.B Move focus:
+.I Super + ↑ ↓ ← →
+
+.B Move focussed window:
+.I Super + Shift + ↑ ↓ ← →
+
+.B Switch workspace:
+.I Super + [number]
+
+.B Swap focus between the tiling area and the floating area:
+.I Super + space
+
+.B Swap focus to the parent window:
+.I Super + a
+
+.SS Setting
+
+
+.B Split windows horizontally:
+.I Super + b
+
+.B Split windows vertically:
+.I Super + v
+
+.SH UTILS
+
+.B yay
+Package manager
+
+.B qutebrowser
+keyboard centric browser
+
+.B pulsemixer
+audio mixer
+
+.B nmtui
+network manager
+
+.B mpsyt
+youtube player
+
+.B ranger
+file manager
+
+.SH EXTEND
+
+Logic should be injected into ~/.config/sway/config.d/
+
+.SH AUTHOR
+Jonas Strassel (info@jonas-strassel.de)

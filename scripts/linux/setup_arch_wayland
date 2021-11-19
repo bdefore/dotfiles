@@ -1,0 +1,12 @@
+yay -S \
+  swayidle \
+  xorg_xlsclients \
+  sworkstyle \
+  fusuma \
+
+### notes on the above and why i want them:
+
+# swayidle: used in sway config to trigger swaylock
+# xorg-xlsclients: for diagnosing which apps are running x instead of wayland
+# sworkstyle: replace waybar workspace numbers with icons
+# fusuma: touchpad gestures

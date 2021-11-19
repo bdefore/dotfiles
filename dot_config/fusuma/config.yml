@@ -1,0 +1,26 @@
+# sendkey actions require https://github.com/iberianpig/fusuma-plugin-sendkey
+# workspace actions require https://github.com/iberianpig/fusuma-plugin-wmctrl
+
+swipe:
+  3:
+    left:
+      sendkey: 'rightalt+right'
+    right:
+      sendkey: 'rightalt+left'
+    up:
+      sendkey: 'capslock+tab'
+    down:
+      sendkey: 'capslock+leftshift+tab'
+
+threshold:
+  swipe: 0.5
+
+interval:
+  swipe: 0.5
+
+#pinch:
+#  2:
+#    in:
+#      command: "ydotool keydown ctrl click 4 keyup ctrl" # threshold: 0.5, interval: 0.5
+#    out:
+#      command: "ydotool keydown ctrl click 5 keyup ctrl" # threshold: 0.5, interval: 0.5

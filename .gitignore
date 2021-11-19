@@ -7,3 +7,9 @@ home/.atom/.apm
 home/.atom/packages
 home/.atom/blob-store
 nohup.out
+.cache
+.bash_history
+.zhistory
+.corporate_profiles
+*.log
+

@@ -11,8 +11,9 @@ yay -S \
   code \
   code-server \
   bat \
-  git-delta-bin \
+  git-delta \
   exa \
+  procs \
   tmux \
   vim \
   ngrok \
@@ -20,14 +21,23 @@ yay -S \
   ncdu \
   sc-controller \
   xorg-server-xvfb \
-  chromium
+  chromium \
+  ttf-iosevka \
+  alacritty \
+  powertop \
+  ncspot \
+  youtube-viewer \
+  mpv \
+  firefox-pwa \
+  viu
 
 ### notes on the above and why i want them:
 
 # code-server: remote vscode in the browser
 # dnsutils: unsure why this is here
-# git-delta-bin: a pleasing git diff parser
+# git-delta: a pleasing git diff parser
 # exa: an enhanced ls
+# procs: an enhanced ps
 # bat: an enhanced cat
 # xorg-server-xvfb: required by cypress, a functional testing library
 # ngrok: for simulating https in web development
@@ -38,6 +48,14 @@ yay -S \
 # xow: xbox one wireless adapter
 # ncdu: ncurses du. nice command-line tool for exploring disk usage. common offender: yay cache. use yay -Sc periodically to clear it
 # sc-controller: steam controller, allows use outside of steam games
+# alacritty: a modern terminal
+# ttf-iosevka: space conscious font
+# powertop: power usage diagnostics
+# ncspot: spotify from terminal
+# youtube-viewer: youtube from terminal
+# mpv: minimal video player
+# firefox-pwa: PWAs from firefox
+# viu: terminal image rendering
 
 ### no longer used:
 
