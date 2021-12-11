@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=X-GNOME-Metatheme
+Name=oomox-Material-Black-Mango-Suru-GTK3-dark-compactMaterial-Black-Mango-4.0
+Encoding=UTF-8
+
+[X-GNOME-Metatheme]
+GtkTheme=Material-Black-Mango-4.0
+MetacityTheme=Material-Black-Mango-4.0
+IconTheme=Material-Black-Mango
+CursorTheme=Adwaita
+CursorSize=24
