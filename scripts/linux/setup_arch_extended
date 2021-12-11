@@ -22,14 +22,17 @@ yay -S \
   sc-controller \
   xorg-server-xvfb \
   chromium \
-  ttf-iosevka \
+  ttf-iosevka-bin \
   alacritty \
   powertop \
-  ncspot \
+  spotifyd \
+  spotify-tui \
   youtube-viewer \
   mpv \
   firefox-pwa \
-  viu
+  viu \
+  iftop \
+  gtk-engine-murrine
 
 ### notes on the above and why i want them:
 
@@ -49,13 +52,16 @@ yay -S \
 # ncdu: ncurses du. nice command-line tool for exploring disk usage. common offender: yay cache. use yay -Sc periodically to clear it
 # sc-controller: steam controller, allows use outside of steam games
 # alacritty: a modern terminal
-# ttf-iosevka: space conscious font
+# ttf-iosevka-bin: space conscious font
 # powertop: power usage diagnostics
-# ncspot: spotify from terminal
+# spotifyd: headless spotify client
+# spotify-tui: cli spotify browser, needs client like spotifyd
 # youtube-viewer: youtube from terminal
 # mpv: minimal video player
 # firefox-pwa: PWAs from firefox
 # viu: terminal image rendering
+# iftop: top for network activity
+# gtk-engine-murrine: needed by some gtk themes
 
 ### no longer used:
 
