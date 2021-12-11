@@ -33,7 +33,7 @@ alias prof="code ~/.bash_profile"
 alias bitch=sudo
 alias weather="curl wttr.in"
 alias towin='sudo grub-reboot 2 && reboot'
-alias yr='yarn run'
+alias yt='youtube-viewer'
 
 # remote ide helpers
 function servecode {
