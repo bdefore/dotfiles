@@ -8,8 +8,16 @@
 #
 # All imports must either be absolute paths starting with `/`, or paths relative
 # to the user's home directory starting with `~/`.
-#import:
-#  - /path/to/alacritty.yml
+import:
+#  - ~/.config/alacritty/alacritty-theme/themes/tender.yaml
+#  - ~/.config/alacritty/alacritty-theme/themes/dracula.yaml
+#  - ~/.config/alacritty/alacritty-theme/themes/challenger_deep.yaml
+#  - ~/.config/alacritty/alacritty-theme/themes/nord.yaml
+  - ~/.config/alacritty/alacritty-theme/themes/seashells.yaml
+#  - ~/.config/alacritty/alacritty-theme/themes/tokyo-night.yaml
+#  - ~/.config/alacritty/alacritty-theme/themes/tokyo-night-storm.yaml
+#   - ~/.config/alacritty/alacritty-theme/themes/remedy_dark.yaml
+#   - ~/.config/alacritty/alacritty-theme/themes/gruvbox_material.yml
 
 # Any items in the `env` entry below will be added as
 # environment variables. Some entries may override variables
@@ -46,8 +54,8 @@ window:
   # Blank space added around the window in pixels. This padding is scaled
   # by DPI and the specified value is always added at both opposing sides.
   padding:
-    x: 8
-    y: 8
+    x: 12
+    y: 12
 
   # Spread additional padding evenly around the terminal content.
   #dynamic_padding: false
@@ -185,8 +193,8 @@ window:
 #colors:
   # Default colors
   #primary:
-  #  background: '#1d1f21'
-  #  foreground: '#c5c8c6'
+    #background: '#1d1f21'
+    #foreground: '#c5c8c6'
 
     # Bright and dim foreground colors
     #
