@@ -1,6 +1,9 @@
 // disable slow gui tab switcher
 user_pref("browser.ctrlTab.sortByRecentlyUsed", false);
 
+// disable separate window with mic/cam indicator, particularly silly on tiled window managers
+user_pref("privacy.webrtc.legacyGlobalIndicator", false);
+
 // add-on for creating pwas, hide top chroming unnecessary for sway
 user_pref("firefoxpwa.enableHidingIconBar", true);
 
