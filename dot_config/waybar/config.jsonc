@@ -197,20 +197,22 @@
         "signal": 7
     },
 
-    "custom/sunset": {
-        "interval": "once",
-        "tooltip": false,
-        "return-type": "json",
-        "format": "{icon}",
-        "format-icons": {
-            "on": "",
-            "off": ""
-        },
-        "exec": "/usr/share/sway/scripts/sunset.sh",
-        "on-click": "/usr/share/sway/scripts/sunset.sh toggle; pkill -RTMIN+6 waybar",
-        "exec-if": "/usr/share/sway/scripts/sunset.sh check",
-        "signal": 6
-    },
+// wlsunset removed from system, causes graphical issues upon waking from sleep
+//
+//    "custom/sunset": {
+//        "interval": "once",
+//        "tooltip": false,
+//        "return-type": "json",
+//        "format": "{icon}",
+//        "format-icons": {
+//            "on": "",
+//            "off": ""
+//        },
+//        "exec": "/usr/share/sway/scripts/sunset.sh",
+//        "on-click": "/usr/share/sway/scripts/sunset.sh toggle; pkill -RTMIN+6 waybar",
+//        "exec-if": "/usr/share/sway/scripts/sunset.sh check",
+//        "signal": 6
+//    },
 
     "custom/wf-recorder": {
         "interval": "once",

@@ -10,3 +10,7 @@ yay -S \
 # xorg-xlsclients: for diagnosing which apps are running x instead of wayland
 # sworkstyle: replace waybar workspace numbers with icons
 # fusuma: touchpad gestures
+
+# wlsunset causes graphical issues on framework laptop when awakening from sleep
+# https://github.com/Manjaro-Sway/manjaro-sway/blob/main/SUPPORT.md#how-can-i-disable-the-night-light-feature
+pacman -R wlsunset
