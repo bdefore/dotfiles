@@ -26,7 +26,8 @@ export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
 # Default editor for those that check this property i.e. git for commit messages
 # export EDITOR='subl'
-export EDITOR='code -w'
+# export EDITOR='code -w'
+export EDITOR='nano'
 
 # if in tmux, load pre config with customizations to theme, see .tmux.conf for more info
 [[ -v TMUX ]] && echo Loading tmux configurations... && tmux source "$HOME/.tmux-pre.conf" && tmux source "$HOME/.tmux.conf" && echo tmux configuration complete, remember to prefix-I if first run to install plugins
