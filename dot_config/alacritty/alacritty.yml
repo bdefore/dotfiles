@@ -19,6 +19,13 @@ import:
 #   - ~/.config/alacritty/alacritty-theme/themes/remedy_dark.yaml
 #   - ~/.config/alacritty/alacritty-theme/themes/gruvbox_material.yml
 
+# override need for shift when paging to scroll up
+key_bindings:
+  - { key: PageUp, action: ScrollPageUp,  }
+  - { key: PageDown, action: ScrollPageDown }
+
+# === DEFAULTS BEGIN ===
+
 # Any items in the `env` entry below will be added as
 # environment variables. Some entries may override variables
 # set by alacritty itself.
