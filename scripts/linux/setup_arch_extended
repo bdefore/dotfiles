@@ -32,7 +32,8 @@ yay -S \
   firefox-pwa \
   viu \
   iftop \
-  gtk-engine-murrine
+  gtk-engine-murrine \
+  lfs
 
 ### notes on the above and why i want them:
 
@@ -62,6 +63,7 @@ yay -S \
 # viu: terminal image rendering
 # iftop: top for network activity
 # gtk-engine-murrine: needed by some gtk themes
+# lfs: df replacement
 
 ### no longer used:
 
