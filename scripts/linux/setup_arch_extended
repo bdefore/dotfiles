@@ -33,7 +33,8 @@ yay -S \
   viu \
   iftop \
   gtk-engine-murrine \
-  lfs
+  lfs \
+  tig
 
 ### notes on the above and why i want them:
 
@@ -64,6 +65,7 @@ yay -S \
 # iftop: top for network activity
 # gtk-engine-murrine: needed by some gtk themes
 # lfs: df replacement
+# tig: text-mode interface for git
 
 ### no longer used:
 
