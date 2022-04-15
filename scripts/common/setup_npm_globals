@@ -6,4 +6,5 @@ npm install -g \
   leasot \
   npm-check-updates \
   trash-cli \
-  yarn
+  yarn \
+  narn
