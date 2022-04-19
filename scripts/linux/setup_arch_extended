@@ -34,7 +34,8 @@ yay -S \
   iftop \
   gtk-engine-murrine \
   lfs \
-  tig
+  tig \
+  zathura
 
 ### notes on the above and why i want them:
 
@@ -66,6 +67,7 @@ yay -S \
 # gtk-engine-murrine: needed by some gtk themes
 # lfs: df replacement
 # tig: text-mode interface for git
+# zathura: pdf reader with support for dark mode
 
 ### no longer used:
 

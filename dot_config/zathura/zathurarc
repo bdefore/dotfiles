@@ -1,0 +1,6 @@
+set selection-clipboard clipboard
+set recolor true
+set recolor-darkcolor "#dcdccc"
+set recolor-lightcolor "#1f1f1f"
+#set recolor-reverse-video true
+set recolor-keephue true
