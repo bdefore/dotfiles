@@ -14,5 +14,17 @@
     },
     "window.menuBarVisibility": "toggle",
     "workbench.colorTheme": "Solarized Dark",
-    "security.workspace.trust.untrustedFiles": "open"
+    "search.exclude": {
+        "**/build": true,
+        "**/dist": true,
+        "**/tmp": true,
+        "**/*.js.map": true,
+        "**/node_modules": true,
+        "**/.netlify": true,
+        "**/pnpm-lock.yaml": true,
+        "**/yarn.lock": true,
+        "**/package-lock.json": true
+    },
+    "security.workspace.trust.untrustedFiles": "open",
+    "editor.wordWrap": "on"
 }
