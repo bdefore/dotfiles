@@ -167,13 +167,10 @@
     },
 
     "bluetooth": {
-        "format": "{icon}",
-        "interval": 30,
-        "format-icons": {
-            "enabled": "",
-            "disabled": ""
-        },
+        "format": "",
+        "format-disabled": "",
         "on-click": "blueberry",
+        "on-click-right": "rfkill toggle bluetooth",
         "tooltip-format": "{}"
     },
 
@@ -225,16 +222,17 @@
         "signal": 8
     },
 
-    "custom/github": {
-        "interval": 300,
-        "tooltip": false,
-        "return-type": "json",
-        "format": " {}",
-        "exec": "gh api '/notifications' -q '{ text: length }' | cat -",
-        "exec-if": "[ -x \"$(command -v gh)\" ] && gh auth status 2>&1 | grep -q -m 1 'Logged in' && gh api '/notifications' -q 'length' | grep -q -m 1 '0' ; test $? -eq 1",
-        "on-click": "xdg-open https://github.com/notifications && sleep 30 && pkill -RTMIN+4 waybar",
-        "signal": 4
-    },
+// 'gh' command not available
+//    "custom/github": {
+//        "interval": 300,
+//        "tooltip": false,
+//        "return-type": "json",
+//        "format": " {}",
+//        "exec": "gh api '/notifications' -q '{ text: length }' | cat -",
+//        "exec-if": "[ -x \"$(command -v gh)\" ] && gh auth status 2>&1 | grep -q -m 1 'Logged in' && gh api '/notifications' -q 'length' | grep -q -m 1 '0' ; test $? -eq 1",
+//        "on-click": "xdg-open https://github.com/notifications && sleep 30 && pkill -RTMIN+4 waybar",
+//        "signal": 4
+//    },
 
     "custom/playerctl": {
         "interval": "once",
