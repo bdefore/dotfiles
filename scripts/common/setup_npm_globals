@@ -7,4 +7,5 @@ npm install -g \
   npm-check-updates \
   trash-cli \
   yarn \
-  narn
+  narn \
+  pnpm
