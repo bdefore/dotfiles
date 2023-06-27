@@ -4,6 +4,9 @@
 #
 # Read `man 5 sway` for a complete reference.
 
+# global variables
+include /etc/sway/definitions
+
 # styles - set the folder for your theme defination file
 set $theme ~/.config/sway/themes/matcha-green-modified
 include $theme/definitions
@@ -24,9 +27,6 @@ exec_always {
   gsettings set $gnome-schema cursor-theme $cursor-theme
   gsettings set $gnome-schema font-name $gui-font
 }
-
-# global variables
-include /etc/sway/definitions
 
 # user variables
 include $HOME/.config/sway/definitions.d/*.conf

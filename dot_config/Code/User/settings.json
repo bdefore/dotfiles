@@ -13,7 +13,7 @@
         "*.css-module": "css"
     },
     "window.menuBarVisibility": "toggle",
-    "workbench.colorTheme": "Solarized Dark",
+    "workbench.colorTheme": "Mayukai Sunset",
     "search.exclude": {
         "**/build": true,
         "**/dist": true,
@@ -26,5 +26,7 @@
         "**/package-lock.json": true
     },
     "security.workspace.trust.untrustedFiles": "open",
-    "editor.wordWrap": "on"
+    "editor.wordWrap": "on",
+    "typescript.updateImportsOnFileMove.enabled": "never",
+    "redhat.telemetry.enabled": false
 }

@@ -39,7 +39,7 @@
 	smudge = git-lfs smudge %f
 	required = true
 [pager]
-	diff = delta --dark --theme="zenburn"
+#	diff = delta --dark -- --theme="zenburn"
 [rebase]
 	autostash = true
 [credential]
@@ -47,6 +47,8 @@
 [push]
 	default = current
 [interactive]
-	diffFilter = delta --color-only
+#	diffFilter = delta --color-only
 [pull]
 	rebase = false
+[pack]
+	window = 1

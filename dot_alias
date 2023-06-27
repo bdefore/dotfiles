@@ -34,6 +34,7 @@ alias bitch=sudo
 alias weather="curl wttr.in"
 alias towin='sudo grub-reboot 2 && reboot'
 alias yt='youtube-viewer'
+alias yarn='narn'
 
 # remote ide helpers
 function servecode {
