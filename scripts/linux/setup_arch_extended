@@ -21,7 +21,7 @@ yay -S \
   ttf-iosevka-bin \
   alacritty \
   powertop \
-  firefox-pwa \
+  firefox-pwa-bin \
   viu \
   iftop \
   gtk-engine-murrine \
