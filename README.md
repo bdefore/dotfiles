@@ -23,6 +23,11 @@ NOTE: This has most recently been used, and is configured to be used, on Manjaro
 (cd ./scripts/linux && ./setup_arch_extended)
 
 yay
+
+# further steps on manjaro:
+- Make UI dark: Open Apperance, change to Matcha-dark-sea
+- Firefox: Turn on dark theme, add basic add-ons: uBlock Origin, Dark Reader, Bitwarden
+- TODO: harden browser
 ```
 
 #### Chrome OS
