@@ -1,13 +1,10 @@
 yay -S \
   dnsutils \
   net-tools \
-  vlc \
   simplescreenrecorder \
   ripgrep \
   gnome-disk-utility \
   x11vnc \
-  steam \
-  transmission-cli \
   code \
   code-server \
   bat \
@@ -24,10 +21,6 @@ yay -S \
   ttf-iosevka-bin \
   alacritty \
   powertop \
-  spotifyd \
-  spotify-tui \
-  youtube-viewer \
-  mpv \
   firefox-pwa \
   viu \
   iftop \
