@@ -1,7 +1,7 @@
 yay -S \
   bitwig-studio \
-  yabridge \
   wine-staging \
+  yabridge \
   vcvrack-bin \
   obs-studio-git
 
