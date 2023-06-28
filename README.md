@@ -1,3 +1,8 @@
+## Before
+
+- [Install chezmoi](https://github.com/twpayne/chezmoi/blob/master/docs/INSTALL.md)
+- Run `chezmoi init --apply bdefore`
+
 ## Setup
 
 #### MacOS
@@ -10,8 +15,13 @@
 NOTE: This has most recently been used, and is configured to be used, on Manjaro/Arch. If using Debian, edit `setup` first and change first line to `setup_debian` from `setup_arch`
 
 ```
-./scripts/linux/setup
-./scripts/linux/setup_development_tools # optional, only do this if you intend to work directly on this machine
+(cd ./scripts/linux && ./setup)
+(cd ./scripts/common && ./setup_node)
+(cd ./scripts/common && ./setup_npm_globals)
+
+## optional: if you intend to develop directly on this machine
+(cd ./scripts/linux && ./setup_arch_extended)
+
 ```
 
 #### Chrome OS
@@ -50,11 +60,6 @@ NOTE: This has most recently been used, and is configured to be used, on Manjaro
     - Go through Chrome extensions, Hide from Chrome Menu (wish these would save preference)
     - Install Moonlight for streaming games
         - Requires manual exension install and NaCL flag (https://github.com/moonlight-stream/moonlight-chrome/releases/tag/v0.9.0)
-
-## Activate
-
-- [Install chezmoi](https://github.com/twpayne/chezmoi/blob/master/docs/INSTALL.md)
-- Run `chezmoi init --apply bdefore`
 
 ## Post-Installation
 
