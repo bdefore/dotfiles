@@ -20,8 +20,14 @@ chezmoi cd
 (cd ./scripts/common && ./setup_node)
 (cd ./scripts/common && ./setup_npm_globals)
 
-## optional: if you intend to develop directly on this machine
+# optional: if you intend to develop directly on this machine
 (cd ./scripts/linux && ./setup_arch_extended)
+
+# optional: if you intent to work with audio/visual
+(cd ./scripts/linux && ./setup_multimedia)
+
+# optional: if you intend to consume
+(cd ./scripts/linux && ./setup_entertainment)
 
 yay
 
