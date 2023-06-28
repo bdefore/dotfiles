@@ -19,7 +19,6 @@ yay -S \
   ngrok \
   xow \
   ncdu \
-  sc-controller \
   xorg-server-xvfb \
   chromium \
   ttf-iosevka-bin \
@@ -36,6 +35,9 @@ yay -S \
   lfs \
   tig \
   zathura
+
+# disabled for further research on failure:
+#  sc-controller \
 
 ### notes on the above and why i want them:
 
