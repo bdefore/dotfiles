@@ -2,8 +2,7 @@ yay -S \
   bitwig-studio \
   wine-staging \
   yabridge \
-  vcvrack-bin \
-  obs-studio-git
+  vcvrack-bin
 
 # manjaro: switch from pulseaudio to pipewire, agree to removing all conflicting
 yay -S \
