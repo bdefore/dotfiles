@@ -4,4 +4,11 @@ yay -S \
   vcvrack-bin \
   obs-studio-git
 
+# manjaro: switch from pulseaudio to pipewire, agree to removing all conflicting
+yay -S \
+  manjaro-pipewire \
+  pipewire-pulse
+
+systemctl start --user pipewire-pulse
+
 source ~/.bash_profile
