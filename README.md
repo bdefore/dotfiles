@@ -22,6 +22,7 @@ NOTE: This has most recently been used, and is configured to be used, on Manjaro
 ## optional: if you intend to develop directly on this machine
 (cd ./scripts/linux && ./setup_arch_extended)
 
+yay
 ```
 
 #### Chrome OS
