@@ -18,7 +18,7 @@ yay -S \
   ncdu \
   xorg-server-xvfb \
   chromium \
-  ttf-iosevka-bin \
+  ttc-iosevka \
   alacritty \
   powertop \
   firefox-pwa-bin \
@@ -50,7 +50,7 @@ yay -S \
 # ncdu: ncurses du. nice command-line tool for exploring disk usage. common offender: yay cache. use yay -Sc periodically to clear it
 # sc-controller: steam controller, allows use outside of steam games
 # alacritty: a modern terminal
-# ttf-iosevka-bin: space conscious font
+# ttc-iosevka: space conscious font
 # powertop: power usage diagnostics
 # spotifyd: headless spotify client
 # spotify-tui: cli spotify browser, needs client like spotifyd
