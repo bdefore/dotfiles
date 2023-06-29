@@ -17,6 +17,7 @@ NOTE: This has most recently been used, and is configured to be used, on Manjaro
 ```
 chezmoi cd
 (cd ./scripts/linux && ./setup)
+(cd ./scripts/common && ./setup_ruby)
 (cd ./scripts/common && ./setup_node)
 (cd ./scripts/common && ./setup_npm_globals)
 
