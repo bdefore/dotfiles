@@ -1,0 +1,11 @@
+yay -S \
+  vlc \
+  steam \
+  transmission-cli \
+  spotifyd \
+  spotify-tui \
+  youtube-viewer \
+  mpv
+
+source ~/.bash_profile
+

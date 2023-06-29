@@ -1,11 +1,7 @@
-# before
+chsh -s /bin/bash
+exec bash
+
 ./setup_arch
 #./setup_debian
-
-# setup ssh
-#../common/setup_ssh_key
-
-#../common/setup_ruby
-../common/setup_node
 
 source ~/.bash_profile

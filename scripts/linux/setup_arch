@@ -1,6 +1,9 @@
+# test fastest mirros and set them
+sudo pacman-mirrors --fasttrack 10 && sudo pacman -Syyu
+
 # what follows is what to do before other setup tasks
 sudo pacman -S base-devel yay
-yay -S openssh
+yay -S openssh eva bat
 
 # auth issues can occur if NTP is not enabled. have experienced with google and steam
 # https://github.com/liamcurry/passport-steam/issues/68#issuecomment-658367752
