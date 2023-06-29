@@ -4,29 +4,14 @@
 #
 # Read `man 5 sway` for a complete reference.
 
-# global variables
-include /etc/sway/definitions
+# styles - set the folder for your theme definition file
+set $theme /usr/share/sway/themes/matcha-green
 
-# styles - set the folder for your theme defination file
-set $theme ~/.config/sway/themes/matcha-green-modified
+# theme variables
 include $theme/definitions
 
-# loading from theme file above does not appear to work, do it here instead
-#set $gtk-theme Matcha-dark-sea
-set $gtk-theme Material-Black-Mango-4.0
-set $icon-theme Papirus-Dark-Maia
-set $cursor-theme xcursor-breeze
-set $gui-font Iosevka 11
-set $term-font Monospace 14
-set $kvantum-theme Matcha-light-azul
-
-set $gnome-schema org.gnome.desktop.interface
-exec_always {
-  gsettings set $gnome-schema gtk-theme $gtk-theme
-  gsettings set $gnome-schema icon-theme $icon-theme
-  gsettings set $gnome-schema cursor-theme $cursor-theme
-  gsettings set $gnome-schema font-name $gui-font
-}
+# global variables
+include /etc/sway/definitions
 
 # user variables
 include $HOME/.config/sway/definitions.d/*.conf
