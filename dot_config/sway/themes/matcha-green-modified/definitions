@@ -12,7 +12,7 @@ set $cursor-theme xcursor-breeze
 set $gui-font Iosevka 11
 #set $term-font RobotoMono Nerd Font 14
 set $term-font Iosevka 14
-set $kvantum-theme Matchama-Dark
+set $kvantum-theme Matcha-Dark-Aliz
 
 set $color0  #141a1b
 set $color1  #282a2b
