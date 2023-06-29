@@ -5,7 +5,7 @@
 # some global theme specific variables
 #set $gtk-theme Matcha-dark-sea
 #set $gtk-theme Matcha-dark-peuril
-set $gtk-them Material-Black-Mango-4.0
+set $gtk-theme Material-Black-Mango-4.0
 set $icon-theme Papirus-Dark-Maia
 set $cursor-theme xcursor-breeze
 #set $gui-font Roboto 11
