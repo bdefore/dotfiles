@@ -1,0 +1,11 @@
+#!/bin/sh
+
+#[[ -r ~/.wayland ]] && source ~/.wayland
+
+# set default shell and terminal
+export SHELL=/bin/bash
+export TERMINAL_COMMAND='/usr/bin/alacritty'
+
+# sway-launcher-desktop with material icons
+export GLYPH_DESKTOP="󰄶 "
+export GLYPH_COMMAND="󰆍 "

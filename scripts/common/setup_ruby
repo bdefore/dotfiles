@@ -3,8 +3,8 @@
 
 # source the rvm
 source ~/.rvm/scripts/rvm
-source /etc/profile.d/rvm.sh
-rvm install ruby --latest
+cat ~/.ruby-version | rvm install
+cat ~/.ruby-version | rvm --default use
 
 # BEGIN OLD DOTFILE MANAGER
 # install homesick and get your dotfiles:
