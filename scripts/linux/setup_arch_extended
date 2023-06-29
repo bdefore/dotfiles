@@ -7,9 +7,7 @@ yay -S \
   x11vnc \
   code \
   code-server \
-  bat \
   git-delta \
-  exa \
   procs \
   tmux \
   vim \
