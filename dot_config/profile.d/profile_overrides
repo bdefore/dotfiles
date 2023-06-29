@@ -4,7 +4,6 @@
 
 # set default shell and terminal
 export SHELL=/bin/bash
-export TERM=alacritty
 export TERMINAL_COMMAND='/usr/bin/alacritty'
 
 # sway-launcher-desktop with material icons
