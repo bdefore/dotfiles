@@ -32,6 +32,9 @@ chezmoi cd
 
 yay
 
+# optional: retrieve disk space from all the installs, currently 1.4GB
+rm -rf .cache/
+
 # if you are on manjaro sway, to immediately load my configuration of it:
 Super + shift + c
 
