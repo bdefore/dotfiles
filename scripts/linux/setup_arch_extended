@@ -51,7 +51,6 @@ yay -S \
 # ttc-iosevka: space conscious font
 # powertop: power usage diagnostics
 # spotifyd: headless spotify client
-# spotify-tui: cli spotify browser, needs client like spotifyd
 # youtube-viewer: youtube from terminal
 # mpv: minimal video player
 # firefox-pwa: PWAs from firefox

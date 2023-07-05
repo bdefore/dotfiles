@@ -3,7 +3,7 @@ yay -S \
   steam \
   transmission-cli \
   spotifyd \
-  spotify-tui \
+  ncspot \
   youtube-viewer \
   mpv
 
