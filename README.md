@@ -17,8 +17,9 @@ NOTE: This has most recently been used, and is configured to be used, on Manjaro
 ```
 chezmoi cd
 (cd ./scripts/linux && ./setup)
-(cd ./scripts/common && ./setup_ruby)
 (cd ./scripts/common && ./setup_node)
+source ~/.bash_profile
+source ~/.bashrc
 (cd ./scripts/common && ./setup_npm_globals)
 
 # optional: if you intend to develop directly on this machine
@@ -38,8 +39,10 @@ rm -rf .cache/
 # if you are on manjaro sway, to immediately load my configuration of it:
 Super + shift + c
 
+# if you do NOT want alt/ctrl swapped (or if your keyboard is hard-mapped), comment out the `input "type:keyboard"` block in ~/.config/sway/config.d/00-user.conf
+
 # further steps on manjaro:
-- Make UI dark: Open Apperance, change to Matcha-dark-sea
+- (non-sway) Make UI dark: Open Apperance, change to Matcha-dark-sea
 - Firefox: Turn on dark theme, add basic add-ons: uBlock Origin, Dark Reader, Bitwarden
 - TODO: harden browser
 ```
