@@ -41,6 +41,8 @@ Super + shift + c
 
 # if you do NOT want alt/ctrl swapped (or if your keyboard is hard-mapped), comment out the `input "type:keyboard"` block in ~/.config/sway/config.d/00-user.conf
 
+# note: you will need to reboot or log in again for the shell to revert from manjaro sway's shell default of zsh to bash.
+
 # further steps on manjaro:
 - (non-sway) Make UI dark: Open Apperance, change to Matcha-dark-sea
 - Firefox: Turn on dark theme, add basic add-ons: uBlock Origin, Dark Reader, Bitwarden
