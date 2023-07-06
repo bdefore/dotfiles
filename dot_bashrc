@@ -31,3 +31,5 @@ export EDITOR='nano'
 
 # if in tmux, load pre config with customizations to theme, see .tmux.conf for more info
 [[ -v TMUX ]] && echo Loading tmux configurations... && tmux source "$HOME/.tmux-pre.conf" && tmux source "$HOME/.tmux.conf" && echo tmux configuration complete, remember to prefix-I if first run to install plugins
+
+. "$HOME/.cargo/env"
