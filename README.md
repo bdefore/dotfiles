@@ -48,6 +48,8 @@ Super + shift + c
 - Firefox: Turn on dark theme, add basic add-ons: uBlock Origin, Dark Reader, Bitwarden
 - TODO: harden browser
 - TODO: obs and droidcam plugin. for now manually enabling flatpak to install obs and using download from droidcam, aur versions not working
+- TODO: configure bitwig to use pulse audio, not pipewire, for its audio engine, or else crashes may occur with obs
+- TODO: configure bitwig to use explicit sample rate, automatic creates artifacts with audio passed back from vcv
 ```
 
 #### Chrome OS
