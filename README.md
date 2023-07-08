@@ -47,6 +47,7 @@ Super + shift + c
 - (non-sway) Make UI dark: Open Apperance, change to Matcha-dark-sea
 - Firefox: Turn on dark theme, add basic add-ons: uBlock Origin, Dark Reader, Bitwarden
 - TODO: harden browser
+- TODO: obs and droidcam plugin. for now manually enabling flatpak to install obs and using download from droidcam, aur versions not working
 ```
 
 #### Chrome OS
