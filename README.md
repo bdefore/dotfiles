@@ -45,6 +45,7 @@ Super + shift + c
 
 # further steps on manjaro:
 - (non-sway) Make UI dark: Open Apperance, change to Matcha-dark-sea
+- if lock/sleep is not desired (say on a home desktop), follow these instructions: https://github.com/manjaro-sway/manjaro-sway/issues/547#issuecomment-1613530167
 - Firefox: Turn on dark theme, add basic add-ons: uBlock Origin, Dark Reader, Bitwarden
 - TODO: harden browser
 - TODO: obs and droidcam plugin. install obs with yay and use download from droidcam and run install script, aur versions not working
