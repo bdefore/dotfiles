@@ -47,10 +47,10 @@ Super + shift + c
 - (non-sway) Make UI dark: Open Apperance, change to Matcha-dark-sea
 - Firefox: Turn on dark theme, add basic add-ons: uBlock Origin, Dark Reader, Bitwarden
 - TODO: harden browser
-- TODO: obs and droidcam plugin. for now manually enabling flatpak to install obs and using download from droidcam, aur versions not working
+- TODO: obs and droidcam plugin. install obs with yay and use download from droidcam and run install script, aur versions not working
 - TODO: configure bitwig to use pulse audio, not pipewire, for its audio engine, or else crashes may occur with obs
 - TODO: configure bitwig to use explicit sample rate, automatic creates artifacts with audio passed back from vcv
-- TODO: note that vcvrack plugin may become frozen and stay that way when saved. only way to recover i can find is to replace the vcvrack instrument in bitwig
+- TODO: note that vcvrack plugin may become frozen and stay that way when saved (with pipewire?). only way to recover i can find is to replace the vcvrack instrument in bitwig
 ```
 
 #### Chrome OS
