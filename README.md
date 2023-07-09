@@ -50,6 +50,7 @@ Super + shift + c
 - TODO: obs and droidcam plugin. for now manually enabling flatpak to install obs and using download from droidcam, aur versions not working
 - TODO: configure bitwig to use pulse audio, not pipewire, for its audio engine, or else crashes may occur with obs
 - TODO: configure bitwig to use explicit sample rate, automatic creates artifacts with audio passed back from vcv
+- TODO: note that vcvrack plugin may become frozen and stay that way when saved. only way to recover i can find is to replace the vcvrack instrument in bitwig
 ```
 
 #### Chrome OS
