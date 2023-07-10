@@ -44,6 +44,7 @@ Super + shift + c
 # note: you will need to reboot or log in again for the shell to revert from manjaro sway's shell default of zsh to bash.
 
 # further steps on manjaro:
+- if you are me, you will probably also want to continue steps located in another private repo
 - (non-sway) Make UI dark: Open Apperance, change to Matcha-dark-sea
 - if lock/sleep is not desired (say on a home desktop), follow these instructions: https://github.com/manjaro-sway/manjaro-sway/issues/547#issuecomment-1613530167
 - Firefox: Turn on dark theme, add basic add-ons: uBlock Origin, Dark Reader, Bitwarden
