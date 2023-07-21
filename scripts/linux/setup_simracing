@@ -1,0 +1,21 @@
+yay -S \
+  linux-headers \
+  hid-fanatecff-dkms \
+  oversteer
+
+# Dependency notes:
+# linux-headers: needed for hid-fanatec-dkms, will prompt for kernel specific version
+# hid-fanatec-dkms: verified to enable support for Fanatec Podium DD1 on ACC
+# oversteer: gui for force feedback settings
+
+# Not yet in AUR:
+# protopedal: used to enable pedal support, verified with Simtrecs ProPedals
+# https://gitlab.com/openirseny/protopedal
+
+# protopedal usage:
+# - lsusb # run when pedals are connected and verify are listed here
+# - ls /dev/input/by-id # and note the event reference id of pedals
+# download and build protopedal from source
+# - ./protopedal --verbose --name Whatevs --product 0001 --buttons 1 /dev/input/by-id/YOUR_PEDAL_EVENT_ID
+# at this opint you should see 'Mapping axis' on a few lines. if not, add --axis 4 (or some other integer)
+# note that the --button 1 flag is a workaround in issue in proton?
