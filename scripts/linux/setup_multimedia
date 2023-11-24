@@ -2,6 +2,7 @@ yay -S \
   bitwig-studio \
   wine-staging \
   yabridge \
+  yabridgectl \
   vcvrack-bin \
   obs-studio
 
@@ -13,3 +14,13 @@ yay -S \
 systemctl start --user pipewire-pulse
 
 source ~/.bash_profile
+
+## Some further audio plugin setup:
+
+# - `yabridgectl add "~/.wine/drive_c/Program Files/Common Files/VST3"`
+# - `yabridgectl add "~/.wine/drive_c/Program Files/VstPlugins"`
+# - `yabridgectl add "~/.wine/drive_c/Program Files/Steinberg/VstPlugins"`
+# - Use rclone copy to get your cloud storage of plugins to the corresponding directory of local wine
+# - `yabridgectl status` and confirm plugins are found, although not synced
+# - `yabridgectl sync`
+# - Test in your DAW
