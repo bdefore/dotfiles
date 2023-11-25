@@ -25,7 +25,8 @@ yay -S \
   gtk-engine-murrine \
   lfs \
   tig \
-  zathura
+  zathura \
+  rclone
 
 # disabled for further research on failure:
 #  sc-controller \
@@ -60,6 +61,7 @@ yay -S \
 # lfs: df replacement
 # tig: text-mode interface for git
 # zathura: pdf reader with support for dark mode
+# rclone: universal api for cloud storage
 
 ### no longer used:
 
