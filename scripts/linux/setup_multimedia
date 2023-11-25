@@ -1,16 +1,10 @@
 yay -S \
   bitwig-studio \
   wine-staging \
-  yabridge \
-  yabridgectl \
+  yabridge-bin \
   realtime-privileges \
   vcvrack-bin \
   obs-studio
-
-# yabridge needs adding to the realtime group to exceed memory locking limits
-# depends on realtime-priveleges package
-# https://github.com/robbert-vdh/yabridge#troubleshooting-common-issues
-sudo gpasswd -a "$USER" realtime
 
 # manjaro: switch from pulseaudio to pipewire, agree to removing all conflicting
 yay -S \
@@ -21,18 +15,40 @@ systemctl start --user pipewire-pulse
 
 source ~/.bash_profile
 
-yabridgectl add "~/.wine/drive_c/Program Files/Common Files/VST3"
-yabridgectl add "~/.wine/drive_c/Program Files/VstPlugins"
-yabridgectl add "~/.wine/drive_c/Program Files/Steinberg/VstPlugins"
+# yabridge needs adding to the realtime group to exceed memory locking limits
+# depends on realtime-priveleges package
+# may need a reboot afterward
+# https://github.com/robbert-vdh/yabridge#troubleshooting-common-issues
+sudo gpasswd -a "$USER" realtime
+
+WINE_PROGRAM_FILES="$HOME/.wine/drive_c/Program Files"
+VST_PATH="$WINE_PROGRAM_FILES/Steinberg/VstPlugins"
+VST_AUX_PATH="$WINE_PROGRAM_FILES/VstPlugins"
+VST3_PATH="$WINE_PROGRAM_FILES/Common Files/VST3"
+
+mkdir -p "$VST_PATH"
+mkdir -p "$VST_AUX_PATH"
+mkdir -p "$VST3_PATH"
+yabridgectl add "$VST_PATH"
+yabridgectl add "$VST_AUX_PATH"
+yabridgectl add "$VST3_PATH"
+
+CLOUD_SERVICE_ABBREV="b2"
+AUDIO_PLUGIN_CLOUD_ROOT="$CLOUD_SERVICE_ABBREV:AudioPlugins"
+AUDIO_PLUGIN_LOCAL_DEST="$HOME/cloud/$CLOUD_SERVICE_ABBREV/AudioPlugins"
+
+# setup native linux plugins
+rclone copy $AUDIO_PLUGIN_CLOUD_ROOT/linux $AUDIO_PLUGIN_LOCAL_DEST/linux
+ln -s $AUDIO_PLUGIN_LOCAL_DEST/linux/.vst $HOME/.vst
+ln -s $AUDIO_PLUGIN_LOCAL_DEST/linux/.vst3 $HOME/.vst3
+
+# setup windows native plugins to be run through yabridge
+rclone copy $AUDIO_PLUGIN_CLOUD_ROOT/win/vst "$VST_PATH"
+rclone copy $AUDIO_PLUGIN_CLOUD_ROOT/win/vst3 "$VST3_PATH"
+
+yabridgectl status
 yabridgectl sync
 
-## Some further audio plugin setup:
-
-# - Use rclone copy to get your cloud storage of plugins, say to ~/cloud/b2/AudioPlugins
-# - Create symlink for Linux native plugins:
-# - `ln -s ~/cloud/b2/AudioPlugins/linux/.vst ~/.vst``
-# - `ln -s ~/cloud/b2/AudioPlugins/linux/.vst3 ~/.vst3`
-# - Copy the Windows native plugins (in ~/cloud/b2/AudioPlugins/win) to the corresponding directory of local wine
-# - `yabridgectl status` and confirm plugins are found, although not yet synced
-# - `yabridgectl sync`
-# - Test in your DAW
+# after installing new plugins via wine:
+# - rclone copy "$VST_PATH" "$AUDIO_PLUGIN_CLOUD_ROOT/win/vst"
+# - rclone copy "$VST3_PATH" "$AUDIO_PLUGIN_CLOUD_ROOT/win/vst3"
