@@ -47,7 +47,7 @@ rclone copy $AUDIO_PLUGIN_CLOUD_ROOT/win/vst "$VST_PATH"
 rclone copy $AUDIO_PLUGIN_CLOUD_ROOT/win/vst3 "$VST3_PATH"
 
 yabridgectl status
-yabridgectl sync
+yabridgectl sync --prune
 
 # after installing new plugins via wine:
 # - rclone copy "$VST_PATH" "$AUDIO_PLUGIN_CLOUD_ROOT/win/vst"
