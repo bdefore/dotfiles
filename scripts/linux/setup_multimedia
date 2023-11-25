@@ -20,7 +20,11 @@ source ~/.bash_profile
 # - `yabridgectl add "~/.wine/drive_c/Program Files/Common Files/VST3"`
 # - `yabridgectl add "~/.wine/drive_c/Program Files/VstPlugins"`
 # - `yabridgectl add "~/.wine/drive_c/Program Files/Steinberg/VstPlugins"`
-# - Use rclone copy to get your cloud storage of plugins to the corresponding directory of local wine
-# - `yabridgectl status` and confirm plugins are found, although not synced
+# - Use rclone copy to get your cloud storage of plugins, say to ~/cloud/b2/AudioPlugins
+# - Create symlink for Linux native plugins:
+# - `ln -s ~/cloud/b2/AudioPlugins/linux/.vst ~/.vst``
+# - `ln -s ~/cloud/b2/AudioPlugins/linux/.vst3 ~/.vst3`
+# - Copy the Windows native plugins (in ~/cloud/b2/AudioPlugins/win) to the corresponding directory of local wine
+# - `yabridgectl status` and confirm plugins are found, although not yet synced
 # - `yabridgectl sync`
 # - Test in your DAW
