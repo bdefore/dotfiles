@@ -3,8 +3,14 @@ yay -S \
   wine-staging \
   yabridge \
   yabridgectl \
+  realtime-privileges \
   vcvrack-bin \
   obs-studio
+
+# yabridge needs adding to the realtime group to exceed memory locking limits
+# depends on realtime-priveleges package
+# https://github.com/robbert-vdh/yabridge#troubleshooting-common-issues
+sudo gpasswd -a "$USER" realtime
 
 # manjaro: switch from pulseaudio to pipewire, agree to removing all conflicting
 yay -S \
@@ -15,11 +21,13 @@ systemctl start --user pipewire-pulse
 
 source ~/.bash_profile
 
+yabridgectl add "~/.wine/drive_c/Program Files/Common Files/VST3"
+yabridgectl add "~/.wine/drive_c/Program Files/VstPlugins"
+yabridgectl add "~/.wine/drive_c/Program Files/Steinberg/VstPlugins"
+yabridgectl sync
+
 ## Some further audio plugin setup:
 
-# - `yabridgectl add "~/.wine/drive_c/Program Files/Common Files/VST3"`
-# - `yabridgectl add "~/.wine/drive_c/Program Files/VstPlugins"`
-# - `yabridgectl add "~/.wine/drive_c/Program Files/Steinberg/VstPlugins"`
 # - Use rclone copy to get your cloud storage of plugins, say to ~/cloud/b2/AudioPlugins
 # - Create symlink for Linux native plugins:
 # - `ln -s ~/cloud/b2/AudioPlugins/linux/.vst ~/.vst``
