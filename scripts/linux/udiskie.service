@@ -1,0 +1,8 @@
+[Unit]
+Description=Udiskie automount daemon
+
+[Install]
+WantedBy=default.target
+
+[Service]
+ExecStart=/usr/bin/udiskie

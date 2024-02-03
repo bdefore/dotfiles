@@ -26,7 +26,9 @@ yay -S \
   lfs \
   tig \
   zathura \
-  rclone
+  rclone \
+  udisks2 \
+  udiskie
 
 # disabled for further research on failure:
 #  sc-controller \
@@ -62,6 +64,12 @@ yay -S \
 # tig: text-mode interface for git
 # zathura: pdf reader with support for dark mode
 # rclone: universal api for cloud storage
+# udisks2: required for udiskie
+# udiskie: automount usb drives.
+
+# note: this comes with some risk to automount usb drives
+# based on instructions from: https://www.youtube.com/watch?v=eVZBvRkLqaE
+systemctl enable --now --user ./udiskie.service
 
 ### no longer used:
 
