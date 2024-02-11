@@ -53,7 +53,9 @@ alias stopdev='killall code-server'
 alias servedev="servecode $DEV_HOME"
 
 # useful for identifying integer for grub-reboot, sourced from https://askubuntu.com/a/1121712
-alias grub-ls="awk -F\' '$1=="menuentry " || $1=="submenu " {print i++ " : " $2}; /\smenuentry / {print "\t" i-1">"j++ " : " $2};' /boot/grub/grub.cfg"
+grub-ls() {
+  awk -F\' '$1=="menuentry " || $1=="submenu " {print i++ " : " $2}; /\smenuentry / {print "\t" i-1">"j++ " : " $2};' /boot/grub/grub.cfg
+}
 alias grub-list="grub-ls"
 
 # https://www.2daygeek.com/how-to-get-find-size-of-directory-folder-linux/
