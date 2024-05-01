@@ -49,11 +49,12 @@ rclone copy $AUDIO_PLUGIN_CLOUD_ROOT/win/vst3 "$VST3_PATH"
 yabridgectl status
 yabridgectl sync --prune
 
-# after installing new plugins via wine:
+# note: when installing new plugins via wine, sync them manually to cloud this way:
 # - rclone copy "$VST_PATH" "$AUDIO_PLUGIN_CLOUD_ROOT/win/vst"
 # - rclone copy "$VST3_PATH" "$AUDIO_PLUGIN_CLOUD_ROOT/win/vst3"
 
 BITWIG_LOCAL_STORE="$HOME/creations/Bitwig Studio"
+VCV_LOCAL_STORE="$HOME/creations/Rack2"
 
 # sync Bitwig creations (projects, extensions, controller scripts)
 rclone copy $CLOUD_SERVICE_ABBREV:creations/Bitwig\ Studio "$BITWIG_LOCAL_STORE"
@@ -63,3 +64,6 @@ rclone copy $CLOUD_SERVICE_ABBREV:creations/.BitwigStudio/prefs ~/.BitwigStudio/
 
 # do this before running Bitwig, otherwise a directory will have already been created before this symlink
 ln -s "$BITWIG_LOCAL_STORE" ~/Bitwig\ Studio
+
+# do this before running VCV Rack, as above
+ln -s "$VCV_LOCAL_STORE" ~/.local/share/Rack2
