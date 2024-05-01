@@ -1,0 +1,70 @@
+yay -S \
+  wine-staging \
+  yabridge-bin \
+  realtime-privileges
+
+######################
+## VSTs VIA YABRIDGE
+######################
+
+# yabridge needs adding to the realtime group to exceed memory locking limits
+# depends on realtime-priveleges package
+# may need a reboot afterward
+# https://github.com/robbert-vdh/yabridge#troubleshooting-common-issues
+sudo gpasswd -a "$USER" realtime
+
+WINE_PROGRAM_FILES="$HOME/.wine/drive_c/Program Files"
+VST_PATH="$WINE_PROGRAM_FILES/Steinberg/VstPlugins"
+VST_AUX_PATH="$WINE_PROGRAM_FILES/VstPlugins"
+VST3_PATH="$WINE_PROGRAM_FILES/Common Files/VST3"
+
+mkdir -p "$VST_PATH"
+mkdir -p "$VST_AUX_PATH"
+mkdir -p "$VST3_PATH"
+yabridgectl add "$VST_PATH"
+yabridgectl add "$VST_AUX_PATH"
+yabridgectl add "$VST3_PATH"
+
+CLOUD_SERVICE_ABBREV="b2"
+AUDIO_PLUGIN_CLOUD_ROOT="$CLOUD_SERVICE_ABBREV:AudioPlugins"
+AUDIO_PLUGIN_LOCAL_DEST="$HOME/cloud/$CLOUD_SERVICE_ABBREV/AudioPlugins"
+
+# setup native linux plugins
+rclone copy $AUDIO_PLUGIN_CLOUD_ROOT/linux $AUDIO_PLUGIN_LOCAL_DEST/linux
+ln -s $AUDIO_PLUGIN_LOCAL_DEST/linux/.vst $HOME/.vst
+ln -s $AUDIO_PLUGIN_LOCAL_DEST/linux/.vst3 $HOME/.vst3
+
+# setup windows native plugins to be run through yabridge
+rclone copy $AUDIO_PLUGIN_CLOUD_ROOT/win/vst "$VST_PATH"
+rclone copy $AUDIO_PLUGIN_CLOUD_ROOT/win/vst3 "$VST3_PATH"
+
+yabridgectl status
+yabridgectl sync --prune
+
+# note: when installing new plugins via wine, sync them manually to cloud this way:
+# - rclone copy "$VST_PATH" "$AUDIO_PLUGIN_CLOUD_ROOT/win/vst"
+# - rclone copy "$VST3_PATH" "$AUDIO_PLUGIN_CLOUD_ROOT/win/vst3"
+
+################
+## BITWIG & VCV
+################
+
+LOCAL_ROOT="$HOME/creations"
+
+rclone copy $CLOUD_SERVICE_ABBREV:creations/app-settings $LOCAL_ROOT/app-settings
+rclone copy $CLOUD_SERVICE_ABBREV:creations/apps $LOCAL_ROOT/apps
+
+BITWIG_LOCAL_STORE="$LOCAL_ROOT/app-settings/Bitwig Studio"
+VCV_LOCAL_STORE="$LOCAL_ROOT/app-settings/Rack2"
+VCV_LOCAL_APP="$LOCAL_ROOT/apps/Rack2Pro"
+
+# sync Bitwig preferences, useful for controller setups
+cp -r $LOCAL_ROOT/app-settings/.BitwigStudio/prefs ~/.BitwigStudio/prefs
+
+# sync Bitwig creations (projects, extensions, controller scripts)
+# do this before running Bitwig, otherwise a directory will have already been created before this symlink
+ln -s "$BITWIG_LOCAL_STORE" ~/Bitwig\ Studio
+
+# do this before running VCV Rack, as above
+ln -s "$VCV_LOCAL_STORE" ~/.local/share/Rack2
+ln -s "$VCV_LOCAL_APP" ~/.local/share/VCV/Rack2Pro
