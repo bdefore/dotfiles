@@ -26,9 +26,9 @@ yabridgectl add "$VST_AUX_PATH"
 yabridgectl add "$VST3_PATH"
 
 LOCAL_ROOT="$HOME/creative"
-CLOUD_SERVICE_ABBREV="b2"
-AUDIO_PLUGINS_PATH="creations/audio/plugins"
-AUDIO_PLUGIN_CLOUD_ROOT="$CLOUD_SERVICE_ABBREV:$AUDIO_PLUGINS_PATH"
+CLOUD_SERVICE_PATH="b2:creations"
+AUDIO_PLUGINS_PATH="audio/plugins"
+AUDIO_PLUGIN_CLOUD_ROOT="$CLOUD_SERVICE_PATH/$AUDIO_PLUGINS_PATH"
 AUDIO_PLUGIN_LOCAL_DEST="$LOCAL_ROOT/$AUDIO_PLUGINS_PATH"
 
 # setup native linux plugins
@@ -51,8 +51,8 @@ yabridgectl sync --prune
 ## APP SETUP
 ################
 
-rclone copy $CLOUD_SERVICE_ABBREV:creations/app-settings $LOCAL_ROOT/app-settings
-rclone copy $CLOUD_SERVICE_ABBREV:creations/apps $LOCAL_ROOT/apps
+rclone copy $CLOUD_SERVICE_PATH/app-settings $LOCAL_ROOT/app-settings
+rclone copy $CLOUD_SERVICE_PATH/apps $LOCAL_ROOT/apps
 
 ################
 ## BITWIG
