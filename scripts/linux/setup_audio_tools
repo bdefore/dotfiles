@@ -75,5 +75,6 @@ VCV_LOCAL_STORE="$LOCAL_ROOT/app-settings/Rack2"
 VCV_LOCAL_APP="$LOCAL_ROOT/apps/Rack2Pro"
 
 # do this before running VCV Rack, as above
-ln -s "$VCV_LOCAL_STORE" ~/.local/share/Rack2
+mkdir -p ~/.local/share/VCV
 ln -s "$VCV_LOCAL_APP" ~/.local/share/VCV/Rack2Pro
+ln -s "$VCV_LOCAL_STORE" ~/.local/share/Rack2
