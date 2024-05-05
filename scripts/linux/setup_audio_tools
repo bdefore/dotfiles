@@ -25,7 +25,7 @@ yabridgectl add "$VST_PATH"
 yabridgectl add "$VST_AUX_PATH"
 yabridgectl add "$VST3_PATH"
 
-LOCAL_ROOT="$HOME/creations"
+LOCAL_ROOT="$HOME/creative"
 CLOUD_SERVICE_ABBREV="b2"
 AUDIO_PLUGINS_PATH="creations/audio/plugins"
 AUDIO_PLUGIN_CLOUD_ROOT="$CLOUD_SERVICE_ABBREV:$AUDIO_PLUGINS_PATH"
