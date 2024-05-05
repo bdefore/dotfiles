@@ -46,7 +46,7 @@ yabridgectl sync --prune
 # - rclone copy "$VST3_PATH" "$AUDIO_PLUGIN_CLOUD_ROOT/win/vst3"
 
 ################
-## BITWIG & VCV
+## APP SETUP
 ################
 
 LOCAL_ROOT="$HOME/creations"
@@ -54,9 +54,11 @@ LOCAL_ROOT="$HOME/creations"
 rclone copy $CLOUD_SERVICE_ABBREV:creations/app-settings $LOCAL_ROOT/app-settings
 rclone copy $CLOUD_SERVICE_ABBREV:creations/apps $LOCAL_ROOT/apps
 
+################
+## BITWIG
+################
+
 BITWIG_LOCAL_STORE="$LOCAL_ROOT/app-settings/Bitwig Studio"
-VCV_LOCAL_STORE="$LOCAL_ROOT/app-settings/Rack2"
-VCV_LOCAL_APP="$LOCAL_ROOT/apps/Rack2Pro"
 
 # sync Bitwig preferences, useful for controller setups
 cp -r $LOCAL_ROOT/app-settings/.BitwigStudio/prefs ~/.BitwigStudio/prefs
@@ -64,6 +66,13 @@ cp -r $LOCAL_ROOT/app-settings/.BitwigStudio/prefs ~/.BitwigStudio/prefs
 # sync Bitwig creations (projects, extensions, controller scripts)
 # do this before running Bitwig, otherwise a directory will have already been created before this symlink
 ln -s "$BITWIG_LOCAL_STORE" ~/Bitwig\ Studio
+
+################
+## VCV
+################
+
+VCV_LOCAL_STORE="$LOCAL_ROOT/app-settings/Rack2"
+VCV_LOCAL_APP="$LOCAL_ROOT/apps/Rack2Pro"
 
 # do this before running VCV Rack, as above
 ln -s "$VCV_LOCAL_STORE" ~/.local/share/Rack2
