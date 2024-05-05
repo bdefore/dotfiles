@@ -25,14 +25,16 @@ yabridgectl add "$VST_PATH"
 yabridgectl add "$VST_AUX_PATH"
 yabridgectl add "$VST3_PATH"
 
+LOCAL_ROOT="$HOME/creations"
 CLOUD_SERVICE_ABBREV="b2"
-AUDIO_PLUGIN_CLOUD_ROOT="$CLOUD_SERVICE_ABBREV:AudioPlugins"
-AUDIO_PLUGIN_LOCAL_DEST="$HOME/cloud/$CLOUD_SERVICE_ABBREV/AudioPlugins"
+AUDIO_PLUGINS_PATH="creations/audio/plugins"
+AUDIO_PLUGIN_CLOUD_ROOT="$CLOUD_SERVICE_ABBREV:$AUDIO_PLUGINS_PATH"
+AUDIO_PLUGIN_LOCAL_DEST="$LOCAL_ROOT/$AUDIO_PLUGINS_PATH"
 
 # setup native linux plugins
 rclone copy $AUDIO_PLUGIN_CLOUD_ROOT/linux $AUDIO_PLUGIN_LOCAL_DEST/linux
-ln -s $AUDIO_PLUGIN_LOCAL_DEST/linux/.vst $HOME/.vst
-ln -s $AUDIO_PLUGIN_LOCAL_DEST/linux/.vst3 $HOME/.vst3
+ln -s $AUDIO_PLUGIN_LOCAL_DEST/linux/vst $HOME/.vst
+ln -s $AUDIO_PLUGIN_LOCAL_DEST/linux/vst3 $HOME/.vst3
 
 # setup windows native plugins to be run through yabridge
 rclone copy $AUDIO_PLUGIN_CLOUD_ROOT/win/vst "$VST_PATH"
@@ -48,8 +50,6 @@ yabridgectl sync --prune
 ################
 ## APP SETUP
 ################
-
-LOCAL_ROOT="$HOME/creations"
 
 rclone copy $CLOUD_SERVICE_ABBREV:creations/app-settings $LOCAL_ROOT/app-settings
 rclone copy $CLOUD_SERVICE_ABBREV:creations/apps $LOCAL_ROOT/apps
