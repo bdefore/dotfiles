@@ -65,6 +65,8 @@ alias cc-mount="mkdir -p $CC_LOCAL_MOUNT_ROOT/$CC_SERVICE && rclone mount --daem
 alias cc-unmount="pkill -f 'rclone mount --daemon $CC_REMOTE_ROOT $CC_LOCAL_MOUNT_ROOT/$CC_SERVICE'"
 
 # video conversion helpers, useful for taking h265 vids to something usable in davinci resolve
+alias davinc="QT_QPA_PLATFORM=xcb /opt/resolve/bin/resolve &"
+
 # taken from https://gitlab.com/AOMediaCodec/SVT-AV1/-/blob/master/Docs/Ffmpeg.md , modified to convert audio to pcm
 #FFMPEG_AUDIO_FLAGS="copy"
 FFMPEG_AUDIO_FLAGS="pcm_s16le"
