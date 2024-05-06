@@ -48,7 +48,7 @@ CC_SERVICE="b2"
 CC_REMOTE_ROOT="$CC_SERVICE:creations"
 CC_EXCLUSIONS_FILE="rclone-exclusions.txt"
 CC_PUSH_CMD="rclone copy -v $CC_LOCAL_ROOT $CC_REMOTE_ROOT --exclude-from $CC_LOCAL_ROOT/$CC_EXCLUSIONS_FILE"
-CC_PULL_CMD() {
+cc-pull-cmd() {
   if [[ $# -eq 0 ]] ; then
       echo "First parameter required. Specify a path on remote, so as not to pull entire storage!"
   else
@@ -57,12 +57,29 @@ CC_PULL_CMD() {
 }
 
 alias cc-cd="cd $CC_LOCAL_ROOT"
-alias cc-init="CC_PULL_CMD $CC_EXCLUSIONS_FILE"
+alias cc-init="cc-pull-cmd $CC_EXCLUSIONS_FILE"
 alias cc-push="$CC_PUSH_CMD"
 alias cc-push-dry="$CC_PUSH_CMD --dry-run"
-alias cc-pull="CC_PULL_CMD $1"
+alias cc-pull="cc-pull-cmd $1"
 alias cc-mount="mkdir -p $CC_LOCAL_MOUNT_ROOT/$CC_SERVICE && rclone mount --daemon $CC_REMOTE_ROOT $CC_LOCAL_MOUNT_ROOT/$CC_SERVICE"
 alias cc-unmount="pkill -f 'rclone mount --daemon $CC_REMOTE_ROOT $CC_LOCAL_MOUNT_ROOT/$CC_SERVICE'"
+
+# video conversion helpers, useful for taking h265 vids to something usable in davinci resolve
+# taken from https://gitlab.com/AOMediaCodec/SVT-AV1/-/blob/master/Docs/Ffmpeg.md , modified to convert audio to pcm
+#FFMPEG_AUDIO_FLAGS="copy"
+FFMPEG_AUDIO_FLAGS="pcm_s16le"
+
+av1-fastest() {
+  time ffmpeg -i $1 -c:v libsvtav1 -preset 10 -crf 35 -c:a $FFMPEG_AUDIO_FLAGS $2
+}
+
+av1-fast() {
+  time ffmpeg -i $1 -c:v libsvtav1 -preset 5 -crf 32 -g 240 -pix_fmt yuv420p10le -svtav1-params tune=0:film-grain=8 -c:a $FFMPEG_AUDIO_FLAGS $2
+}
+
+av1-slow() {
+  time ffmpeg -i $1 -c:v libsvtav1 -preset 2 -crf 25 -g 24 -pix_fmt yuv420p10le -svtav1-params tune=0:film-grain=8 -c:a $FFMPEG_AUDIO_FLAGS $2
+}
 
 # remote ide helpers
 function servecode {
