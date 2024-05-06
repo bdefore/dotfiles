@@ -78,3 +78,11 @@ VCV_LOCAL_APP="$LOCAL_ROOT/apps/Rack2Pro"
 mkdir -p ~/.local/share/VCV
 ln -s "$VCV_LOCAL_APP" ~/.local/share/VCV/Rack2Pro
 ln -s "$VCV_LOCAL_STORE" ~/.local/share/Rack2
+
+###################
+## DaVinci Resolve
+###################
+
+DR_LOCAL_STORE="$LOCAL_ROOT/app-settings/DaVinciResolve"
+
+ln -s ~/.local/share/DaVinciResolve "$DR_LOCAL_STORE"
