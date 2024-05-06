@@ -1,5 +1,3 @@
-alias vi=vim
-
 # Git Aliases
 alias gs='git status'
 # alias gl='git pull'
@@ -14,10 +12,13 @@ alias gsr='git svn rebase'
 alias gsd='git svn dcommit'
 alias undo='git reset HEAD~1'
 alias d='git diff'
-alias cat=bat
-alias ls="exa -la"
 alias remotebranches="git for-each-ref --format='%(color:cyan)%(authordate:format:%m/%d/%Y %I:%M %p)    %(align:25,left)%(color:yellow)%(authorname)%(end) %(color:reset)%(refname:strip=3)' --sort=authordate refs/remotes"
 alias gsw='watch --color git -c color.status=always status'
+
+# terminal utilities
+alias vi=vim
+alias cat=bat
+alias ls="exa -la"
 
 # Easier navigation: .., ..., ...., ....., ~ and -
 alias ..="cd .."
@@ -29,12 +30,39 @@ alias -- -="cd -"
 # Pretty display recursively
 alias tree="ls -R | grep ":$" | sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' -e 's/^/   /' -e 's/-/|/'"
 
-alias prof="code ~/.bash_profile"
+# https://www.2daygeek.com/how-to-get-find-size-of-directory-folder-linux/
+function foldersize {
+  du -hc $1 | sort -rh | head -20
+}
+
 alias bitch=sudo
 alias weather="curl wttr.in"
 alias towin='sudo grub-reboot 2 && reboot'
 alias yt='youtube-viewer'
 alias yarn='narn'
+
+# creative cloud storage helpers
+CC_LOCAL_ROOT="$HOME/creative"
+CC_LOCAL_MOUNT_ROOT="$HOME/cloud"
+CC_SERVICE="b2"
+CC_REMOTE_ROOT="$CC_SERVICE:creations"
+CC_EXCLUSIONS_FILE="rclone-exclusions.txt"
+CC_PUSH_CMD="rclone copy -v $CC_LOCAL_ROOT $CC_REMOTE_ROOT --exclude-from $CC_LOCAL_ROOT/$CC_EXCLUSIONS_FILE"
+CC_PULL_CMD() {
+  if [[ $# -eq 0 ]] ; then
+      echo "First parameter required. Specify a path on remote, so as not to pull entire storage!"
+  else
+      rclone copy -v $CC_REMOTE_ROOT/$1 $CC_LOCAL_ROOT
+  fi
+}
+
+alias cc-cd="cd $CC_LOCAL_ROOT"
+alias cc-init="CC_PULL_CMD $CC_EXCLUSIONS_FILE"
+alias cc-push="$CC_PUSH_CMD"
+alias cc-push-dry="$CC_PUSH_CMD --dry-run"
+alias cc-pull="CC_PULL_CMD $1"
+alias cc-mount="mkdir -p $CC_LOCAL_MOUNT_ROOT/$CC_SERVICE && rclone mount --daemon $CC_REMOTE_ROOT $CC_LOCAL_MOUNT_ROOT/$CC_SERVICE"
+alias cc-unmount="pkill -f 'rclone mount --daemon $CC_REMOTE_ROOT $CC_LOCAL_MOUNT_ROOT/$CC_SERVICE'"
 
 # remote ide helpers
 function servecode {
@@ -58,7 +86,3 @@ grub-ls() {
 }
 alias grub-list="grub-ls"
 
-# https://www.2daygeek.com/how-to-get-find-size-of-directory-folder-linux/
-function foldersize {
-  du -hc $1 | sort -rh | head -20
-}
