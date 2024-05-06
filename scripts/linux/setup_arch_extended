@@ -28,7 +28,9 @@ yay -S \
   zathura \
   rclone \
   udisks2 \
-  udiskie
+  udiskie \
+  wireguard-tools \
+  systemd-resolvconf
 
 # disabled for further research on failure:
 #  sc-controller \
@@ -70,6 +72,11 @@ yay -S \
 # note: this comes with some risk to automount usb drives
 # based on instructions from: https://www.youtube.com/watch?v=eVZBvRkLqaE
 systemctl enable --now --user ./udiskie.service
+
+# wireguard-tools: used for vpn
+# systemd-resolvconf: needed by wireguard to use openresolv in place of resolvconf
+
+systemctl enable systemd-resolved.service
 
 ### no longer used:
 
