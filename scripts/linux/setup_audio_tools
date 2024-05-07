@@ -83,6 +83,24 @@ ln -s "$VCV_LOCAL_STORE" ~/.local/share/Rack2
 ## DaVinci Resolve
 ###################
 
+# First setup symlink:
 DR_LOCAL_STORE="$LOCAL_ROOT/app-settings/DaVinciResolve"
 
 ln -s ~/.local/share/DaVinciResolve "$DR_LOCAL_STORE"
+
+# Next, to install DaVinci Resolve, use davincibox (https://github.com/zelikos/davincibox):
+# Note: Required disk space: > 15gb during install, > 10gb after
+
+# (First, get latest DaVinci Resolve from official site and unzip it, or pull from cloud:)
+# rclone copy b2:creations/installers/DaVinci_Resolve_18.6.6_Linux.run ~/Downloads
+# cd ~/Downloads
+# ./DaVinci_Resolve_18.6.6_Linux.run --appimage-extract
+# yay -S podman distrobox
+# distrobox create -i ghcr.io/zelikos/davincibox:latest -n davincibox
+# (if this fails on some issues with UIDs, you may need to run this workaround https://github.com/containers/podman/issues/12715#issuecomment-1436095278)
+# distrobox enter davincibox -- setup-davinci squashfs-root/AppRun distrobox
+# (Cleanup, to get about 8gb back)
+# rm ~/Downloads/DaVinci_Resolve_18.6.6_Linux.run
+# rm -rf ~/Downloads/squashfs-root
+# (Run via terminal, desktop shortcut fails to start?)
+# distrobox enter davincibox -- QT_QPA_PLATFORM=xcb /opt/resolve/bin/resolve
