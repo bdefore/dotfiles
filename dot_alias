@@ -37,9 +37,12 @@ function foldersize {
 
 alias bitch=sudo
 alias weather="curl wttr.in"
-alias towin='sudo grub-reboot 2 && reboot'
 alias yt='youtube-viewer'
 alias yarn='narn'
+
+alias boot-waymanj='sudo grub-reboot 0 && reboot'
+alias boot-xmanj='sudo grub-reboot 2 && reboot'
+alias boot-win='sudo grub-reboot 4 && reboot'
 
 # creative cloud storage helpers
 CC_LOCAL_ROOT="$HOME/creative"
