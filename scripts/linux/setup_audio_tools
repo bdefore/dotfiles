@@ -57,6 +57,8 @@ rclone copy $CLOUD_SERVICE_PATH/app-settings $LOCAL_ROOT/app-settings
 echo "Retrieving apps from cloud storage..."
 rclone copy $CLOUD_SERVICE_PATH/apps $LOCAL_ROOT/apps
 
+echo "NOTE: Arturia Pigments requires manual install via Arturia Software Center before plugin can work"
+
 ################
 ## BITWIG
 ################
