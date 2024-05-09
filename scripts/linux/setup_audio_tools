@@ -86,7 +86,7 @@ ln -s "$VCV_LOCAL_STORE" ~/.local/share/Rack2
 # First setup symlink:
 DR_LOCAL_STORE="$LOCAL_ROOT/app-settings/DaVinciResolve"
 
-ln -s ~/.local/share/DaVinciResolve "$DR_LOCAL_STORE"
+ln -s "$DR_LOCAL_STORE" ~/.local/share/DaVinciResolve
 
 # Next, to install DaVinci Resolve, use davincibox (https://github.com/zelikos/davincibox):
 # Note: Required disk space: > 15gb during install, > 10gb after
