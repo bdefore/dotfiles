@@ -37,6 +37,7 @@ ln -s $AUDIO_PLUGIN_LOCAL_DEST/linux/vst $HOME/.vst
 ln -s $AUDIO_PLUGIN_LOCAL_DEST/linux/vst3 $HOME/.vst3
 
 # setup windows native plugins to be run through yabridge
+echo "Retrieving audio plugins from cloud storage..."
 rclone copy $AUDIO_PLUGIN_CLOUD_ROOT/win/vst "$VST_PATH"
 rclone copy $AUDIO_PLUGIN_CLOUD_ROOT/win/vst3 "$VST3_PATH"
 
@@ -51,7 +52,9 @@ yabridgectl sync --prune
 ## APP SETUP
 ################
 
+echo "Retrieving app settings from cloud storage..."
 rclone copy $CLOUD_SERVICE_PATH/app-settings $LOCAL_ROOT/app-settings
+echo "Retrieving apps from cloud storage..."
 rclone copy $CLOUD_SERVICE_PATH/apps $LOCAL_ROOT/apps
 
 ################
