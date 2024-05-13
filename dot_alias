@@ -40,9 +40,9 @@ alias weather="curl wttr.in"
 alias yt='youtube-viewer'
 alias yarn='narn'
 
-alias boot-waymanj='sudo grub-reboot 0 && reboot'
-alias boot-xmanj='sudo grub-reboot 2 && reboot'
-alias boot-win='sudo grub-reboot 4 && reboot'
+alias boot-waymanj='sudo grub-reboot 0 && sudo reboot'
+alias boot-xmanj='sudo grub-reboot 2 && sudo reboot'
+alias boot-win='sudo grub-reboot 4 && sudo reboot'
 
 # creative cloud storage helpers
 CC_LOCAL_ROOT="$HOME/creative"
