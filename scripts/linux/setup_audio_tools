@@ -31,15 +31,18 @@ AUDIO_PLUGINS_PATH="audio/plugins"
 AUDIO_PLUGIN_CLOUD_ROOT="$CLOUD_SERVICE_PATH/$AUDIO_PLUGINS_PATH"
 AUDIO_PLUGIN_LOCAL_DEST="$LOCAL_ROOT/$AUDIO_PLUGINS_PATH"
 
+# https://rclone.org/commands/rclone_copy/#copy-options
+RCLONE_COPY_FLAGS="--check-first --progress --update --create-empty-src-dirs"
+
 # setup native linux plugins
-rclone copy $AUDIO_PLUGIN_CLOUD_ROOT/linux $AUDIO_PLUGIN_LOCAL_DEST/linux
+rclone copy $RCLONE_COPY_FLAGS $AUDIO_PLUGIN_CLOUD_ROOT/linux $AUDIO_PLUGIN_LOCAL_DEST/linux
 ln -s $AUDIO_PLUGIN_LOCAL_DEST/linux/vst $HOME/.vst
 ln -s $AUDIO_PLUGIN_LOCAL_DEST/linux/vst3 $HOME/.vst3
 
 # setup windows native plugins to be run through yabridge
 echo "Retrieving audio plugins from cloud storage..."
-rclone copy $AUDIO_PLUGIN_CLOUD_ROOT/win/vst "$VST_PATH"
-rclone copy $AUDIO_PLUGIN_CLOUD_ROOT/win/vst3 "$VST3_PATH"
+rclone copy $RCLONE_COPY_FLAGS $AUDIO_PLUGIN_CLOUD_ROOT/win/vst "$VST_PATH"
+rclone copy $RCLONE_COPY_FLAGS $AUDIO_PLUGIN_CLOUD_ROOT/win/vst3 "$VST3_PATH"
 
 yabridgectl status
 yabridgectl sync --prune
@@ -53,9 +56,9 @@ yabridgectl sync --prune
 ################
 
 echo "Retrieving app settings from cloud storage..."
-rclone copy $CLOUD_SERVICE_PATH/app-settings $LOCAL_ROOT/app-settings
+rclone copy $RCLONE_COPY_FLAGS $CLOUD_SERVICE_PATH/app-settings $LOCAL_ROOT/app-settings
 echo "Retrieving apps from cloud storage..."
-rclone copy $CLOUD_SERVICE_PATH/apps $LOCAL_ROOT/apps
+rclone copy $RCLONE_COPY_FLAGS $CLOUD_SERVICE_PATH/apps $LOCAL_ROOT/apps
 
 echo "NOTE: Arturia Pigments requires manual install via Arturia Software Center before plugin can work"
 
