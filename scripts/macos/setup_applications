@@ -1,54 +1,62 @@
 #!/bin/bash
 
 # essentials
-brew install --cask google-chrome
-brew install --cask dropbox
-# brew install --cask onepassword
+brew install --cask firefox
 brew install --cask iterm2
 brew install --cask the-unarchiver
 brew install --cask spectacle
 
 # messengers
-# brew install --cask hipchat
-brew install --cask slack
-brew install --cask discord
-# brew install --cask riot
-# brew install --cask colloquy
 
 # editors
-brew install --cask sublime-text
-# brew install --cask atom
 brew install --cask visual-studio-code
-# brew install --cask brackets
 
 # development
-brew install --cask kitematic
 
 # less important
-brew install --cask google-drive
-brew install --cask firefox
-# brew install --cask skype
-brew install --cask charles
-# brew install --cask screenhero
-brew install --cask vnc-viewer
-# brew install --cask chromium
-# brew install --cask vmware-fusion
-# brew install --cask adium
-# brew install --cask adobe-air
-# brew install --cask alfred
-brew install --cask keepingyouawake
 
 # home entertainment
 brew install --cask transmission
 brew install --cask vlc
 brew install --cask spotify
-brew install --cask plex-media-server
-brew install --cask steam
-brew install --cask gog
-brew install --cask itch
-brew install --cask battle-net
-brew install --cask dotnet-sdk
+# brew install --cask steam
+# brew install --cask gog
+# brew install --cask itch
 # brew install --cask handbrake # too slow
+
+# maybe retired
+# brew install --cask sublime-text
+# brew install --cask battle-net
+# brew install --cask dotnet-sdk
+# brew install --cask keepingyouawake
+# brew install --cask charles
+# brew install --cask vnc-viewer
+# brew install --cask chromium
+# brew install --cask alfred
+
+# retired
+# brew install --cask google-chrome
+# brew install --cask dropbox
+# brew install --cask onepassword
+# brew install --cask hipchat
+# brew install --cask slack
+# brew install --cask discord
+# brew install --cask riot
+# brew install --cask colloquy
+# brew install --cask atom
+# brew install --cask brackets
+# brew install --cask kitematic
+# brew install --cask skype
+# brew install --cask screenhero
+# brew install --cask vmware-fusion
+# brew install --cask adium
+# brew install --cask adobe-air
+# brew install --cask google-drive
+# brew install --cask charles
+# brew install --cask vnc-viewer
+# brew install --cask chromium
+# brew install --cask alfred
+# brew install --cask plex-media-server
 
 # android dev
 # brew install --cask java
