@@ -1,6 +1,6 @@
 ## Before
 
-- [Install chezmoi](https://github.com/twpayne/chezmoi/blob/master/docs/INSTALL.md)
+- [Install chezmoi](https://www.chezmoi.io/install)
 - Run `chezmoi init --apply bdefore`
 
 ## Setup
