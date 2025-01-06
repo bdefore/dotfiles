@@ -1,67 +1,67 @@
 #!/bin/bash
 
 # essentials
-brew cask install google-chrome
-brew cask install dropbox
-# brew cask install onepassword
-brew cask install iterm2
-brew cask install the-unarchiver
-brew cask install spectacle
+brew install --cask google-chrome
+brew install --cask dropbox
+# brew install --cask onepassword
+brew install --cask iterm2
+brew install --cask the-unarchiver
+brew install --cask spectacle
 
 # messengers
-# brew cask install hipchat
-brew cask install slack
-brew cask install discord
-# brew cask install riot
-# brew cask install colloquy
+# brew install --cask hipchat
+brew install --cask slack
+brew install --cask discord
+# brew install --cask riot
+# brew install --cask colloquy
 
 # editors
-brew cask install sublime-text
-# brew cask install atom
-brew cask install visual-studio-code
-# brew cask install brackets
+brew install --cask sublime-text
+# brew install --cask atom
+brew install --cask visual-studio-code
+# brew install --cask brackets
 
 # development
-brew cask install kitematic
+brew install --cask kitematic
 
 # less important
-brew cask install google-drive
-brew cask install firefox
-# brew cask install skype
-brew cask install charles
-# brew cask install screenhero
-brew cask install vnc-viewer
-# brew cask install chromium
-# brew cask install vmware-fusion
-# brew cask install adium
-# brew cask install adobe-air
-# brew cask install alfred
-brew cask install keepingyouawake
+brew install --cask google-drive
+brew install --cask firefox
+# brew install --cask skype
+brew install --cask charles
+# brew install --cask screenhero
+brew install --cask vnc-viewer
+# brew install --cask chromium
+# brew install --cask vmware-fusion
+# brew install --cask adium
+# brew install --cask adobe-air
+# brew install --cask alfred
+brew install --cask keepingyouawake
 
 # home entertainment
-brew cask install transmission
-brew cask install vlc
-brew cask install spotify
-brew cask install plex-media-server
-brew cask install steam
-brew cask install gog
-brew cask install itch
-brew cask install battle-net
-brew cask install dotnet-sdk
-# brew cask install handbrake # too slow
+brew install --cask transmission
+brew install --cask vlc
+brew install --cask spotify
+brew install --cask plex-media-server
+brew install --cask steam
+brew install --cask gog
+brew install --cask itch
+brew install --cask battle-net
+brew install --cask dotnet-sdk
+# brew install --cask handbrake # too slow
 
 # android dev
-# brew cask install java
-# brew cask install android-studio
-# brew cask install genymotion
+# brew install --cask java
+# brew install --cask android-studio
+# brew install --cask genymotion
 
 # rare use but nice to have
-brew cask install daisydisk
-brew cask install superduper
-# brew cask install audacity
-# brew cask install unity-web-player
+brew install --cask daisydisk
+brew install --cask superduper
+# brew install --cask audacity
+# brew install --cask unity-web-player
 
 brew tap caskroom/fonts
-brew cask install font-iosevka
+brew install --cask font-iosevka
 
 brew cask cleanup
