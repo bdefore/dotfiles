@@ -21,7 +21,8 @@ brew install diff-so-fancy
 brew install bat
 brew install exa
 brew install git-delta
-brew install --HEAD hub
+#brew install --HEAD hub
+brew install chezmoi
 brew cleanup
 
 brew services start code-server

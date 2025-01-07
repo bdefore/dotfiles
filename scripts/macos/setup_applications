@@ -5,6 +5,7 @@ brew install --cask firefox
 brew install --cask iterm2
 brew install --cask the-unarchiver
 brew install --cask spectacle
+brew install --cask betterdisplay
 
 # messengers
 
@@ -19,6 +20,7 @@ brew install --cask visual-studio-code
 brew install --cask transmission
 brew install --cask vlc
 brew install --cask spotify
+brew install --cask jellyfin
 # brew install --cask steam
 # brew install --cask gog
 # brew install --cask itch
