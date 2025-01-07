@@ -8,6 +8,8 @@
 #### MacOS
 ```
 (cd ./scripts/macos && ./setup)
+
+(Developers) Afterwards, enable remote access via SSH in System Preferences > Sharing > Remote Login
 ```
 
 #### Linux
