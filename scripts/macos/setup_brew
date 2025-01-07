@@ -1,6 +1,5 @@
 # macos now defaults to zsh. switch it back to bash
 brew install bash
-echo /bin/bash | sudo tee -a /etc/shells
 chsh -s /bin/bash
 echo The following bash version echoes should NOT be version 3
 bash --version
