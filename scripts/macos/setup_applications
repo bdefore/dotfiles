@@ -74,4 +74,4 @@ brew install --cask superduper
 brew tap caskroom/fonts
 brew install --cask font-iosevka
 
-brew cask cleanup
+brew cleanup
