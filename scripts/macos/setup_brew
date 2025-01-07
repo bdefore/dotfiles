@@ -19,7 +19,7 @@ brew install wget
 brew install terminal-notifier
 brew install diff-so-fancy
 brew install bat
-brew install exa
+brew install eza
 brew install git-delta
 #brew install --HEAD hub
 brew install chezmoi

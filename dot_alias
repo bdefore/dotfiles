@@ -18,7 +18,7 @@ alias gsw='watch --color git -c color.status=always status'
 # terminal utilities
 alias vi=vim
 alias cat=bat
-alias ls="exa -la"
+alias ls="eza -la"
 
 # Easier navigation: .., ..., ...., ....., ~ and -
 alias ..="cd .."
