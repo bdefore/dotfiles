@@ -20,6 +20,7 @@ export NVM_DIR="$HOME/.nvm"
 #     eval "$(<~/.ssh-agent-thing)"
 # fi
 
+export PATH="$HOME/.local/share/yabridge:$PATH"
 export PATH="/opt/homebrew/bin:$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
 [[ -r ~/.corporate_profiles/bcdef ]] && source ~/.corporate_profiles/bcdef
