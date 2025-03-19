@@ -33,3 +33,7 @@ export EDITOR='nano'
 [[ -v TMUX ]] && echo Loading tmux configurations... && tmux source "$HOME/.tmux-pre.conf" && tmux source "$HOME/.tmux.conf" && echo tmux configuration complete, remember to prefix-I if first run to install plugins
 
 . "$HOME/.cargo/env"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
