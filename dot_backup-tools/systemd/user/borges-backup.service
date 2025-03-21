@@ -1,0 +1,14 @@
+[Unit]
+Description=Restic Backup
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=%h/.backup-tools/bin/restic-backup /mnt/Borges/local /mnt/Godot/active-repo
+ExecStart=%h/.backup-tools/bin/restic-backup /mnt/Borges/shared /mnt/Godot/active-repo
+# No timeout since backups might take a while
+TimeoutStartSec=0
+
+[Install]
+WantedBy=default.target

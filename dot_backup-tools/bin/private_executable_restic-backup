@@ -1,0 +1,93 @@
+#!/bin/bash
+set -e
+
+# Get script directory and source relative to it
+SCRIPT_DIR="$(dirname "$(readlink -f "$0")")"
+
+# Set general config values
+BACKUP_CONFIG_ROOT=$SCRIPT_DIR/..
+SECRETS_ROOT=$BACKUP_CONFIG_ROOT/../fscrypt
+EXCLUSIONS_ROOT=$BACKUP_CONFIG_ROOT/etc/exclusions
+BACKUP_FLAGS="--one-file-system --exclude-file=$EXCLUSIONS_ROOT/common.txt --exclude-file=$EXCLUSIONS_ROOT/linux-system-root.txt"
+
+# Check if we have enough positional parameters
+if [ $# -lt 2 ]; then
+  echo "Usage: $0 BACKUP_ROOT REPO_PATH" >&2
+  exit 1
+fi
+
+# Assign the positional parameters
+BACKUP_ROOT="$1"
+REPO_PATH="$2"
+
+# Extract the repository name from the path (last component)
+REPO_NAME=$(basename "$REPO_PATH")
+PASSWORD_FILE="$SECRETS_ROOT/$REPO_NAME"
+
+# Validate that BACKUP_ROOT is a directory
+if [ ! -d "$BACKUP_ROOT" ]; then
+  echo "Error: BACKUP_ROOT '$BACKUP_ROOT' is not a valid directory" >&2
+  exit 1
+fi
+
+# Validate that REPO_PATH is a directory
+if [ ! -d "$REPO_PATH" ]; then
+  echo "Error: REPO_PATH '$REPO_PATH' is not a valid directory" >&2
+  exit 1
+fi
+
+echo "Starting backup of $BACKUP_ROOT..."
+
+# Check if the password file exists
+if [ -f "$PASSWORD_FILE" ]; then
+  # Use password file if it exists
+  restic -p "$PASSWORD_FILE" backup $BACKUP_FLAGS "$BACKUP_ROOT" -r "$REPO_PATH"
+else
+  # Otherwise, log message and let restic prompt for password
+  echo "Password file not found at $PASSWORD_FILE. Will prompt for password." >&2
+  restic backup $BACKUP_FLAGS "$BACKUP_ROOT" -r "$REPO_PATH"
+fi
+
+echo "Completed backup of $BACKUP_ROOT"
+echo "--------------------------"
+
+# Run repository health checks
+echo "Performing repository health checks..."
+
+echo "1. Verifying repository integrity..."
+restic -p $PASSWORD_FILE check -r $REPO_PATH
+check_result=$?
+if [ $check_result -eq 0 ]; then
+    echo "✓ Repository integrity check passed"
+else
+    echo "✗ Repository integrity check failed with code $check_result"
+fi
+
+echo "2. Listing recent snapshots..."
+restic -p $PASSWORD_FILE snapshots -r $REPO_PATH --latest 4
+snap_result=$?
+if [ $snap_result -eq 0 ]; then
+    echo "✓ Successfully retrieved snapshots"
+else
+    echo "✗ Failed to retrieve snapshots with code $snap_result"
+fi
+
+echo "3. Repository statistics..."
+restic -p $PASSWORD_FILE stats -r $REPO_PATH
+stats_result=$?
+if [ $stats_result -eq 0 ]; then
+    echo "✓ Successfully retrieved repository statistics"
+else
+    echo "✗ Failed to retrieve statistics with code $stats_result"
+fi
+
+# Check if any health checks failed
+if [ $check_result -eq 0 ] && [ $snap_result -eq 0 ] && [ $stats_result -eq 0 ]; then
+    echo "All repository health checks passed successfully"
+else
+    echo "Warning: One or more repository health checks failed"
+    exit 1
+fi
+
+# Exit successfully
+echo "All backups and health checks completed successfully"

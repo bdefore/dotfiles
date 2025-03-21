@@ -1,0 +1,26 @@
+# System directories (virtual filesystems)
+/proc
+/sys
+/dev
+/run
+/tmp
+
+# Cache and temporary storage
+/var/tmp
+/var/cache
+/var/cache/pacman/pkg
+/lost+found
+
+# User cache and trash
+/home/*/.cache
+/home/*/.local/share/pnpm
+/home/*/.local/share/Trash
+
+# Optional: logs
+/var/log
+
+# Optional: VM/container data
+/var/lib/docker
+/var/lib/libvirt
+/home/*/.docker
+

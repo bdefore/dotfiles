@@ -1,0 +1,9 @@
+/mnt
+fscrypt
+node_modules
+.pnpm-store
+.ssh
+.nvm
+.npm
+.cache
+
