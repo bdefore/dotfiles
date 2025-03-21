@@ -12,7 +12,7 @@ BACKUP_FLAGS="--one-file-system --exclude-file=$EXCLUSIONS_ROOT/common.txt --exc
 
 # Check if we have enough positional parameters
 if [ $# -lt 2 ]; then
-  echo "Usage: $0 BACKUP_ROOT REPO_PATH" >&2
+  echo "Usage: $0 BACKUP_ROOT1 BACKUP_ROOT2 ... BACKUP_ROOTN REPO_PATH" >&2
   exit 1
 fi
 
@@ -37,31 +37,19 @@ done
 REPO_NAME=$(basename "$REPO_PATH")
 PASSWORD_FILE="$SECRETS_ROOT/$REPO_NAME"
 
-# Validate that BACKUP_ROOT is a directory
-if [ ! -d "$BACKUP_ROOT" ]; then
-  echo "Error: BACKUP_ROOT '$BACKUP_ROOT' is not a valid directory" >&2
-  exit 1
-fi
-
-# Validate that REPO_PATH is a directory
-if [ ! -d "$REPO_PATH" ]; then
-  echo "Error: REPO_PATH '$REPO_PATH' is not a valid directory" >&2
-  exit 1
-fi
-
-echo "Starting backup of $BACKUP_ROOT..."
+echo "Starting backup..."
 
 # Check if the password file exists
 if [ -f "$PASSWORD_FILE" ]; then
   # Use password file if it exists
-  restic -p "$PASSWORD_FILE" backup $BACKUP_FLAGS "$BACKUP_ROOT" -r "$REPO_PATH"
+  restic -p "$PASSWORD_FILE" backup $BACKUP_FLAGS "${BACKUP_PATHS[@]}" -r "$REPO_PATH"
 else
   # Otherwise, log message and let restic prompt for password
   echo "Password file not found at $PASSWORD_FILE. Will prompt for password." >&2
-  restic backup $BACKUP_FLAGS "$BACKUP_ROOT" -r "$REPO_PATH"
+  restic backup $BACKUP_FLAGS "${BACKUP_PATHS[@]}" -r "$REPO_PATH"
 fi
 
-echo "Completed backup of $BACKUP_ROOT"
+echo "Completed backup"
 echo "--------------------------"
 
 # Skip health checks if no password file exists
