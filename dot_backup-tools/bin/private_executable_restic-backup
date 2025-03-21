@@ -51,6 +51,12 @@ fi
 echo "Completed backup of $BACKUP_ROOT"
 echo "--------------------------"
 
+# Skip health checks if no password file exists
+if [ ! -f "$PASSWORD_FILE" ]; then
+  echo "Password file not found at $PASSWORD_FILE. Skipping restic health checks." >&2
+  exit 0
+fi
+
 # Run repository health checks
 echo "Performing repository health checks..."
 

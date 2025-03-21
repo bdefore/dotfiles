@@ -1,4 +1,5 @@
-/mnt
+/mnt/vrrig
+/mnt/vrrig-root
 fscrypt
 node_modules
 .pnpm-store
