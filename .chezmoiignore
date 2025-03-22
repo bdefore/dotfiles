@@ -1,12 +1,2 @@
-*.log
-.*history
-.cache
-.ssh
-.env
-.env*
-.cert
-.pnpm-store
-.nvm
-.corporate_profiles
-tmp
-fscrypt
+scripts
+README.md
