@@ -1,0 +1,15 @@
+[Unit]
+Description=Restic Backup
+After=network-online.target mnt-Borges.mount
+Wants=network-online.target
+Requires=mnt-Borges.mount
+
+[Service]
+Type=oneshot
+ExecStart=%h/.backup-tools/bin/rstc backup /mnt/Borges/local /mnt/Borges/shared rclone:uloz:active-repo
+ExecStart=%h/.backup-tools/bin/rstc health rclone:uloz:active-repo
+# No timeout since backups might take a while
+TimeoutStartSec=0
+
+[Install]
+WantedBy=default.target

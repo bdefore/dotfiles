@@ -1,0 +1,11 @@
+[Unit]
+Description=Run Restic Cloud Backup daily at 4 AM
+
+[Timer]
+OnCalendar=*-*-* 04:00:00
+Persistent=true
+# Small randomization to avoid exact timing collisions
+RandomizedDelaySec=5min
+
+[Install]
+WantedBy=timers.target
