@@ -1,0 +1,176 @@
+#!/bin/bash
+set -e
+
+# Get script directory and source relative to it
+SCRIPT_DIR="$(dirname "$(readlink -f "$0")")"
+
+# Set general config values
+BACKUP_CONFIG_ROOT=$SCRIPT_DIR/..
+SECRETS_ROOT=$BACKUP_CONFIG_ROOT/../fscrypt
+EXCLUSIONS_ROOT=$BACKUP_CONFIG_ROOT/etc/exclusions
+
+# Function to resolve repository details
+resolve_repo() {
+    local REPO_PATH="$1"
+    local IS_RCLONE=false
+
+    # Extract a usable repository name for remote paths
+    if [[ "$REPO_PATH" == *:*:* ]]; then
+        # For paths like rclone:uloz:restic-test, extract the last part
+        REPO_NAME=$(echo "$REPO_PATH" | sed 's/.*://')
+        IS_RCLONE=true
+    else
+        # For regular paths, use basename
+        REPO_NAME=$(basename "$REPO_PATH")
+    fi
+
+    PASSWORD_FILE="$SECRETS_ROOT/$REPO_NAME"
+
+    # Return values via echo for capture by caller
+    echo "$REPO_NAME $PASSWORD_FILE $IS_RCLONE"
+}
+
+# Function to execute restic commands with proper credentials
+execute_restic() {
+    local REPO_PATH="$1"
+    shift
+
+    # Get repository details
+    read -r REPO_NAME PASSWORD_FILE IS_RCLONE <<< "$(resolve_repo "$REPO_PATH")"
+
+    # Set rclone config if using rclone
+    if [[ "$IS_RCLONE" == "true" ]]; then
+        export RCLONE_CONFIG="$SECRETS_ROOT/restic-rclone.conf"
+        echo "Using rclone config: $RCLONE_CONFIG"
+    fi
+
+    # Check if the password file exists
+    if [ -f "$PASSWORD_FILE" ]; then
+        # Use password file if it exists
+        restic -p "$PASSWORD_FILE" -r "$REPO_PATH" "$@"
+    else
+        # Otherwise, log message and let restic prompt for password
+        echo "Password file not found at $PASSWORD_FILE. Will prompt for password." >&2
+        restic -r "$REPO_PATH" "$@"
+    fi
+}
+
+# Function to handle backup operations
+do_backup() {
+    # Check if we have enough positional parameters
+    if [ $# -lt 2 ]; then
+        echo "Usage: $0 backup BACKUP_ROOT1 BACKUP_ROOT2 ... BACKUP_ROOTN REPO_PATH" >&2
+        exit 1
+    fi
+
+    REPO_PATH="${@: -1}"  # Get the last argument as repo path
+    BACKUP_PATHS=("${@:1:$#-1}")  # Get all arguments except the last one as backup paths
+
+    # Backup-specific flags
+    BACKUP_FLAGS="--one-file-system --exclude-file=$EXCLUSIONS_ROOT/common.txt --exclude-file=$EXCLUSIONS_ROOT/linux-system-root.txt"
+
+    # Validate backup paths
+    for path in "${BACKUP_PATHS[@]}"; do
+        if [ ! -d "$path" ]; then
+            echo "Error: Backup path '$path' is not a valid directory" >&2
+            exit 1
+        fi
+    done
+
+    echo "Starting backup..."
+
+    # Execute the backup
+    execute_restic "$REPO_PATH" backup $BACKUP_FLAGS "${BACKUP_PATHS[@]}"
+
+    echo "Completed backup"
+    echo "--------------------------"
+}
+
+# Function to perform repository health checks
+do_health_check() {
+    if [ $# -lt 1 ]; then
+        echo "Usage: $0 health REPO_PATH" >&2
+        exit 1
+    fi
+
+    REPO_PATH="$1"
+
+    # Get repository details
+    read -r REPO_NAME PASSWORD_FILE IS_RCLONE <<< "$(resolve_repo "$REPO_PATH")"
+
+    # Set rclone config if using rclone
+    if [[ "$IS_RCLONE" == "true" ]]; then
+        export RCLONE_CONFIG="$SECRETS_ROOT/restic-rclone.conf"
+        echo "Using rclone config: $RCLONE_CONFIG"
+    fi
+
+    # Skip health checks if no password file exists
+    if [ ! -f "$PASSWORD_FILE" ]; then
+        echo "Password file not found at $PASSWORD_FILE. Skipping restic health checks." >&2
+        exit 0
+    fi
+
+    # Run repository health checks
+    echo "Performing repository health checks..."
+
+    echo "1. Verifying repository integrity..."
+    restic -p "$PASSWORD_FILE" check -r "$REPO_PATH"
+    check_result=$?
+    if [ $check_result -eq 0 ]; then
+        echo "✓ Repository integrity check passed"
+    else
+        echo "✗ Repository integrity check failed with code $check_result"
+    fi
+
+    echo "2. Listing recent snapshots..."
+    restic -p "$PASSWORD_FILE" snapshots -r "$REPO_PATH" --latest 4
+    snap_result=$?
+    if [ $snap_result -eq 0 ]; then
+        echo "✓ Successfully retrieved snapshots"
+    else
+        echo "✗ Failed to retrieve snapshots with code $snap_result"
+    fi
+
+    echo "3. Repository statistics..."
+    restic -p "$PASSWORD_FILE" stats -r "$REPO_PATH"
+    stats_result=$?
+    if [ $stats_result -eq 0 ]; then
+        echo "✓ Successfully retrieved repository statistics"
+    else
+        echo "✗ Failed to retrieve statistics with code $stats_result"
+    fi
+
+    # Check if any health checks failed
+    if [ $check_result -eq 0 ] && [ $snap_result -eq 0 ] && [ $stats_result -eq 0 ]; then
+        echo "All repository health checks passed successfully"
+    else
+        echo "Warning: One or more repository health checks failed"
+        exit 1
+    fi
+
+    # Exit successfully
+    echo "All health checks completed successfully"
+}
+
+# Process commands
+case "$1" in
+    backup)
+        shift
+        do_backup "$@"
+        ;;
+    health)
+        shift
+        do_health_check "$@"
+        ;;
+    snapshots|check|forget|prune|mount|restore|stats)
+        # First argument is the command, second is repo path
+        CMD="$1"
+        REPO_PATH="$2"
+        shift 2
+        execute_restic "$REPO_PATH" "$CMD" "$@"
+        ;;
+    *)
+        echo "Usage: $0 {backup|health|snapshots|check|forget|prune|mount|restore|stats} [args...]" >&2
+        exit 1
+        ;;
+esac

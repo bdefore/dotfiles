@@ -6,8 +6,9 @@ Wants=network-online.target
 [Service]
 Type=oneshot
 User=root
-ExecStart=/usr/local/bin/restic-backup / /run/media/d4/Nusquama/fw-repo
-ExecStart=/usr/local/bin/restic-backup /home /run/media/d4/Nusquama/fw-repo
+ExecStart=/usr/local/bin/rstc backup / /run/media/d4/Nusquama/fw-repo
+ExecStart=/usr/local/bin/rstc backup /home /run/media/d4/Nusquama/fw-repo
+ExecStart=/usr/local/bin/rstc health /run/media/d4/Nusquama/fw-repo
 # No timeout since backups might take a while
 TimeoutStartSec=0
 
