@@ -4,6 +4,7 @@
 [[ -r ~/.node ]] && source ~/.node
 [[ -r ~/.ruby ]] && source ~/.ruby
 [[ -r ~/.go ]] && source ~/.go
+[[ -r ~/.backup-tools/.alias ]] && source ~/.backup-tools/.alias
 [[ -r ~/.Xmodmap ]] && xmodmap ~/.Xmodmap # TODO: what was this for? galliumos?
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting

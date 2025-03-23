@@ -44,32 +44,6 @@ alias boot-waymanj='sudo grub-reboot 0 && sudo reboot'
 alias boot-xmanj='sudo grub-reboot 2 && sudo reboot'
 alias boot-win='sudo grub-reboot 4 && sudo reboot'
 
-# https://rclone.org/commands/rclone_copy/#copy-options
-RCLONE_COPY_FLAGS="--verbose --check-first --progress --update --create-empty-src-dirs"
-
-# creative cloud storage helpers
-CC_LOCAL_ROOT="$HOME/creative"
-CC_LOCAL_MOUNT_ROOT="$HOME/cloud"
-CC_SERVICE="b2"
-CC_REMOTE_ROOT="$CC_SERVICE:creations"
-CC_EXCLUSIONS_FILE="rclone-exclusions.txt"
-CC_PUSH_CMD="rclone copy $RCLONE_COPY_FLAGS $CC_LOCAL_ROOT $CC_REMOTE_ROOT --exclude-from $CC_LOCAL_ROOT/$CC_EXCLUSIONS_FILE"
-cc-pull-cmd() {
-  if [[ $# -eq 0 ]] ; then
-      echo "First parameter required. Specify a path on remote, so as not to pull entire storage!"
-  else
-      rclone copy $RCLONE_COPY_FLAGS $CC_REMOTE_ROOT/$1 $CC_LOCAL_ROOT
-  fi
-}
-
-alias cc-cd="cd $CC_LOCAL_ROOT"
-alias cc-init="cc-pull-cmd $CC_EXCLUSIONS_FILE"
-alias cc-push="$CC_PUSH_CMD"
-alias cc-push-dry="$CC_PUSH_CMD --dry-run"
-alias cc-pull="cc-pull-cmd $1"
-alias cc-mount="mkdir -p $CC_LOCAL_MOUNT_ROOT/$CC_SERVICE && rclone mount --daemon $CC_REMOTE_ROOT $CC_LOCAL_MOUNT_ROOT/$CC_SERVICE"
-alias cc-unmount="pkill -f 'rclone mount --daemon $CC_REMOTE_ROOT $CC_LOCAL_MOUNT_ROOT/$CC_SERVICE'"
-
 # video conversion helpers, useful for taking h265 vids to something usable in davinci resolve
 alias davinc="distrobox enter -n davincibox -- QT_QPA_PLATFORM=xcb /opt/resolve/bin/resolve"
 
