@@ -6,8 +6,8 @@ Requires=mnt-Borges.mount
 
 [Service]
 Type=oneshot
-ExecStart=%h/.backup-tools/bin/rstc backup /mnt/Borges/local /mnt/Borges/shared /mnt/Godot/active-repo
-ExecStart=%h/.backup-tools/bin/rstc health /mnt/Godot/active-repo
+ExecStart=%h/.backup-tools/bin/rstc backup /mnt/Borges/local /mnt/Borges/shared /mnt/Godot/restic/active-repo
+ExecStart=%h/.backup-tools/bin/rstc health /mnt/Godot/restic/active-repo
 # No timeout since backups might take a while
 TimeoutStartSec=0
 
