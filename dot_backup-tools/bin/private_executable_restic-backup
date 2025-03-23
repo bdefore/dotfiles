@@ -19,8 +19,19 @@ fi
 REPO_PATH="${@: -1}"  # Get the last argument as repo path
 BACKUP_PATHS=("${@:1:$#-1}")  # Get all arguments except the last one as backup paths
 
-# Then validate repo path is a directory
-if [ ! -d "$REPO_PATH" ]; then
+# Extract a usable repository name for remote paths containing colons
+if [[ "$REPO_PATH" == *:*:* ]]; then
+  # For paths like rclone:uloz:restic-test, extract the last part
+  REPO_NAME=$(echo "$REPO_PATH" | sed 's/.*://')
+else
+  # For regular paths, use basename as before
+  REPO_NAME=$(basename "$REPO_PATH")
+fi
+
+PASSWORD_FILE="$SECRETS_ROOT/$REPO_NAME"
+
+# Validate that REPO_PATH is a directory (skip for remote repositories)
+if [[ ! "$REPO_PATH" == *:*:* ]] && [ ! -d "$REPO_PATH" ]; then
   echo "Error: REPO_PATH '$REPO_PATH' is not a valid directory" >&2
   exit 1
 fi
@@ -32,10 +43,6 @@ for path in "${BACKUP_PATHS[@]}"; do
     exit 1
   fi
 done
-
-# Extract the repository name from the path (last component)
-REPO_NAME=$(basename "$REPO_PATH")
-PASSWORD_FILE="$SECRETS_ROOT/$REPO_NAME"
 
 echo "Starting backup..."
 
