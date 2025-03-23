@@ -23,6 +23,7 @@ BACKUP_PATHS=("${@:1:$#-1}")  # Get all arguments except the last one as backup 
 if [[ "$REPO_PATH" == *:*:* ]]; then
   # For paths like rclone:uloz:restic-test, extract the last part
   REPO_NAME=$(echo "$REPO_PATH" | sed 's/.*://')
+  export RCLONE_CONFIG=$SECRETS_ROOT/restic-rclone.conf
 else
   # For regular paths, use basename as before
   REPO_NAME=$(basename "$REPO_PATH")
