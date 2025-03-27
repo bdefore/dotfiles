@@ -67,7 +67,7 @@ do_backup() {
     BACKUP_PATHS=("${@:1:$#-1}")  # Get all arguments except the last one as backup paths
 
     # Backup-specific flags
-    BACKUP_FLAGS="--one-file-system --exclude-file=$EXCLUSIONS_ROOT/common.txt --exclude-file=$EXCLUSIONS_ROOT/linux-system-root.txt"
+    BACKUP_FLAGS="--one-file-system --skip-if-unchanged --exclude-file=$EXCLUSIONS_ROOT/common.txt --exclude-file=$EXCLUSIONS_ROOT/linux-system-root.txt"
 
     # Validate backup paths
     for path in "${BACKUP_PATHS[@]}"; do
